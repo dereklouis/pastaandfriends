@@ -2,11 +2,11 @@
 
 .container {
   width: 100%;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 36px;
+  margin: 0px 0px 36px 0px;
 }
 
 #buttonContainer {
@@ -14,7 +14,8 @@
   box-shadow: rgba(70, 70, 77, 0.5) 4px 7px 29px 0px;
   border-radius: 15px;
   transition-duration: 0.1s;
-  margin: 50px 0px;
+  margin: 50px auto;
+  width: fit-content;
 }
 
 #buttonContainer:active {
@@ -57,10 +58,11 @@
   height: 300px;
   border: 2px solid black;
   border-radius: 15px;
-  margin: 15px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .columnWrap {
@@ -84,4 +86,17 @@
 .playerName {
   margin: 0px 0px 15px 0px;
   font-size: 18px;
+}
+
+.flag {
+  position: absolute;
+  width: 36px;
+  height: auto;
+  transform: translate(220px, 10px);
+}
+
+.position {
+  position: absolute;
+  font-size: 18px;
+  transform: translate(-225px, -2px);
 }
