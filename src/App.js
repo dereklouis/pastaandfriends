@@ -29,11 +29,11 @@ function App() {
 
   const [roster, setRoster] = useState([]);
 
-  useEffect(() => {
-    fetchRoster();
-  }, []);
+  // useEffect(() => {
+  //   fetchRoster();
+  // }, []);
 
-  console.log(111, roster);
+  console.log('Roster--->', roster);
 
   return (
     <div className="container">
@@ -47,9 +47,40 @@ function App() {
       </div>
       {roster.length ? (
         roster.map((player) => (
-          <div key={player.primaryNumber}>
-            <h3>#{player.primaryNumber}</h3>
-            <h6>{player.fullName}</h6>
+          <div key={player.primaryNumber} className="playerBox">
+            <h3 className="playerNumber">#{player.primaryNumber}</h3>
+            <h6 className="playerName">{player.fullName}</h6>
+            {player.seasonData ? (
+              <>
+                <p className="playerGamesPlayed">
+                  {`${player.seasonData.games} Games Played`}
+                </p>
+                {player.primaryPosition.code !== 'G' ? (
+                  <>
+                    <p className="playerGoals">
+                      {`${player.seasonData.goals} Goals`}
+                    </p>
+                    <p className="playerAssists">
+                      {`${player.seasonData.assists} Assists`}
+                    </p>
+                    <p className="playerPoints">
+                      {`${player.seasonData.points} Points`}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="playerSavePercentage">
+                      {Number(
+                        player.seasonData.evenStrengthSavePercentage
+                      ).toFixed(2)}
+                      % Save Percentage
+                    </p>
+                  </>
+                )}
+              </>
+            ) : (
+              <h4>No Data Available</h4>
+            )}
           </div>
         ))
       ) : (
