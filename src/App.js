@@ -24,6 +24,16 @@ function App() {
       }
       finalData.push(person);
     }
+    finalData.sort((a, b) => {
+      if (a.seasonData === undefined || b.seasonData === undefined) {
+        return 0;
+      } else {
+        return (
+          (b.seasonData.points || b.seasonData.savePercentage) -
+          (a.seasonData.points || a.seasonData.savePercentage)
+        );
+      }
+    });
     setRoster(finalData);
   };
 
