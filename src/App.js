@@ -50,37 +50,100 @@ function App() {
           <div key={player.primaryNumber} className="playerBox">
             <h3 className="playerNumber">#{player.primaryNumber}</h3>
             <h6 className="playerName">{player.fullName}</h6>
-            {player.seasonData ? (
-              <>
-                <p className="playerGamesPlayed">
-                  {`${player.seasonData.games} Games Played`}
-                </p>
-                {player.primaryPosition.code !== 'G' ? (
-                  <>
-                    <p className="playerGoals">
-                      {`${player.seasonData.goals} Goals`}
-                    </p>
-                    <p className="playerAssists">
-                      {`${player.seasonData.assists} Assists`}
-                    </p>
-                    <p className="playerPoints">
-                      {`${player.seasonData.points} Points`}
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <p className="playerSavePercentage">
-                      {Number(
-                        player.seasonData.evenStrengthSavePercentage
-                      ).toFixed(2)}
-                      % Save Percentage
-                    </p>
-                  </>
-                )}
-              </>
-            ) : (
-              <h4>No Data Available</h4>
-            )}
+            <div className="columnWrap">
+              {player.seasonData ? (
+                <>
+                  <p className="playerGamesPlayed">
+                    {`${player.seasonData.games} Games Played`}
+                  </p>
+                  {player.primaryPosition.code !== 'G' ? (
+                    <>
+                      <p className="playerGoals">
+                        {`${player.seasonData.goals} Goals`}
+                      </p>
+                      <p className="playerAssists">
+                        {`${player.seasonData.assists} Assists`}
+                      </p>
+                      <p className="playerPoints">
+                        {`${player.seasonData.points} Points`}
+                      </p>
+                      <p className="playerPlusMinus">
+                        {`${player.seasonData.plusMinus} PlusMinus`}
+                      </p>
+                      <p className="playerPPG">
+                        {`${player.seasonData.powerPlayGoals} PP Goals`}
+                      </p>
+                      <p className="playerSHG">
+                        {`${player.seasonData.shortHandedGoals} SH Goals`}
+                      </p>
+                      <p className="playerShots">
+                        {`${player.seasonData.shots} Shots`}
+                      </p>
+                      <p className="playerShotPercentage">
+                        {`${player.seasonData.shotPct} Shot %`}
+                      </p>
+                      <p className="playerHits">
+                        {`${player.seasonData.hits} Hits`}
+                      </p>
+                      <p className="playerPIM">
+                        {`${player.seasonData.pim} PIM`}
+                      </p>
+                      <p className="playerAVGTimeOnIce">
+                        {`${player.seasonData.timeOnIcePerGame} AVG TOI`}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="playerSavePercentage">
+                        {`${player.seasonData.savePercentage
+                          .toString()
+                          .split('')
+                          .slice(2)
+                          .join('')} Save %`}
+                      </p>
+                      <p className="playerGAA">
+                        {`${Number(
+                          player.seasonData.goalAgainstAverage
+                        ).toFixed(2)} GAA`}
+                      </p>
+                      <p className="playerShutouts">
+                        {`${player.seasonData.shutouts} Shutouts`}
+                      </p>
+                      <p className="playerWins">
+                        {`${player.seasonData.wins} Wins`}
+                      </p>
+                      <p className="playerLosses">
+                        {`${player.seasonData.losses} Losses`}
+                      </p>
+                      <p className="playerOT">
+                        {`${player.seasonData.ot} OT Losses`}
+                      </p>
+                      <p className="playerGA">
+                        {`${player.seasonData.goalsAgainst} GA`}
+                      </p>
+                      <p className="playerSA">
+                        {`${player.seasonData.shotsAgainst} SA`}
+                      </p>
+                      <p className="playerSaves">
+                        {`${player.seasonData.saves} Saves`}
+                      </p>
+                      <p className="playerPPSavePercentage">
+                        {`${Number(
+                          player.seasonData.powerPlaySavePercentage
+                        ).toFixed(2)} PP Save %`}
+                      </p>
+                      <p className="playerSHSavePercentage">
+                        {`${Number(
+                          player.seasonData.shortHandedSavePercentage
+                        ).toFixed(2)} SH Save %`}
+                      </p>
+                    </>
+                  )}
+                </>
+              ) : (
+                <h4 id="noData">No Data Available</h4>
+              )}
+            </div>
           </div>
         ))
       ) : (
