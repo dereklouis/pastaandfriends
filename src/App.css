@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
-}
+/* #FFB81C */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+}
+
+#buttonContainer {
+  position: relative;
+  box-shadow: rgba(70, 70, 77, 0.5) 4px 7px 29px 0px;
+  border-radius: 15px;
+  transition-duration: 0.1s;
+  margin: 50px 0px;
+}
+
+#buttonContainer:active {
+  transform: scale(0.98);
+  box-shadow: rgba(100, 100, 111, 0.5) 2px 3px 29px 0px;
+}
+
+#fetchButtonTop,
+#fetchButtonBottom {
+  padding: 20px 75px;
+  border-radius: 15px;
   color: white;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  cursor: pointer;
+  transition-duration: 1s;
+  border: none;
+  outline: none;
 }
 
-.App-link {
-  color: #61dafb;
+#fetchButtonTop {
+  background-color: black;
+  z-index: 5;
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#fetchButtonTop:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#fetchButtonBottom {
+  background-image: linear-gradient(to right, #000, #000, #ffb81c);
+  z-index: 1;
 }

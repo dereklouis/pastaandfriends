@@ -1,0 +1,79 @@
+https://statsapi.web.nhl.com/api/v1/teams
+
+0: {id: 1, name: "New Jersey Devils", link: "/api/v1/teams/1", venue: {…}, abbreviation: "NJD", …}
+1: {id: 2, name: "New York Islanders", link: "/api/v1/teams/2", venue: {…}, abbreviation: "NYI", …}
+2: {id: 3, name: "New York Rangers", link: "/api/v1/teams/3", venue: {…}, abbreviation: "NYR", …}
+3: {id: 4, name: "Philadelphia Flyers", link: "/api/v1/teams/4", venue: {…}, abbreviation: "PHI", …}
+4: {id: 5, name: "Pittsburgh Penguins", link: "/api/v1/teams/5", venue: {…}, abbreviation: "PIT", …}
+5: {id: 6, name: "Boston Bruins", link: "/api/v1/teams/6", venue: {…}, abbreviation: "BOS", …}
+
+/////////////////////////////////////////////
+
+https://statsapi.web.nhl.com/api/v1/teams/6/roster
+
+0: {person: {…}, jerseyNumber: "27", position: {…}}
+1: {person: {…}, jerseyNumber: "37", position: {…}}
+2: {person: {…}, jerseyNumber: "41", position: {…}}
+3: {person: {…}, jerseyNumber: "46", position: {…}}
+4: {person: {…}, jerseyNumber: "40", position: {…}}
+5: {person: {…}, jerseyNumber: "63", position: {…}}
+6: {person: {…}, jerseyNumber: "12", position: {…}}
+7: {person: {…}, jerseyNumber: "13", position: {…}}
+8: {person: {…}, jerseyNumber: "14", position: {…}}
+9: {person: {…}, jerseyNumber: "71", position: {…}}
+10: {person: {…}, jerseyNumber: "84", position: {…}}
+11: {person: {…}, jerseyNumber: "86", position: {…}}
+12: {person: {…}, jerseyNumber: "52", position: {…}}
+13: {person: {…}, jerseyNumber: "6", position: {…}}
+14: {person: {…}, jerseyNumber: "48", position: {…}}
+15: {person: {…}, jerseyNumber: "81", position: {…}}
+16: {person: {…}, jerseyNumber: "75", position: {…}}
+17: {person: {…}, jerseyNumber: "20", position: {…}}
+18: {person: {…}, jerseyNumber: "21", position: {…}}
+19: {person: {…}, jerseyNumber: "88", position: {…}}
+20: {person: {…}, jerseyNumber: "28", position: {…}}
+21: {person: {…}, jerseyNumber: "67", position: {…}}
+22: {person: {…}, jerseyNumber: "80", position: {…}}
+23: {person: {…}, jerseyNumber: "25", position: {…}}
+24: {person: {…}, jerseyNumber: "55", position: {…}}
+25: {person: {…}, jerseyNumber: "70", position: {…}}
+26: {person: {…}, jerseyNumber: "74", position: {…}}
+27: {person: {…}, jerseyNumber: "73", position: {…}}
+28: {person: {…}, jerseyNumber: "11", position: {…}}
+29: {person: {…}, jerseyNumber: "1", position: {…}}
+30: {person: {…}, jerseyNumber: "83", position: {…}}
+31: {person: {…}, jerseyNumber: "54", position: {…}}
+length: 32
+
+///////////////////////////////////////////
+
+https://statsapi.web.nhl.com/api/v1/people/8473419
+
+people: Array(1)
+0:
+active: true
+alternateCaptain: true
+birthCity: "Halifax"
+birthCountry: "CAN"
+birthDate: "1988-05-11"
+birthStateProvince: "NS"
+captain: false
+currentAge: 33
+currentTeam: {id: 6, name: "Boston Bruins", link: "/api/v1/teams/6"}
+firstName: "Brad"
+fullName: "Brad Marchand"
+height: "5' 9\""
+id: 8473419
+lastName: "Marchand"
+link: "/api/v1/people/8473419"
+nationality: "CAN"
+primaryNumber: "63"
+primaryPosition: {code: "L", name: "Left Wing", type: "Forward", abbreviation: "LW"}
+rookie: false
+rosterStatus: "Y"
+shootsCatches: "L"
+weight: 181
+__proto__: Object
+length: 1
+
+//////////////////////////
