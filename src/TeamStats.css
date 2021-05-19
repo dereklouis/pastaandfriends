@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 36px 0px;
+  padding: 75px 0px 25px 0px;
 }
 
 #buttonContainer {

@@ -1,12 +1,11 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import NavBar from './NavBar';
 import TeamStats from './TeamStats';
 import Loading from './Loading';
 
 const season = '20202021';
-
-const pizza = [1, 2, 3, 4, 5];
 
 const Routes = () => {
   const [fullTeamStats, setFullTeamStats] = useState([]);
@@ -50,6 +49,7 @@ const Routes = () => {
 
   return (
     <>
+      <NavBar />
       <Route
         path="/"
         render={(props) => (

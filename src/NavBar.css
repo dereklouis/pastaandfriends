@@ -1,0 +1,30 @@
+#navBarWrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.948);
+  border-top: 1px solid #ffb81c;
+  border-bottom: 1px solid #ffb81c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navLogo {
+  width: auto;
+  height: 45px;
+  margin: 0px 15px;
+}
+
+#navTitle {
+  margin: 0px;
+  font-family: 'Bree Serif', serif;
+  color: white;
+}
+
+#navMiddle {
+  display: flex;
+  align-items: center;
+}

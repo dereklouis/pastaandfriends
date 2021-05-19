@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Loading from './Loading';
 import './TeamStats.css';
 
 function TeamStats(props) {
   return (
     <>
-      <div className="container">
-        {props.fullTeamStats.length ? (
-          props.fullTeamStats.map((player) => (
+      {props.fullTeamStats.length ? (
+        <div className="container">
+          {props.fullTeamStats.map((player) => (
             <div key={player.id} className="playerBox">
               <img
                 alt="flag"
@@ -112,11 +113,11 @@ function TeamStats(props) {
                 )}
               </div>
             </div>
-          ))
-        ) : (
-          <h3>Loading...</h3>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 }
