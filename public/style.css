@@ -1,0 +1,14 @@
+html,
+body {
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+}
+
+.FCAIC {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

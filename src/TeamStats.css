@@ -5,8 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 36px;
-  margin: 0px 0px 36px 0px;
+  margin: 36px 0px;
 }
 
 #buttonContainer {
@@ -56,6 +55,7 @@
   background-color: #ffb81c;
   width: 500px;
   height: 300px;
+  margin: 20px 36px;
   border: 2px solid black;
   border-radius: 15px;
   display: flex;
