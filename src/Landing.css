@@ -77,7 +77,6 @@
   position: absolute;
   transform: translate(64px, 135px);
   cursor: pointer;
-  background-color: rgb(95, 83, 228);
   opacity: 0;
   z-index: 10;
 }
