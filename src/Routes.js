@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
 import TeamStats from './TeamStats';
-import Loading from './Loading';
+import Landing from './Landing';
 
 const season = '20202021';
 
@@ -50,8 +50,9 @@ const Routes = () => {
   return (
     <>
       <NavBar />
+      <Route exact path="/" component={Landing} />
       <Route
-        path="/"
+        path="/teamstats"
         render={(props) => (
           <TeamStats {...props} fullTeamStats={fullTeamStats} />
         )}

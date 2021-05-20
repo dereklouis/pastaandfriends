@@ -21,3 +21,15 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+a {
+  text-decoration: none;
+}
+
+.opacityHide {
+  opacity: 0;
+}
+
+.opacityShow {
+  opacity: 1;
+}

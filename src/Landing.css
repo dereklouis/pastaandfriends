@@ -1,0 +1,111 @@
+#landingContainer {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.866);
+}
+
+#landingTitle {
+  color: black;
+  font-size: 42px;
+}
+
+#tvContainer {
+  position: relative;
+  width: 510px;
+  height: 290px;
+}
+
+#tv {
+  position: absolute;
+  z-index: 5;
+}
+
+#gifElement {
+  position: absolute;
+  z-index: 3;
+  transform: translate(5px, 5px);
+  width: 500px;
+  height: 275px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#tvBlack {
+  width: 500px;
+  height: 276px;
+  background-color: black;
+  z-index: 1;
+  transform: translate(4px, 2px);
+}
+
+#remoteContainer {
+  margin: 75px 125px 0px 0px;
+  height: 275px;
+  width: 158px;
+  position: relative;
+}
+
+@keyframes clickAction {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(10deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.click {
+  animation-name: clickAction;
+  animation-duration: 0.2s;
+}
+
+#remote {
+  height: 275px;
+  width: 158px;
+  z-index: 5;
+  position: absolute;
+}
+
+#remoteButtonChange {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(64px, 135px);
+  cursor: pointer;
+  background-color: rgb(95, 83, 228);
+  opacity: 0;
+  z-index: 10;
+}
+
+#remoteButtonFiller {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(64px, 135px);
+  z-index: 4;
+}
+
+.buttonUp {
+  background-color: rgb(156, 228, 83);
+}
+
+.buttonDown {
+  background-color: rgb(142, 210, 75);
+}
+
+#remoteButtonOff {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(119px, 32px);
+  cursor: pointer;
+  background-color: rgb(130, 11, 11);
+  z-index: 10;
+}

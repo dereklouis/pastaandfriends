@@ -9,7 +9,7 @@
   border-bottom: 1px solid #ffb81c;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 #navLogo {
@@ -27,4 +27,15 @@
 #navMiddle {
   display: flex;
   align-items: center;
+}
+
+.navLink {
+  color: white;
+  font-family: 'Bree Serif', serif;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.navLink:hover {
+  transform: scale(1.05);
 }
