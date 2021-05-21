@@ -33,3 +33,7 @@ a {
 .opacityShow {
   opacity: 1;
 }
+
+.displayNone {
+  display: none;
+}

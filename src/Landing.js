@@ -43,7 +43,7 @@ const Landing = () => {
         <img id="tv" src="tv.png" alt="tv" />
         <img
           id="gifElement"
-          src={`gif${currentGif}.gif`}
+          src={`gifs/gif${currentGif}.gif`}
           alt="gif"
           className="opacityShow"
         />
