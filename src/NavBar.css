@@ -39,3 +39,53 @@
 .navLink:hover {
   transform: scale(1.05);
 }
+
+#stickContainer {
+  position: relative;
+  width: 32px;
+  height: 40px;
+  margin: 0px 36px 0px 0px;
+  cursor: pointer;
+}
+
+#stick0 {
+  position: absolute;
+  height: 40px;
+  width: auto;
+  transition-duration: 1s;
+}
+
+#stick1 {
+  position: absolute;
+  height: 40px;
+  width: auto;
+  transition-duration: 1s;
+}
+
+.stick0Close {
+  transform: translate(-6px, 1px) rotate(114deg);
+}
+
+.stick0Open {
+  transform: translate(-8px, 1px) rotate(164deg);
+}
+
+.stick1Close {
+  transform: translate(6px, -1px) rotate(-66deg);
+}
+
+.stick1Open {
+  transform: translate(8px, 1px) rotate(-164deg) scaleX(-1);
+}
+
+@media (max-width: 600px) {
+  #navBarWrapper {
+    justify-content: space-between;
+  }
+  .navLink {
+    display: none;
+  }
+  #navMiddle {
+    margin: 0px 0px 0px 20px;
+  }
+}
