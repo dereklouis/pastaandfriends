@@ -25,40 +25,64 @@ function TeamStats(props) {
                   {player.seasonData ? (
                     <>
                       <p className="playerGamesPlayed">
-                        {`${player.seasonData.games} Games Played`}
+                        <span className="bold">{player.seasonData.games}</span>{' '}
+                        Games Played
                       </p>
                       <p className="playerGoals">
-                        {`${player.seasonData.goals} Goals`}
+                        <span className="bold">{player.seasonData.goals}</span>{' '}
+                        Goals
                       </p>
                       <p className="playerAssists">
-                        {`${player.seasonData.assists} Assists`}
+                        <span className="bold">
+                          {player.seasonData.assists}
+                        </span>{' '}
+                        Assists
                       </p>
                       <p className="playerPoints">
-                        {`${player.seasonData.points} Points`}
+                        <span className="bold">{player.seasonData.points}</span>{' '}
+                        Points
                       </p>
                       <p className="playerPlusMinus">
-                        {`${player.seasonData.plusMinus} PlusMinus`}
+                        <span className="bold">
+                          {player.seasonData.plusMinus}
+                        </span>{' '}
+                        PlusMinus
                       </p>
                       <p className="playerPPG">
-                        {`${player.seasonData.powerPlayGoals} PP Goals`}
+                        <span className="bold">
+                          {player.seasonData.powerPlayGoals}
+                        </span>{' '}
+                        PP Goals
                       </p>
                       <p className="playerSHG">
-                        {`${player.seasonData.shortHandedGoals} SH Goals`}
+                        <span className="bold">
+                          {player.seasonData.shortHandedGoals}
+                        </span>{' '}
+                        SH Goals
                       </p>
                       <p className="playerShots">
-                        {`${player.seasonData.shots} Shots`}
+                        <span className="bold">{player.seasonData.shots}</span>{' '}
+                        Shots
                       </p>
                       <p className="playerShotPercentage">
-                        {`${player.seasonData.shotPct} Shot %`}
+                        <span className="bold">
+                          {player.seasonData.shotPct}
+                        </span>{' '}
+                        Shot %
                       </p>
                       <p className="playerHits">
-                        {`${player.seasonData.hits} Hits`}
+                        <span className="bold"> {player.seasonData.hits}</span>{' '}
+                        Hits
                       </p>
                       <p className="playerPIM">
-                        {`${player.seasonData.pim} PIM`}
+                        <span className="bold">{player.seasonData.pim}</span>{' '}
+                        PIM
                       </p>
                       <p className="playerAVGTimeOnIce">
-                        {`${player.seasonData.timeOnIcePerGame} AVG TOI`}
+                        <span className="bold">
+                          {player.seasonData.timeOnIcePerGame}
+                        </span>{' '}
+                        AVG TOI
                       </p>
                     </>
                   ) : (
@@ -85,50 +109,76 @@ function TeamStats(props) {
                   {player.seasonData ? (
                     <>
                       <p className="playerGamesPlayed">
-                        {`${player.seasonData.games} Games Played`}
+                        <span className="bold">{player.seasonData.games}</span>{' '}
+                        Games Played
                       </p>
                       <p className="playerSavePercentage">
-                        {`${player.seasonData.savePercentage
-                          .toString()
-                          .split('')
-                          .slice(2)
-                          .join('')} Save %`}
+                        <span className="bold">
+                          {player.seasonData.savePercentage
+                            .toString()
+                            .split('')
+                            .slice(2)
+                            .join('')}
+                        </span>{' '}
+                        Save %
                       </p>
                       <p className="playerGAA">
-                        {`${Number(
-                          player.seasonData.goalAgainstAverage
-                        ).toFixed(2)} GAA`}
+                        <span className="bold">
+                          {Number(player.seasonData.goalAgainstAverage).toFixed(
+                            2
+                          )}
+                        </span>{' '}
+                        GAA
                       </p>
                       <p className="playerShutouts">
-                        {`${player.seasonData.shutouts} Shutouts`}
+                        <span className="bold">
+                          {player.seasonData.shutouts}
+                        </span>{' '}
+                        Shutouts
                       </p>
                       <p className="playerWins">
-                        {`${player.seasonData.wins} Wins`}
+                        <span className="bold">{player.seasonData.wins}</span>{' '}
+                        Wins
                       </p>
                       <p className="playerLosses">
-                        {`${player.seasonData.losses} Losses`}
+                        <span className="bold">{player.seasonData.losses}</span>{' '}
+                        Losses
                       </p>
                       <p className="playerOT">
-                        {`${player.seasonData.ot} OT Losses`}
+                        <span className="bold">{player.seasonData.ot}</span> OT
+                        Losses
                       </p>
                       <p className="playerGA">
-                        {`${player.seasonData.goalsAgainst} GA`}
+                        <span className="bold">
+                          {player.seasonData.goalsAgainst}
+                        </span>{' '}
+                        GA
                       </p>
                       <p className="playerSA">
-                        {`${player.seasonData.shotsAgainst} SA`}
+                        <span className="bold">
+                          {player.seasonData.shotsAgainst}
+                        </span>{' '}
+                        SA
                       </p>
                       <p className="playerSaves">
-                        {`${player.seasonData.saves} Saves`}
+                        <span className="bold">{player.seasonData.saves}</span>{' '}
+                        Saves
                       </p>
                       <p className="playerPPSavePercentage">
-                        {`${Number(
-                          player.seasonData.powerPlaySavePercentage
-                        ).toFixed(2)} PP Save %`}
+                        <span className="bold">
+                          {Number(
+                            player.seasonData.powerPlaySavePercentage
+                          ).toFixed(2)}
+                        </span>{' '}
+                        PP Save %
                       </p>
                       <p className="playerSHSavePercentage">
-                        {`${Number(
-                          player.seasonData.shortHandedSavePercentage
-                        ).toFixed(2)} SH Save %`}
+                        <span className="bold">
+                          {Number(
+                            player.seasonData.shortHandedSavePercentage
+                          ).toFixed(2)}
+                        </span>{' '}
+                        SH Save %
                       </p>
                     </>
                   ) : (
