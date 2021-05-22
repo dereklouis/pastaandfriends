@@ -2,7 +2,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
-import TeamStats from './TeamStats';
+import PlayerStats from './PlayerStats';
 import Landing from './Landing';
 import Loading from './Loading';
 
@@ -29,16 +29,6 @@ const Routes = () => {
       }
       finalData.push(person);
     }
-    finalData.sort((a, b) => {
-      if (a.seasonData === undefined || b.seasonData === undefined) {
-        return 0;
-      } else {
-        return (
-          (b.seasonData.points || b.seasonData.savePercentage) -
-          (a.seasonData.points || a.seasonData.savePercentage)
-        );
-      }
-    });
     setFullTeamStats(finalData);
   };
 
@@ -56,7 +46,7 @@ const Routes = () => {
       <Route
         path="/teamstats"
         render={(props) => (
-          <TeamStats {...props} fullTeamStats={fullTeamStats} />
+          <PlayerStats {...props} fullTeamStats={fullTeamStats} />
         )}
       />
     </>

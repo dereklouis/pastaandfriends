@@ -4,9 +4,9 @@ import SkaterStats from './SkaterStats';
 import SkaterPerson from './SkaterPerson';
 import GoalieStats from './GoalieStats';
 import GoaliePerson from './GoaliePerson';
-import './TeamStats.css';
+import './PlayerStats.css';
 
-function TeamStats(props) {
+function PlayerStats(props) {
   const skaterRefs = useRef([]);
 
   const goalieRefs = useRef([]);
@@ -82,7 +82,11 @@ function TeamStats(props) {
       {props.fullTeamStats.length ? (
         <div className="container">
           {props.fullTeamStats
-            .filter((player) => player.primaryPosition.abbreviation !== 'G')
+            .filter(
+              (player) =>
+                player.primaryPosition.abbreviation !== 'G' && player.seasonData
+            )
+            .sort((a, b) => b.seasonData.points - a.seasonData.points)
             .map((player, idx) => (
               <div
                 key={player.id}
@@ -96,7 +100,50 @@ function TeamStats(props) {
               </div>
             ))}
           {props.fullTeamStats
-            .filter((player) => player.primaryPosition.abbreviation === 'G')
+            .filter(
+              (player) =>
+                player.primaryPosition.abbreviation !== 'G' &&
+                !player.seasonData
+            )
+            .map((player, idx) => (
+              <div
+                key={player.id}
+                ref={(element) => skaterRefs.current.push(element)}
+                onClick={(e) => flipCard(e, idx, 'S')}
+                className="cardContainer spin0"
+                onAnimationEnd={(e) => handleAnimation(e, idx, 'S')}
+              >
+                <SkaterStats player={player} />
+                <SkaterPerson player={player} />
+              </div>
+            ))}
+          {props.fullTeamStats
+            .filter(
+              (player) =>
+                player.primaryPosition.abbreviation === 'G' && player.seasonData
+            )
+            .sort(
+              (a, b) =>
+                b.seasonData.savePercentage - a.seasonData.savePercentage
+            )
+            .map((player, idx) => (
+              <div
+                key={player.id}
+                ref={(element) => goalieRefs.current.push(element)}
+                className="cardContainer spin0"
+                onClick={(e) => flipCard(e, idx, 'G')}
+                onAnimationEnd={(e) => handleAnimation(e, idx, 'G')}
+              >
+                <GoalieStats player={player} />
+                <GoaliePerson player={player} />
+              </div>
+            ))}
+          {props.fullTeamStats
+            .filter(
+              (player) =>
+                player.primaryPosition.abbreviation === 'G' &&
+                !player.seasonData
+            )
             .map((player, idx) => (
               <div
                 key={player.id}
@@ -117,4 +164,4 @@ function TeamStats(props) {
   );
 }
 
-export default TeamStats;
+export default PlayerStats;
