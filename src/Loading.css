@@ -5,7 +5,84 @@
   justify-content: center;
 }
 
+#loadingTitleContainer {
+  display: flex;
+  margin: 0px 0px 150px 0px;
+}
+
 #loadingTitle {
-  font-size: 36px;
+  font-size: 50px;
   color: white;
+  margin: 0px;
+  letter-spacing: 4px;
+}
+
+@keyframes blink {
+  0% {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  50%,
+  100% {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+#loadingDot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  align-self: flex-end;
+  margin: 0px 0px 10px 25px;
+  border-radius: 50%;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-delay: 0.5s;
+}
+
+#loadingDot::before,
+#loadingDot::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  align-self: flex-end;
+  border-radius: 50%;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+#loadingDot::before {
+  transform: translateX(-16px);
+}
+
+#loadingDot::after {
+  transform: translateX(16px);
+  animation-name: blink;
+  animation-delay: 1s;
+}
+
+@keyframes loadingLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#bruinsLogo {
+  width: 600px;
+  height: auto;
+  opacity: 0.85;
+  animation-name: loadingLogo;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }

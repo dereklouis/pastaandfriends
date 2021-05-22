@@ -4,6 +4,7 @@ import axios from 'axios';
 import NavBar from './NavBar';
 import TeamStats from './TeamStats';
 import Landing from './Landing';
+import Loading from './Loading';
 
 const season = '20202021';
 
@@ -50,6 +51,7 @@ const Routes = () => {
   return (
     <>
       <NavBar />
+      <Route path="/loading" component={Loading} />
       <Route exact path="/" component={Landing} />
       <Route
         path="/teamstats"
