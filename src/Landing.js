@@ -38,28 +38,31 @@ const Landing = () => {
   };
 
   return (
-    <div id="landingContainer" className="FCAIC">
-      <div id="tvContainer">
-        <img id="tv" src="tv.png" alt="tv" />
-        <img
-          id="gifElement"
-          src={`gifs/gif${currentGif}.gif`}
-          alt="gif"
-          className="opacityShow"
-        />
-        <div id="tvBlack"></div>
-      </div>
-      <div id="remoteContainer">
-        <button type="button" id="remoteButtonOff" onClick={tvOffOn}></button>
-        <button
-          type="button"
-          id="remoteButtonChange"
-          onClick={changeClip}
-          onMouseDown={downUp}
-          onMouseUp={downUp}
-        ></button>
-        <div id="remoteButtonFiller" className="buttonUp"></div>
-        <img id="remote" alt="remote" src="remote.png" />
+    <div id="landingMaster">
+      <div id="landingContainer" className="FCAIC">
+        <div id="tvContainer">
+          <img id="tv" src="tv.png" alt="tv" />
+          <img
+            id="gifElement"
+            src={`gifs/gif${currentGif}.gif`}
+            alt="gif"
+            className="opacityShow"
+          />
+          <div id="tvBlack"></div>
+        </div>
+        <div id="remoteContainer">
+          <button type="button" id="remoteButtonOff" onClick={tvOffOn}></button>
+          <button
+            type="button"
+            id="remoteButtonChange"
+            onClick={changeClip}
+            onMouseDown={downUp}
+            onMouseUp={downUp}
+          ></button>
+          <div id="remoteButtonFiller" className="buttonUp"></div>
+          <img id="remote" alt="remote" src="remote.png" />
+        </div>
+        <img alt="Jack" id="jack" src="jackbw.png" />
       </div>
     </div>
   );
