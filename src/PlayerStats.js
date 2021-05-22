@@ -77,6 +77,9 @@ function PlayerStats(props) {
     }
   };
 
+  let skaterCount = 0;
+  let goalieCount = 0;
+
   return (
     <>
       {props.fullTeamStats.length ? (
@@ -87,18 +90,21 @@ function PlayerStats(props) {
                 player.primaryPosition.abbreviation !== 'G' && player.seasonData
             )
             .sort((a, b) => b.seasonData.points - a.seasonData.points)
-            .map((player, idx) => (
-              <div
-                key={player.id}
-                ref={(element) => skaterRefs.current.push(element)}
-                onClick={(e) => flipCard(e, idx, 'S')}
-                className="cardContainer spin0"
-                onAnimationEnd={(e) => handleAnimation(e, idx, 'S')}
-              >
-                <SkaterStats player={player} />
-                <SkaterPerson player={player} />
-              </div>
-            ))}
+            .map((player, idx) => {
+              skaterCount++;
+              return (
+                <div
+                  key={player.id}
+                  ref={(element) => skaterRefs.current.push(element)}
+                  onClick={(e) => flipCard(e, idx, 'S')}
+                  className="cardContainer spin0"
+                  onAnimationEnd={(e) => handleAnimation(e, idx, 'S')}
+                >
+                  <SkaterStats player={player} />
+                  <SkaterPerson player={player} />
+                </div>
+              );
+            })}
           {props.fullTeamStats
             .filter(
               (player) =>
@@ -109,9 +115,11 @@ function PlayerStats(props) {
               <div
                 key={player.id}
                 ref={(element) => skaterRefs.current.push(element)}
-                onClick={(e) => flipCard(e, idx, 'S')}
+                onClick={(e) => flipCard(e, idx + skaterCount, 'S')}
                 className="cardContainer spin0"
-                onAnimationEnd={(e) => handleAnimation(e, idx, 'S')}
+                onAnimationEnd={(e) =>
+                  handleAnimation(e, idx + skaterCount, 'S')
+                }
               >
                 <SkaterStats player={player} />
                 <SkaterPerson player={player} />
@@ -126,18 +134,21 @@ function PlayerStats(props) {
               (a, b) =>
                 b.seasonData.savePercentage - a.seasonData.savePercentage
             )
-            .map((player, idx) => (
-              <div
-                key={player.id}
-                ref={(element) => goalieRefs.current.push(element)}
-                className="cardContainer spin0"
-                onClick={(e) => flipCard(e, idx, 'G')}
-                onAnimationEnd={(e) => handleAnimation(e, idx, 'G')}
-              >
-                <GoalieStats player={player} />
-                <GoaliePerson player={player} />
-              </div>
-            ))}
+            .map((player, idx) => {
+              goalieCount++;
+              return (
+                <div
+                  key={player.id}
+                  ref={(element) => goalieRefs.current.push(element)}
+                  className="cardContainer spin0"
+                  onClick={(e) => flipCard(e, idx, 'G')}
+                  onAnimationEnd={(e) => handleAnimation(e, idx, 'G')}
+                >
+                  <GoalieStats player={player} />
+                  <GoaliePerson player={player} />
+                </div>
+              );
+            })}
           {props.fullTeamStats
             .filter(
               (player) =>
@@ -149,8 +160,10 @@ function PlayerStats(props) {
                 key={player.id}
                 ref={(element) => goalieRefs.current.push(element)}
                 className="cardContainer spin0"
-                onClick={(e) => flipCard(e, idx, 'G')}
-                onAnimationEnd={(e) => handleAnimation(e, idx, 'G')}
+                onClick={(e) => flipCard(e, idx + goalieCount, 'G')}
+                onAnimationEnd={(e) =>
+                  handleAnimation(e, idx + goalieCount, 'G')
+                }
               >
                 <GoalieStats player={player} />
                 <GoaliePerson player={player} />
