@@ -93,6 +93,20 @@ function TeamStats(props) {
                     className="flag"
                     src={`/flags/${player.nationality}.png`}
                   />
+                  {player.captain === true ? (
+                    <img alt="Captain" className="badge" src="captain.png" />
+                  ) : (
+                    false
+                  )}
+                  {player.alternateCaptain === true ? (
+                    <img
+                      alt="Alternate Captain"
+                      className="badge"
+                      src="alternate.png"
+                    />
+                  ) : (
+                    false
+                  )}
                   <p className="position">
                     {player.primaryPosition.abbreviation}
                   </p>
@@ -184,6 +198,20 @@ function TeamStats(props) {
                     className="flag"
                     src={`/flags/${player.nationality}.png`}
                   />
+                  {player.captain === true ? (
+                    <img alt="Captain" className="badge" src="captain.png" />
+                  ) : (
+                    false
+                  )}
+                  {player.alternateCaptain === true ? (
+                    <img
+                      alt="Alternate Captain"
+                      className="badge"
+                      src="alternate.png"
+                    />
+                  ) : (
+                    false
+                  )}
                   <p className="position">
                     {player.primaryPosition.abbreviation}
                   </p>

@@ -212,6 +212,13 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.badge {
+  position: absolute;
+  width: auto;
+  height: 36px;
+  transform: translate(120px, 10px);
+}
+
 .position {
   position: absolute;
   font-size: 18px;
