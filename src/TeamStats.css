@@ -51,18 +51,123 @@
   z-index: 1;
 }
 
-.playerBox {
+.cardContainer {
+  position: relative;
+  width: 504px;
+  height: 304px;
+  margin: 20px 36px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+@keyframes spin1 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(90deg);
+  }
+}
+
+.spin1 {
+  animation-name: spin1;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.spin2 {
+  animation-name: spin2;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(270deg);
+  }
+}
+
+.spin3 {
+  animation-name: spin3;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+@keyframes spin4 {
+  0% {
+    transform: rotateY(270deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.spin4 {
+  animation-name: spin4;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.playerBoxStats {
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: #ffb81c;
   width: 500px;
   height: 300px;
-  margin: 20px 36px;
   border: 2px solid black;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+}
+
+.playerBoxPerson {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffb81c;
+  width: 500px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
+.over {
+  z-index: 2;
+}
+
+.under {
+  z-index: 1;
+}
+
+.wrapContainer {
+  width: 100%;
 }
 
 .columnWrap {
@@ -75,8 +180,18 @@
   gap: 0px 50px;
 }
 
+.columnWrapCenter {
+  align-self: flex-start;
+  margin: 0px 0px 0px 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 200px;
+  gap: 0px 50px;
+}
+
 #noData {
-  margin: 65px 0px 0px 134px;
+  margin: 65px 0px 0px 113px;
 }
 
 .playerNumber {
@@ -93,6 +208,8 @@
   width: 36px;
   height: auto;
   transform: translate(220px, 10px);
+  border-radius: 50%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .position {

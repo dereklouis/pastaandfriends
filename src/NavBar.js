@@ -1,16 +1,18 @@
 import './NavBar.css';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
+  const stick0 = useRef(null);
+  const stick1 = useRef(null);
+
   const toggleBurger = () => {
-    const stick0 = document.getElementById('stick0');
-    const stick1 = document.getElementById('stick1');
-    if (stick0.className === 'stick0Close') {
-      stick0.className = 'stick0Open';
-      stick1.className = 'stick1Open';
+    if (stick0.current.className === 'stick0Close') {
+      stick0.current.className = 'stick0Open';
+      stick1.current.className = 'stick1Open';
     } else {
-      stick0.className = 'stick0Close';
-      stick1.className = 'stick1Close';
+      stick0.current.className = 'stick0Close';
+      stick1.current.className = 'stick1Close';
     }
   };
   return (
@@ -40,12 +42,14 @@ const NavBar = () => {
           className="stick0Close"
           id="stick0"
           alt="hockey stick"
+          ref={stick0}
         />
         <img
           src="stick.png"
           className="stick1Close"
           id="stick1"
           alt="hockey stick"
+          ref={stick1}
         />
       </div>
     </div>
