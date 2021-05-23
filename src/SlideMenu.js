@@ -3,6 +3,13 @@ import toggleBurgerSlide from './ToggleBurgerSlide';
 import { Link } from 'react-router-dom';
 
 const SlideMenu = () => {
+  const slideMenu = document.getElementById('SMContainer');
+  window.onresize = () => {
+    if (slideMenu.className === 'SMOpen' && window.innerWidth > 600) {
+      toggleBurgerSlide();
+    }
+  };
+
   return (
     <div id="SMContainer" className="SMClose">
       <div id="SMLinkBox">
@@ -12,8 +19,8 @@ const SlideMenu = () => {
         <Link className="SMLink" to="/teamstats" onClick={toggleBurgerSlide}>
           Team Stats
         </Link>
-        <Link className="SMLink" to="/" onClick={toggleBurgerSlide}>
-          Top Six
+        <Link className="SMLink" to="/boxscore" onClick={toggleBurgerSlide}>
+          Boxscore
         </Link>
         <Link className="SMLink" to="/" onClick={toggleBurgerSlide}>
           Four

@@ -18,8 +18,8 @@ const NavBar = () => {
           <h1 id="navTitle">Friends</h1>
         </div>
       </Link>
-      <Link className="navLink" to="/">
-        Top Six
+      <Link className="navLink" to="/boxscore">
+        Boxscore
       </Link>
       <Link className="navLink" to="/">
         Four

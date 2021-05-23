@@ -6,6 +6,7 @@ import SlideMenu from './SlideMenu';
 import Dimmer from './Dimmer';
 import PlayerStats from './PlayerStats';
 import TeamStats from './TeamStats';
+import Boxscore from './Boxscore';
 import Landing from './Landing';
 import Loading from './Loading';
 
@@ -75,6 +76,12 @@ const Routes = () => {
         path="/teamstats"
         render={(props) => (
           <TeamStats {...props} teamStats={teamStats} season={season} />
+        )}
+      />
+      <Route
+        path="/boxscore"
+        render={(props) => (
+          <Boxscore {...props} teamStats={teamStats} season={season} />
         )}
       />
     </>
