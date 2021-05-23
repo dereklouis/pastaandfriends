@@ -4,11 +4,12 @@ import axios from 'axios';
 import NavBar from './NavBar';
 import SlideMenu from './SlideMenu';
 import Dimmer from './Dimmer';
+import Landing from './Landing';
+import Loading from './Loading';
 import PlayerStats from './PlayerStats';
 import TeamStats from './TeamStats';
 import Boxscore from './Boxscore';
-import Landing from './Landing';
-import Loading from './Loading';
+import GameRosters from './GameRosters';
 
 const season = '20202021';
 
@@ -82,6 +83,12 @@ const Routes = () => {
         path="/boxscore"
         render={(props) => (
           <Boxscore {...props} teamStats={teamStats} season={season} />
+        )}
+      />
+      <Route
+        path="/gamerosters"
+        render={(props) => (
+          <GameRosters {...props} teamStats={teamStats} season={season} />
         )}
       />
     </>

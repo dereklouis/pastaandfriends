@@ -21,8 +21,8 @@ const NavBar = () => {
       <Link className="navLink" to="/boxscore">
         Boxscore
       </Link>
-      <Link className="navLink" to="/">
-        Four
+      <Link className="navLink" to="/gamerosters">
+        Game Rosters
       </Link>
       <div id="stickContainer" onClick={toggleBurgerSlide}>
         <img

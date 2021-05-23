@@ -20,7 +20,7 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.wins}
                   </span>{' '}
-                  Wins{' '}
+                  <span className="TSStatType">Wins</span>{' '}
                   <span className="TSNote">
                     ... ({props.teamStats[1].splits[0].stat.wins})
                   </span>
@@ -29,7 +29,7 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.ot}
                   </span>{' '}
-                  OT{' '}
+                  <span className="TSStatType">OT</span>{' '}
                   <span className="TSNote">
                     ... ({props.teamStats[1].splits[0].stat.ot})
                   </span>
@@ -38,7 +38,7 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.goalsPerGame}
                   </span>{' '}
-                  Goals For Avg.{' '}
+                  <span className="TSStatType">Goals For Avg.</span>{' '}
                   <span className="TSNote">
                     ... ({props.teamStats[1].splits[0].stat.goalsPerGame})
                   </span>
@@ -47,7 +47,7 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.powerPlayPercentage}
                   </span>{' '}
-                  PP %{' '}
+                  <span className="TSStatType">PP %</span>{' '}
                   <span className="TSNote">
                     ... ({props.teamStats[1].splits[0].stat.powerPlayPercentage}
                     )
@@ -57,13 +57,13 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.gamesPlayed}
                   </span>{' '}
-                  Games Played
+                  <span className="TSStatType">Games Played</span>
                 </p>
                 <p className="teamLosses TSData">
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.losses}
                   </span>{' '}
-                  Losses{' '}
+                  <span className="TSStatType">Losses</span>{' '}
                   <span className="TSNote">
                     ... ({props.teamStats[1].splits[0].stat.losses})
                   </span>
@@ -72,7 +72,7 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.pts}
                   </span>{' '}
-                  Points{' '}
+                  <span className="TSStatType">Points</span>{' '}
                   <span className="TSNote">
                     ... ({props.teamStats[1].splits[0].stat.pts})
                   </span>
@@ -81,7 +81,7 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.goalsAgainstPerGame}
                   </span>{' '}
-                  Goals Agst. Avg.{' '}
+                  <span className="TSStatType">Goals Agst. Avg.</span>{' '}
                   <span className="TSNote">
                     ... ({props.teamStats[1].splits[0].stat.goalsAgainstPerGame}
                     )
@@ -91,7 +91,7 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.penaltyKillPercentage}
                   </span>{' '}
-                  PK %{' '}
+                  <span className="TSStatType">PK %</span>{' '}
                   <span className="TSNote">
                     ... (
                     {props.teamStats[1].splits[0].stat.penaltyKillPercentage})
@@ -101,7 +101,7 @@ const TeamStats = (props) => {
                   <span className="TSBold">
                     {props.teamStats[0].splits[0].stat.faceOffWinPercentage}
                   </span>{' '}
-                  FO %{' '}
+                  <span className="TSStatType">FO %</span>{' '}
                   <span className="TSNote">
                     ... (
                     {props.teamStats[1].splits[0].stat.faceOffWinPercentage})
