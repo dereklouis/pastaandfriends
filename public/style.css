@@ -37,3 +37,79 @@ a {
 .displayNone {
   display: none;
 }
+
+@keyframes spin1 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(270deg);
+  }
+}
+
+@keyframes spin4 {
+  0% {
+    transform: rotateY(270deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.spin1 {
+  animation-name: spin1;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.spin2 {
+  animation-name: spin2;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.spin3 {
+  animation-name: spin3;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.spin4 {
+  animation-name: spin4;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.over {
+  z-index: 2;
+}
+
+.under {
+  z-index: 1;
+}
