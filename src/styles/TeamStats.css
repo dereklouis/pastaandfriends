@@ -1,0 +1,61 @@
+#teamStatsContainer {
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+#teamStatsBox {
+  width: 800px;
+  height: 675px;
+  background-color: #ffb71c;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#TSTitle {
+  font-size: 36px;
+}
+
+#TSBruinsLogo {
+  width: 75px;
+  height: auto;
+  position: absolute;
+  transform: translate(-330px, 25px);
+}
+
+#TSSeason {
+  font-size: 20px;
+  margin: 32px 0px 0px 0px;
+}
+
+#TSWrapContainer {
+  margin: 50px 0px 0px 0px;
+  width: 100%;
+}
+
+#TSColumnWrap {
+  align-self: flex-start;
+  margin: 0px 0px 0px 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 400px;
+}
+
+.TSData {
+  font-size: 24px;
+}
+
+.TSBold {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.TSNote {
+  font-style: italic;
+  font-size: 16px;
+}

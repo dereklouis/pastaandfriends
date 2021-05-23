@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
 import PlayerStats from './PlayerStats';
+import TeamStats from './TeamStats';
 import Landing from './Landing';
 import Loading from './Loading';
 
@@ -44,10 +45,18 @@ const Routes = () => {
       <Route path="/loading" component={Loading} />
       <Route exact path="/" component={Landing} />
       <Route
-        path="/teamstats"
+        path="/playerstats"
         render={(props) => (
-          <PlayerStats {...props} fullTeamStats={fullTeamStats} />
+          <PlayerStats
+            {...props}
+            fullTeamStats={fullTeamStats}
+            season={season}
+          />
         )}
+      />
+      <Route
+        path="/teamstats"
+        render={(props) => <TeamStats {...props} season={season} />}
       />
     </>
   );

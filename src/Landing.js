@@ -1,4 +1,4 @@
-import './Landing.css';
+import './styles/Landing.css';
 import { useState } from 'react';
 
 const Landing = () => {

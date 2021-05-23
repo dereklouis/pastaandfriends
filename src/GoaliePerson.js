@@ -10,7 +10,7 @@ const GoaliePerson = (props) => {
       <h3 className="playerNumber">#{props.player.primaryNumber}</h3>
       <h6 className="playerName">{props.player.fullName}</h6>
       <div className="wrapContainer">
-        <div className="columnWrapCenter">
+        <div className="columnWrap">
           <p className="playerHeight">
             Height: <span className="bold">{props.player.height}</span>
           </p>

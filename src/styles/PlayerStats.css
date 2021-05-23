@@ -5,50 +5,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 75px 0px 25px 0px;
+  padding: 25px 0px 25px 0px;
 }
 
-#buttonContainer {
-  position: relative;
-  box-shadow: rgba(70, 70, 77, 0.5) 4px 7px 29px 0px;
-  border-radius: 15px;
-  transition-duration: 0.1s;
-  margin: 50px auto;
-  width: fit-content;
-}
-
-#buttonContainer:active {
-  transform: scale(0.98);
-  box-shadow: rgba(100, 100, 111, 0.5) 2px 3px 29px 0px;
-}
-
-#fetchButtonTop,
-#fetchButtonBottom {
-  padding: 20px 75px;
-  border-radius: 15px;
+#PSSeason {
+  margin: 115px 0px 0px 0px;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 6px;
-  cursor: pointer;
-  transition-duration: 1s;
-  border: none;
-  outline: none;
+  font-size: 18px;
 }
 
-#fetchButtonTop {
-  background-color: black;
-  z-index: 5;
-  position: absolute;
-}
-
-#fetchButtonTop:hover {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-#fetchButtonBottom {
-  background-image: linear-gradient(to right, #000, #000, #ffb81c);
-  z-index: 1;
+#PSTitle {
+  color: white;
 }
 
 .cardContainer {
@@ -160,16 +127,6 @@
 }
 
 .columnWrap {
-  align-self: flex-start;
-  margin: 0px 0px 0px 50px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 200px;
-  gap: 0px 50px;
-}
-
-.columnWrapCenter {
   align-self: flex-start;
   margin: 0px 0px 0px 50px;
   display: flex;

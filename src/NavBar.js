@@ -1,4 +1,4 @@
-import './NavBar.css';
+import './styles/NavBar.css';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -17,11 +17,11 @@ const NavBar = () => {
   };
   return (
     <div id="navBarWrapper">
+      <Link className="navLink" to="/playerstats">
+        Player Stats
+      </Link>
       <Link className="navLink" to="/teamstats">
         Team Stats
-      </Link>
-      <Link className="navLink" to="/">
-        Two
       </Link>
       <Link to="/">
         <div id="navMiddle">
