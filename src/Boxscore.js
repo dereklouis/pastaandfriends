@@ -79,8 +79,8 @@ const Boxscore = () => {
                     src={`teamLogos/team${gameData[0].gameData.teams.home.id}.png`}
                   />
                 </div>
-                <div id="BSStatsRow">
-                  <div id="BSAwayStats">
+                <div id="BSGSOGRow">
+                  <div className="BSStatsColumn">
                     <p className="BSGoals">
                       {
                         gameData[0].liveData.boxscore.teams.away.teamStats
@@ -95,7 +95,7 @@ const Boxscore = () => {
                       <span className="BSSOGLabel">SOG</span>
                     </p>
                   </div>
-                  <div id="BSHomeStats">
+                  <div className="BSStatsColumn">
                     <p className="BSGoals">
                       {
                         gameData[0].liveData.boxscore.teams.home.teamStats
@@ -108,6 +108,110 @@ const Boxscore = () => {
                           .teamSkaterStats.shots
                       }{' '}
                       <span className="BSSOGLabel">SOG</span>
+                    </p>
+                  </div>
+                </div>
+                <div id="BSStatsRow">
+                  <div className="BSStatsColumn">
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.away.teamStats
+                          .teamSkaterStats.hits
+                      }{' '}
+                      <span className="BSDataLabel">Hits</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.away.teamStats
+                          .teamSkaterStats.faceOffWinPercentage
+                      }{' '}
+                      <span className="BSDataLabel">FO Win %</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.away.teamStats
+                          .teamSkaterStats.powerPlayOpportunities
+                      }{' '}
+                      <span className="BSDataLabel">Power Plays</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.away.teamStats
+                          .teamSkaterStats.pim
+                      }{' '}
+                      <span className="BSDataLabel">PIM</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.away.teamStats
+                          .teamSkaterStats.giveaways
+                      }{' '}
+                      <span className="BSDataLabel">Giveaways</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.away.teamStats
+                          .teamSkaterStats.takeaways
+                      }{' '}
+                      <span className="BSDataLabel">Takeaways</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.away.teamStats
+                          .teamSkaterStats.blocked
+                      }{' '}
+                      <span className="BSDataLabel">Blocks</span>
+                    </p>
+                  </div>
+                  <div className="BSStatsColumn">
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.home.teamStats
+                          .teamSkaterStats.hits
+                      }{' '}
+                      <span className="BSDataLabel">Hits</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.home.teamStats
+                          .teamSkaterStats.faceOffWinPercentage
+                      }{' '}
+                      <span className="BSDataLabel">FO Win %</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.home.teamStats
+                          .teamSkaterStats.powerPlayOpportunities
+                      }{' '}
+                      <span className="BSDataLabel">Power Plays</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.home.teamStats
+                          .teamSkaterStats.pim
+                      }{' '}
+                      <span className="BSDataLabel">PIM</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.home.teamStats
+                          .teamSkaterStats.giveaways
+                      }{' '}
+                      <span className="BSDataLabel">Giveaways</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.home.teamStats
+                          .teamSkaterStats.takeaways
+                      }{' '}
+                      <span className="BSDataLabel">Takeaways</span>
+                    </p>
+                    <p className="BSData">
+                      {
+                        gameData[0].liveData.boxscore.teams.home.teamStats
+                          .teamSkaterStats.blocked
+                      }{' '}
+                      <span className="BSDataLabel">Blocks</span>
                     </p>
                   </div>
                 </div>
