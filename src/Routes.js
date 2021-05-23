@@ -2,6 +2,8 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
+import SlideMenu from './SlideMenu';
+import Dimmer from './Dimmer';
 import PlayerStats from './PlayerStats';
 import TeamStats from './TeamStats';
 import Landing from './Landing';
@@ -42,6 +44,8 @@ const Routes = () => {
   return (
     <>
       <NavBar />
+      <SlideMenu />
+      <Dimmer />
       <Route path="/loading" component={Loading} />
       <Route exact path="/" component={Landing} />
       <Route

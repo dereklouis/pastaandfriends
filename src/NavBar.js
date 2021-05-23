@@ -1,20 +1,8 @@
 import './styles/NavBar.css';
-import { useRef } from 'react';
+import toggleBurgerSlide from './ToggleBurgerSlide';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-  const stick0 = useRef(null);
-  const stick1 = useRef(null);
-
-  const toggleBurger = () => {
-    if (stick0.current.className === 'stick0Close') {
-      stick0.current.className = 'stick0Open';
-      stick1.current.className = 'stick1Open';
-    } else {
-      stick0.current.className = 'stick0Close';
-      stick1.current.className = 'stick1Close';
-    }
-  };
   return (
     <div id="navBarWrapper">
       <Link className="navLink" to="/playerstats">
@@ -36,20 +24,18 @@ const NavBar = () => {
       <Link className="navLink" to="/">
         Four
       </Link>
-      <div id="stickContainer" onClick={toggleBurger}>
+      <div id="stickContainer" onClick={toggleBurgerSlide}>
         <img
           src="stick.png"
           className="stick0Close"
           id="stick0"
           alt="hockey stick"
-          ref={stick0}
         />
         <img
           src="stick.png"
           className="stick1Close"
           id="stick1"
           alt="hockey stick"
-          ref={stick1}
         />
       </div>
     </div>

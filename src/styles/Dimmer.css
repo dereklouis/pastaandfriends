@@ -1,0 +1,46 @@
+#dimmerBox {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+  backdrop-filter: blur(5px);
+}
+
+.dimmerOff {
+  display: none;
+}
+
+@keyframes dimmerOn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dimmerOn {
+  display: block;
+  animation-name: dimmerOn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes dimmerFade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dimmerFade {
+  display: block;
+  animation-name: dimmerFade;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}

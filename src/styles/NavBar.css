@@ -44,7 +44,7 @@
   position: relative;
   width: 32px;
   height: 40px;
-  margin: 0px 45px 0px 0px;
+  margin: 0px 65px 0px 0px;
   cursor: pointer;
   display: none;
 }
@@ -87,7 +87,7 @@
     display: none;
   }
   #navMiddle {
-    margin: 0px 0px 0px 36px;
+    margin: 0px 0px 0px 65px;
   }
   #stickContainer {
     display: block;
