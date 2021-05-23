@@ -1,0 +1,126 @@
+#gameRostersContainer {
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+#GRBoxWrapper {
+  position: relative;
+  width: 800px;
+  height: 900px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#gameRosterBoxFront {
+  width: 800px;
+  height: 900px;
+  border-radius: 15px;
+  background-color: #ffb71c;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#gameRosterBoxBack {
+  width: 800px;
+  height: 900px;
+  border-radius: 15px;
+  background-color: #ffb71c;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+#GRTeamLogoRow {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  justify-content: space-between;
+  margin: 40px 0px 5px 0px;
+}
+
+#GRAwayTitle {
+  position: absolute;
+  transform: translate(37px, -70px);
+  font-size: 14px;
+  font-style: italic;
+  margin: 0px;
+}
+
+#GRHomeTitle {
+  position: absolute;
+  transform: translate(618px, -70px);
+  font-size: 14px;
+  font-style: italic;
+  margin: 0px;
+}
+
+.GRTeamLogo {
+  width: 100px;
+  height: auto;
+}
+
+.GRRowSB {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  justify-content: space-between;
+}
+
+.GRRowC {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  justify-content: center;
+}
+
+.GRStatsColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+.GRStatsColumnOfficials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+.GRLine {
+  height: 1px;
+  width: 85%;
+  background-color: black;
+  margin: 15px 0px 0px 0px;
+}
+
+.GRCategory {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0px 0px 0px;
+}
+
+.GRName {
+  margin: 5px 0px;
+}
+
+#officialsLabel {
+  margin: 20px 0px;
+}
+
+.officialType {
+  font-size: 12px;
+}

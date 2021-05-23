@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
