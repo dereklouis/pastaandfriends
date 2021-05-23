@@ -26,6 +26,10 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.playerNumber {
+  font-weight: 300;
+}
+
 @keyframes spin1 {
   0% {
     transform: rotateY(0deg);
