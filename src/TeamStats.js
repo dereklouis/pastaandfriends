@@ -1,6 +1,4 @@
 import './styles/TeamStats.css';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import Loading from './Loading';
 
 const TeamStats = (props) => {

@@ -117,13 +117,13 @@
 .BSSOG {
   align-self: center;
   font-weight: bold;
-  font-size: 18px;
-  margin: 10px 0px 30px 0px;
+  font-size: 24px;
+  margin: 10px 0px 20px 0px;
 }
 
 .BSSOGLabel {
   font-weight: 300;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 #BSPeriod {
