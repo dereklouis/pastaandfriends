@@ -160,3 +160,36 @@
 #NoSPYet {
   margin: auto 0px;
 }
+
+#scoringPlaysMaster {
+  height: 700px;
+  width: 95%;
+  overflow-y: auto;
+}
+
+#scoringPlaysMaster::-webkit-scrollbar-thumb {
+  background: rgba(113, 113, 113, 0.7);
+  border-radius: 5px;
+}
+
+#scoringPlaysMaster::-webkit-scrollbar {
+  width: 10px;
+  background-color: #ffb71c;
+  border-radius: 5px;
+}
+
+.scoringPlayContainer {
+  display: flex;
+  align-items: center;
+}
+
+.scoringPlay {
+  font-size: 18px;
+  margin: 18px 0px;
+}
+
+.scoringPlayLogo {
+  width: 36px;
+  height: auto;
+  margin: 0px 15px;
+}

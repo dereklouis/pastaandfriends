@@ -250,8 +250,24 @@ const Boxscore = () => {
                 <div id="boxscoreBoxBack" className="under">
                   <h1 id="scoringPlays">Scoring Plays</h1>
                   {gameData[0].liveData.plays.scoringPlays.length ? (
-                    <div>
-                      <p>TEST</p>
+                    <div id="scoringPlaysMaster">
+                      {gameData[0].liveData.plays.scoringPlays.map(
+                        (playId, idx) => (
+                          <div className="scoringPlayContainer">
+                            <img
+                              alt="Team Logo"
+                              className="scoringPlayLogo"
+                              src={`teamLogos/team${gameData[0].liveData.plays.allPlays[playId].team.id}.png`}
+                            />
+                            <p className="scoringPlay" key={idx}>
+                              {
+                                gameData[0].liveData.plays.allPlays[playId]
+                                  .result.description
+                              }
+                            </p>
+                          </div>
+                        )
+                      )}
                     </div>
                   ) : (
                     <p id="NoSPYet">No scoring plays yet...</p>
