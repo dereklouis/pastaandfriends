@@ -15,6 +15,7 @@ const GameRosters = () => {
   const [forwardsObject, setForwardsObject] = useState({});
   const [scratchesObject, setScratchesObject] = useState({});
   const GRMaster = useRef(null);
+  const refreshButtonGR = useRef(null);
 
   useEffect(() => {
     checkSchedule(
@@ -28,18 +29,43 @@ const GameRosters = () => {
     );
   }, []);
 
+  const refresh = () => {
+    checkSchedule(
+      setGameData,
+      setAwaySkatersFinalState,
+      setHomeSkatersFinalState,
+      setGoalieObject,
+      setDefensemenObject,
+      setForwardsObject,
+      setScratchesObject
+    );
+    refreshButtonGR.current.classList.add('refreshButtonSpin');
+  };
+
+  const resetButton = () => {
+    refreshButtonGR.current.classList.remove('refreshButtonSpin');
+  };
+
   return (
     <>
       {!gameData.length ? (
         <Loading />
       ) : (
-        <>
-          <div id="gameRostersContainer" className="FCAIC">
-            {typeof gameData === 'string' ? (
-              <div className="NoGameWrapper">
-                <h1 className="NoGame">{gameData}</h1>
-              </div>
-            ) : (
+        <div id="gameRostersContainer" className="FCAIC">
+          {typeof gameData === 'string' ? (
+            <div className="NoGameWrapper">
+              <h1 className="NoGame">{gameData}</h1>
+            </div>
+          ) : (
+            <>
+              <button
+                className="refreshButton"
+                onClick={refresh}
+                onAnimationEnd={resetButton}
+                ref={refreshButtonGR}
+              >
+                Refresh Stats
+              </button>
               <div
                 id="GRBoxWrapper"
                 onClick={(e) => flipCard(e, GRMaster)}
@@ -57,9 +83,9 @@ const GameRosters = () => {
                 />
                 <CSO gameData={gameData} scratchesObject={scratchesObject} />
               </div>
-            )}
-          </div>
-        </>
+            </>
+          )}
+        </div>
       )}
     </>
   );
