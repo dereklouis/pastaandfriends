@@ -60,8 +60,6 @@ const Routes = () => {
     fetchData();
   }, []);
 
-  console.log('Roster--->', fullTeamStats);
-
   return (
     <>
       <NavBar />
