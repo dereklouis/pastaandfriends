@@ -20,7 +20,7 @@
 
 #navTitle {
   margin: 0px;
-  font-family: 'Bree Serif', serif;
+  font-family: 'Roboto', sans-serif;
   color: white;
 }
 
@@ -31,7 +31,7 @@
 
 .navLink {
   color: white;
-  font-family: 'Bree Serif', serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin: 0px;
 }
@@ -79,7 +79,7 @@
   transform: translate(8px, 1px) rotate(-164deg) scaleX(-1);
 }
 
-@media (max-width: 715px) {
+@media (max-width: 800px) {
   #navBarWrapper {
     justify-content: space-between;
   }

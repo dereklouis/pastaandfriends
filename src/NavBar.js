@@ -6,23 +6,23 @@ const NavBar = () => {
   return (
     <div id="navBarWrapper">
       <Link className="navLink" to="/playerstats">
-        Player Stats
+        PLAYER STATS
       </Link>
       <Link className="navLink" to="/teamstats">
-        Team Stats
+        TEAM STATS
       </Link>
       <Link to="/">
         <div id="navMiddle">
-          <h1 id="navTitle">Pasta</h1>
+          <h1 id="navTitle">PASTA</h1>
           <img src="pastalogo.png" id="navLogo" alt="pasta" />
-          <h1 id="navTitle">Friends</h1>
+          <h1 id="navTitle">FRIENDS</h1>
         </div>
       </Link>
       <Link className="navLink" to="/boxscore">
-        Boxscore
+        BOXSCORE
       </Link>
       <Link className="navLink" to="/gamerosters">
-        Game Rosters
+        GAME ROSTERS
       </Link>
       <div id="stickContainer" onClick={toggleBurgerSlide}>
         <img

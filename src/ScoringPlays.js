@@ -1,7 +1,7 @@
 const ScoringPlays = (props) => {
   return (
     <div id="boxscoreBoxBack" className="under">
-      <h1 id="scoringPlays">Scoring Plays</h1>
+      <h1 id="scoringPlays">SCORING PLAYS</h1>
       {props.gameData[0].liveData.plays.scoringPlays.length ? (
         <div id="scoringPlaysMaster">
           {props.gameData[0].liveData.plays.scoringPlays.map((playId, idx) => (
@@ -21,7 +21,7 @@ const ScoringPlays = (props) => {
           ))}
         </div>
       ) : (
-        <p id="NoSPYet">No scoring plays yet...</p>
+        <p id="NoSPYet">NO SCORING PLAYS YET...</p>
       )}
     </div>
   );

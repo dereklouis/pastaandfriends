@@ -1,69 +1,87 @@
 const SkaterStats = (props) => {
   return (
     <div className="playerBoxStats over">
-      <img
-        alt="flag"
-        className="flag"
-        src={`/flags/${props.player.nationality}.png`}
-      />
-      {props.player.captain === true ? (
-        <img alt="Captain" className="badge" src="captain.png" />
-      ) : (
-        false
-      )}
-      {props.player.alternateCaptain === true ? (
-        <img alt="Alternate Captain" className="badge" src="alternate.png" />
-      ) : (
-        false
-      )}
-      <p className="position">{props.player.primaryPosition.abbreviation}</p>
-      <h3 className="playerNumber">#{props.player.primaryNumber}</h3>
-      <h6 className="playerName">{props.player.fullName}</h6>
+      <h6 className="playerName">{props.player.fullName.toUpperCase()}</h6>
+      <div className="PSCircleRow">
+        <div className="PSCircle FCAIC">
+          <p className="position">
+            {props.player.primaryPosition.abbreviation}
+          </p>
+        </div>
+        <div className="PSCircle FCAIC">
+          <h3 className="playerNumber">#{props.player.primaryNumber}</h3>
+        </div>
+        <div className="PSCircle FCAIC">
+          <img
+            alt="flag"
+            className="flag"
+            src={`/flags/${props.player.nationality}.png`}
+          />
+        </div>
+        {props.player.captain === true ? (
+          <div className="PSCircle FCAIC">
+            <img alt="Captain" className="badge" src="captain.png" />
+          </div>
+        ) : (
+          false
+        )}
+        {props.player.alternateCaptain === true ? (
+          <div className="PSCircle FCAIC">
+            <img
+              alt="Alternate Captain"
+              className="badge"
+              src="alternate.png"
+            />
+          </div>
+        ) : (
+          false
+        )}
+      </div>
       <div className="columnWrap">
         {props.player.seasonData ? (
           <>
             <p className="playerGamesPlayed">
               <span className="bold">{props.player.seasonData.games}</span>{' '}
-              Games Played
+              GAMES PLAYED
             </p>
             <p className="playerGoals">
               <span className="bold">{props.player.seasonData.goals}</span>{' '}
-              Goals
+              GOALS
             </p>
             <p className="playerAssists">
               <span className="bold">{props.player.seasonData.assists}</span>{' '}
-              Assists
+              ASSISTS
             </p>
             <p className="playerPoints">
               <span className="bold">{props.player.seasonData.points}</span>{' '}
-              Points
+              POINTS
             </p>
             <p className="playerPlusMinus">
               <span className="bold">{props.player.seasonData.plusMinus}</span>{' '}
-              PlusMinus
+              PlUS/MINUS
             </p>
             <p className="playerPPG">
               <span className="bold">
                 {props.player.seasonData.powerPlayGoals}
               </span>{' '}
-              PP Goals
+              PP GOALS
             </p>
             <p className="playerSHG">
               <span className="bold">
                 {props.player.seasonData.shortHandedGoals}
               </span>{' '}
-              SH Goals
+              SH GOALS
             </p>
             <p className="playerShots">
               <span className="bold">{props.player.seasonData.shots}</span>{' '}
-              Shots
+              SHOTS
             </p>
             <p className="playerShotPercentage">
               <span className="bold">{props.player.seasonData.shotPct}</span>{' '}
-              Shot %
+              SHOT %
             </p>
             <p className="playerHits">
-              <span className="bold"> {props.player.seasonData.hits}</span> Hits
+              <span className="bold"> {props.player.seasonData.hits}</span> HITS
             </p>
             <p className="playerPIM">
               <span className="bold">{props.player.seasonData.pim}</span> PIM

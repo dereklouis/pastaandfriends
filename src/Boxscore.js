@@ -44,7 +44,7 @@ const Boxscore = () => {
                   onAnimationEnd={resetButton}
                   ref={refreshButtonBS}
                 >
-                  Refresh Stats
+                  REFRESH STATS
                 </button>
                 <div
                   id="BSBoxWrapper"

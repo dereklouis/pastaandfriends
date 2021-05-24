@@ -2,7 +2,7 @@ const LeagueStandings = (props) => {
   return (
     <div id="TSStandingsBox" className="under">
       <p id="TSStandingSeason">{props.seasonArr.join('')}</p>
-      <h1 id="TSStandingTitle">League Standings</h1>
+      <h1 id="TSStandingTitle">LEAGUE STANDINGS</h1>
       <div id="TSStandingColumns">
         {props.teamStats[1][0].teamRecords.map((team) => (
           <div className="TSStandingRow" key={team.team.id}>
@@ -14,7 +14,7 @@ const LeagueStandings = (props) => {
             />
             <p className="StandingPoints">
               <span className="TSStandingsBold">{team.points}</span>{' '}
-              <span className="TSStandingPoints">Pts,</span>
+              <span className="TSStandingPoints">PTS,</span>
             </p>
             <p className="StandingGP">({team.gamesPlayed} GP)</p>
           </div>

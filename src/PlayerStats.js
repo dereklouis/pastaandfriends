@@ -23,7 +23,7 @@ function PlayerStats(props) {
       {props.fullTeamStats.length ? (
         <div id="PSMaster" className="FCAIC">
           <p id="PSSeason">{seasonArr.join('')}</p>
-          <h1 id="PSTitle">Regular Season Player Stats</h1>
+          <h1 id="PSTitle">REGULAR SEASON PLAYER STATS</h1>
           <div className="container">
             {props.fullTeamStats
               .filter(

@@ -11,17 +11,20 @@
 #PSSeason {
   margin: 115px 0px 0px 0px;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
 #PSTitle {
   color: white;
+  letter-spacing: 1px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .cardContainer {
   position: relative;
-  width: 504px;
-  height: 304px;
+  width: 512px;
+  height: 327px;
   margin: 20px 36px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -37,13 +40,14 @@
   left: 0;
   background-color: #ffb81c;
   width: 500px;
-  height: 300px;
-  border: 2px solid black;
+  height: 315px;
+  border: 6px solid black;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  font-family: 'Roboto', sans-serif;
 }
 
 .playerBoxPerson {
@@ -56,11 +60,11 @@
 
 .columnWrap {
   align-self: flex-start;
-  margin: 0px 0px 0px 50px;
+  margin: 0px 0px 0px 30px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 200px;
+  height: 225px;
   gap: 0px 50px;
 }
 
@@ -68,37 +72,54 @@
   margin: 65px 0px 0px 113px;
 }
 
-.playerNumber {
-  margin: 20px 0px 15px 0px;
+.playerName {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffb81c;
+  background-color: black;
+  padding: 8px 20px;
+  border-radius: 20px;
+  align-self: flex-start;
+  margin: 15px;
+}
+.position {
+  font-size: 18px;
+  margin: 0px;
+  font-weight: 500;
 }
 
-.playerName {
-  margin: 0px 0px 15px 0px;
-  font-size: 18px;
+.playerNumber {
+  font-size: 16px;
+  margin: 0px;
+  font-weight: 500;
 }
 
 .flag {
-  position: absolute;
   width: 36px;
-  height: auto;
-  transform: translate(220px, 10px);
+  height: 36px;
   border-radius: 50%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .badge {
-  position: absolute;
   width: auto;
-  height: 36px;
-  transform: translate(120px, 10px);
-}
-
-.position {
-  position: absolute;
-  font-size: 18px;
-  transform: translate(-225px, -2px);
+  height: 28px;
 }
 
 .bold {
   font-weight: bold;
+}
+
+.PSCircleRow {
+  display: flex;
+  width: 100%;
+}
+
+.PSCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid black;
+  margin: 0px 0px 0px 15px;
+  justify-content: center;
 }

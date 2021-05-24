@@ -3,14 +3,14 @@ const BruinsTeamStats = (props) => {
     <div id="teamStatsBox" className="over">
       <img alt="Bruins Logo" src="bruinsLogo.png" id="TSBruinsLogo" />
       <p id="TSSeason">{props.seasonArr.join('')}</p>
-      <h1 id="TSTitle">Regular Season Team Stats</h1>
+      <h1 id="TSTitle">REGULAR SEASON TEAM STATS</h1>
       <div id="TSWrapContainer">
         <div id="TSColumnWrap">
           <p className="teamWins TSData">
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.wins}
             </span>{' '}
-            <span className="TSStatType">Wins</span>{' '}
+            <span className="TSStatType">WINS</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.wins})
             </span>
@@ -28,7 +28,7 @@ const BruinsTeamStats = (props) => {
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.goalsPerGame}
             </span>{' '}
-            <span className="TSStatType">Goals For Avg.</span>{' '}
+            <span className="TSStatType">GOALS FOR AVG.</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.goalsPerGame})
             </span>
@@ -46,13 +46,13 @@ const BruinsTeamStats = (props) => {
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.gamesPlayed}
             </span>{' '}
-            <span className="TSStatType">Games Played</span>
+            <span className="TSStatType">GAMES PLAYED</span>
           </p>
           <p className="teamLosses TSData">
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.losses}
             </span>{' '}
-            <span className="TSStatType">Losses</span>{' '}
+            <span className="TSStatType">LOSSES</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.losses})
             </span>
@@ -61,7 +61,7 @@ const BruinsTeamStats = (props) => {
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.pts}
             </span>{' '}
-            <span className="TSStatType">Points</span>{' '}
+            <span className="TSStatType">POINTS</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.pts})
             </span>
@@ -70,7 +70,7 @@ const BruinsTeamStats = (props) => {
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.goalsAgainstPerGame}
             </span>{' '}
-            <span className="TSStatType">Goals Agst. Avg.</span>{' '}
+            <span className="TSStatType">GOALS AGST. AVG.</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.goalsAgainstPerGame})
             </span>

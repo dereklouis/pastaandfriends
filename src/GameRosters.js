@@ -64,7 +64,7 @@ const GameRosters = () => {
                 onAnimationEnd={resetButton}
                 ref={refreshButtonGR}
               >
-                Refresh Stats
+                REFRESH STATS
               </button>
               <div
                 id="GRBoxWrapper"

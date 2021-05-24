@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const SlideMenu = () => {
   const slideMenu = document.getElementById('SMContainer');
   window.onresize = () => {
-    if (slideMenu.className === 'SMOpen' && window.innerWidth > 715) {
+    if (slideMenu.className === 'SMOpen' && window.innerWidth > 800) {
       toggleBurgerSlide();
     }
   };
@@ -14,16 +14,16 @@ const SlideMenu = () => {
     <div id="SMContainer" className="SMClose">
       <div id="SMLinkBox">
         <Link className="SMLink" to="/playerstats" onClick={toggleBurgerSlide}>
-          Player Stats
+          PLAYER STATS
         </Link>
         <Link className="SMLink" to="/teamstats" onClick={toggleBurgerSlide}>
-          Team Stats
+          TEAM STATS
         </Link>
         <Link className="SMLink" to="/boxscore" onClick={toggleBurgerSlide}>
-          Boxscore
+          BOXSCORE
         </Link>
         <Link className="SMLink" to="/gamerosters" onClick={toggleBurgerSlide}>
-          Game Rosters
+          GAME ROSTERS
         </Link>
       </div>
     </div>

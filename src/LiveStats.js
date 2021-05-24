@@ -2,7 +2,7 @@ const LiveStats = (props) => {
   return (
     <div id="boxscoreBoxFront" className="over">
       <div id="teamLogoRow">
-        <p id="awayTitle">Away</p>
+        <p id="awayTitle">AWAY</p>
         <img
           alt="Away Team"
           className="BSTeamLogo"
@@ -11,14 +11,16 @@ const LiveStats = (props) => {
         <div id="timeColumn" className="FCAIC">
           <p id="BSPeriod">
             {props.gameData[0].liveData.linescore.currentPeriodOrdinal}{' '}
-            <span id="BSPeriodLabel">Period</span>
+            <span id="BSPeriodLabel">PERIOD</span>
           </p>
           <p id="BSTime">
             {props.gameData[0].liveData.linescore.currentPeriodTimeRemaining}
           </p>
-          <p id="venue">{props.gameData[0].gameData.venue.name}</p>
+          <p id="venue">
+            {props.gameData[0].gameData.venue.name.toUpperCase()}
+          </p>
         </div>
-        <p id="homeTitle">Home</p>
+        <p id="homeTitle">HOME</p>
         <img
           alt="Home Team"
           className="BSTeamLogo"
@@ -64,21 +66,21 @@ const LiveStats = (props) => {
               props.gameData[0].liveData.boxscore.teams.away.teamStats
                 .teamSkaterStats.hits
             }{' '}
-            <span className="BSDataLabel">Hits</span>
+            <span className="BSDataLabel">HITS</span>
           </p>
           <p className="BSData">
             {
               props.gameData[0].liveData.boxscore.teams.away.teamStats
                 .teamSkaterStats.faceOffWinPercentage
             }{' '}
-            <span className="BSDataLabel">FO Win %</span>
+            <span className="BSDataLabel">FO WIN %</span>
           </p>
           <p className="BSData">
             {
               props.gameData[0].liveData.boxscore.teams.away.teamStats
                 .teamSkaterStats.powerPlayOpportunities
             }{' '}
-            <span className="BSDataLabel">Power Plays</span>
+            <span className="BSDataLabel">POWER PLAYS</span>
           </p>
           <p className="BSData">
             {
@@ -92,21 +94,21 @@ const LiveStats = (props) => {
               props.gameData[0].liveData.boxscore.teams.away.teamStats
                 .teamSkaterStats.giveaways
             }{' '}
-            <span className="BSDataLabel">Giveaways</span>
+            <span className="BSDataLabel">GIVEAWAYS</span>
           </p>
           <p className="BSData">
             {
               props.gameData[0].liveData.boxscore.teams.away.teamStats
                 .teamSkaterStats.takeaways
             }{' '}
-            <span className="BSDataLabel">Takeaways</span>
+            <span className="BSDataLabel">TAKEAWAYS</span>
           </p>
           <p className="BSData">
             {
               props.gameData[0].liveData.boxscore.teams.away.teamStats
                 .teamSkaterStats.blocked
             }{' '}
-            <span className="BSDataLabel">Blocks</span>
+            <span className="BSDataLabel">BLOCKS</span>
           </p>
         </div>
         <div className="BSStatsColumn">
@@ -115,21 +117,21 @@ const LiveStats = (props) => {
               props.gameData[0].liveData.boxscore.teams.home.teamStats
                 .teamSkaterStats.hits
             }{' '}
-            <span className="BSDataLabel">Hits</span>
+            <span className="BSDataLabel">HITS</span>
           </p>
           <p className="BSData">
             {
               props.gameData[0].liveData.boxscore.teams.home.teamStats
                 .teamSkaterStats.faceOffWinPercentage
             }{' '}
-            <span className="BSDataLabel">FO Win %</span>
+            <span className="BSDataLabel">FO WIN %</span>
           </p>
           <p className="BSData">
             {
               props.gameData[0].liveData.boxscore.teams.home.teamStats
                 .teamSkaterStats.powerPlayOpportunities
             }{' '}
-            <span className="BSDataLabel">Power Plays</span>
+            <span className="BSDataLabel">POWER PLAYS</span>
           </p>
           <p className="BSData">
             {
@@ -143,21 +145,21 @@ const LiveStats = (props) => {
               props.gameData[0].liveData.boxscore.teams.home.teamStats
                 .teamSkaterStats.giveaways
             }{' '}
-            <span className="BSDataLabel">Giveaways</span>
+            <span className="BSDataLabel">GIVEAWAYS</span>
           </p>
           <p className="BSData">
             {
               props.gameData[0].liveData.boxscore.teams.home.teamStats
                 .teamSkaterStats.takeaways
             }{' '}
-            <span className="BSDataLabel">Takeaways</span>
+            <span className="BSDataLabel">TAKEAWAYS</span>
           </p>
           <p className="BSData">
             {
               props.gameData[0].liveData.boxscore.teams.home.teamStats
                 .teamSkaterStats.blocked
             }{' '}
-            <span className="BSDataLabel">Blocks</span>
+            <span className="BSDataLabel">BLOCKS</span>
           </p>
         </div>
       </div>
