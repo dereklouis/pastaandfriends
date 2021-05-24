@@ -5,6 +5,12 @@ import Loading from './Loading';
 
 const GameRosters = () => {
   const [gameData, setGameData] = useState([]);
+  const [goalieObject, setGoalieObject] = useState({});
+  const [defensemenObject, setDefensemenObject] = useState({});
+  const [forwardsObject, setForwardsObject] = useState({});
+  const [scratchesObject, setScratchesObject] = useState({});
+  const [awaySkatersFinalState, setAwaySkatersFinalState] = useState([]);
+  const [homeSkatersFinalState, setHomeSkatersFinalState] = useState([]);
   const GRMaster = useRef(null);
 
   useEffect(() => {
@@ -34,9 +40,82 @@ const GameRosters = () => {
   };
 
   const fetchGameData = async (gamePk) => {
+    let fetchGoalieObj = {};
+    let fetchDefensemenObj = {};
+    let fetchForwardsObj = {};
+    let fetchScratchesObj = {};
     const data = await axios.get(
       `https://statsapi.web.nhl.com/api/v1/game/${gamePk}/feed/live`
     );
+
+    const awayScratches = data.data.liveData.boxscore.teams.away.scratches;
+    const awaySkaters = data.data.liveData.boxscore.teams.away.skaters;
+    const awaySkatersFinal = awaySkaters.filter(
+      (skater) => awayScratches.indexOf(skater) === -1
+    );
+
+    const homeScratches = data.data.liveData.boxscore.teams.home.scratches;
+    const homeSkaters = data.data.liveData.boxscore.teams.home.skaters;
+    const homeSkatersFinal = homeSkaters.filter(
+      (skater) => homeScratches.indexOf(skater) === -1
+    );
+
+    for (let goalieId of data.data.liveData.boxscore.teams.away.goalies) {
+      const name = await axios.get(
+        `https://statsapi.web.nhl.com/api/v1/people/${goalieId}`
+      );
+      fetchGoalieObj[goalieId] = name.data.people[0].fullName;
+    }
+
+    for (let goalieId of data.data.liveData.boxscore.teams.home.goalies) {
+      const name = await axios.get(
+        `https://statsapi.web.nhl.com/api/v1/people/${goalieId}`
+      );
+      fetchGoalieObj[goalieId] = name.data.people[0].fullName;
+    }
+
+    for (let skaterId of awaySkatersFinal) {
+      const name = await axios.get(
+        `https://statsapi.web.nhl.com/api/v1/people/${skaterId}`
+      );
+      if (name.data.people[0].primaryPosition.abbreviation === 'D') {
+        fetchDefensemenObj[skaterId] = name.data.people[0].fullName;
+      } else {
+        fetchForwardsObj[skaterId] = name.data.people[0].fullName;
+      }
+    }
+
+    for (let skaterId of homeSkatersFinal) {
+      const name = await axios.get(
+        `https://statsapi.web.nhl.com/api/v1/people/${skaterId}`
+      );
+      if (name.data.people[0].primaryPosition.abbreviation === 'D') {
+        fetchDefensemenObj[skaterId] = name.data.people[0].fullName;
+      } else {
+        fetchForwardsObj[skaterId] = name.data.people[0].fullName;
+      }
+    }
+
+    for (let scratchId of data.data.liveData.boxscore.teams.away.scratches) {
+      const name = await axios.get(
+        `https://statsapi.web.nhl.com/api/v1/people/${scratchId}`
+      );
+      fetchScratchesObj[scratchId] = name.data.people[0].fullName;
+    }
+
+    for (let scratchId of data.data.liveData.boxscore.teams.home.scratches) {
+      const name = await axios.get(
+        `https://statsapi.web.nhl.com/api/v1/people/${scratchId}`
+      );
+      fetchScratchesObj[scratchId] = name.data.people[0].fullName;
+    }
+
+    setAwaySkatersFinalState(awaySkatersFinal);
+    setHomeSkatersFinalState(homeSkatersFinal);
+    setGoalieObject(fetchGoalieObj);
+    setDefensemenObject(fetchDefensemenObj);
+    setForwardsObject(fetchForwardsObj);
+    setScratchesObject(fetchScratchesObj);
     setGameData([data.data]);
   };
 
@@ -101,12 +180,26 @@ const GameRosters = () => {
                   </div>
                   <div className="GRRowSB">
                     <div className="GRStatsColumn">
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
+                      {gameData[0].liveData.boxscore.teams.away.goalies.map(
+                        (goalieId, idx) => {
+                          return (
+                            <p className="GRName" key={idx}>
+                              {goalieObject[goalieId]}
+                            </p>
+                          );
+                        }
+                      )}
                     </div>
                     <div className="GRStatsColumn">
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
+                      {gameData[0].liveData.boxscore.teams.home.goalies.map(
+                        (goalieId, idx) => {
+                          return (
+                            <p className="GRName" key={idx}>
+                              {goalieObject[goalieId]}
+                            </p>
+                          );
+                        }
+                      )}
                     </div>
                   </div>
                   <div className="GRLine" />
@@ -115,20 +208,26 @@ const GameRosters = () => {
                   </div>
                   <div className="GRRowSB">
                     <div className="GRStatsColumn">
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
+                      {awaySkatersFinalState
+                        .filter((id) => defensemenObject[id] !== undefined)
+                        .map((skaterId, idx) => {
+                          return (
+                            <p className="GRName" key={idx}>
+                              {defensemenObject[skaterId]}
+                            </p>
+                          );
+                        })}
                     </div>
                     <div className="GRStatsColumn">
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
+                      {homeSkatersFinalState
+                        .filter((id) => defensemenObject[id] !== undefined)
+                        .map((skaterId, idx) => {
+                          return (
+                            <p className="GRName" key={idx}>
+                              {defensemenObject[skaterId]}
+                            </p>
+                          );
+                        })}
                     </div>
                   </div>
                   <div className="GRLine" />
@@ -137,32 +236,26 @@ const GameRosters = () => {
                   </div>
                   <div className="GRRowSB">
                     <div className="GRStatsColumn">
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
-                      <p className="GRName">John Johnson</p>
+                      {awaySkatersFinalState
+                        .filter((id) => forwardsObject[id] !== undefined)
+                        .map((skaterId, idx) => {
+                          return (
+                            <p className="GRName" key={idx}>
+                              {forwardsObject[skaterId]}
+                            </p>
+                          );
+                        })}
                     </div>
                     <div className="GRStatsColumn">
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
-                      <p className="GRName">Mark Smithson</p>
+                      {homeSkatersFinalState
+                        .filter((id) => forwardsObject[id] !== undefined)
+                        .map((skaterId, idx) => {
+                          return (
+                            <p className="GRName" key={idx}>
+                              {forwardsObject[skaterId]}
+                            </p>
+                          );
+                        })}
                     </div>
                   </div>
                 </div>
@@ -209,17 +302,21 @@ const GameRosters = () => {
                     <p className="GRCategory">Scratches</p>
                   </div>
                   <div className="GRRowSB">
-                    <div className="GRStatsColumn">
+                    <div className="GRScratchColumn">
                       {gameData[0].liveData.boxscore.teams.away.scratches.map(
-                        (scratch) => (
-                          <p className="GRName">SCRATCH</p>
+                        (scratchId, idx) => (
+                          <p className="GRName" key={idx}>
+                            {scratchesObject[scratchId]}
+                          </p>
                         )
                       )}
                     </div>
-                    <div className="GRStatsColumn">
+                    <div className="GRScratchColumn">
                       {gameData[0].liveData.boxscore.teams.home.scratches.map(
-                        (scratch) => (
-                          <p className="GRName">SCRATCH</p>
+                        (scratchId, idx) => (
+                          <p className="GRName" key={idx}>
+                            {scratchesObject[scratchId]}
+                          </p>
                         )
                       )}
                     </div>

@@ -93,6 +93,16 @@
   width: 150px;
 }
 
+.GRScratchColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 275px;
+  height: 325px;
+  flex-wrap: wrap;
+  gap: 0px 20px;
+}
+
 .GRStatsColumnOfficials {
   display: flex;
   flex-direction: column;
