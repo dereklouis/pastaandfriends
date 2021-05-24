@@ -13,7 +13,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: absolute;
+}
+
+#TSStandingsBox {
+  width: 800px;
+  height: 675px;
+  background-color: #ffb71c;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  transform: scaleX(-1);
 }
 
 #TSTitle {
@@ -63,4 +76,56 @@
 .TSStatType {
   font-size: 18px;
   font-weight: normal;
+}
+
+#TSBoxWrapper {
+  cursor: pointer;
+  width: 800px;
+  height: 675px;
+  border-radius: 15px;
+  position: relative;
+}
+
+#TSStandingColumns {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 590px;
+  width: 90%;
+  gap: 0px 100px;
+}
+
+.TSStandingRow {
+  display: flex;
+  align-items: center;
+}
+
+.TSStandingLogo {
+  width: 36px;
+  height: auto;
+  margin: 7px 10px 7px 7px;
+}
+
+.StandingGP {
+  margin: 2px 0px 0px 5px;
+  font-size: 14px;
+}
+
+.TSStandingsBold {
+  font-weight: bold;
+}
+
+.TSStandingPoints {
+  font-size: 14px;
+}
+
+#TSStandingSeason {
+  font-weight: normal;
+  font-size: 16px;
+  margin: 15px 0px 10px 0px;
+}
+
+#TSStandingTitle {
+  margin: 0px 0px 10px 0px;
 }

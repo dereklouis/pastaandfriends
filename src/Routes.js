@@ -15,7 +15,7 @@ const season = '20202021';
 
 const Routes = () => {
   const [fullTeamStats, setFullTeamStats] = useState([]);
-  const [teamStats, setTeamStats] = useState({});
+  const [teamStats, setTeamStats] = useState([]);
 
   const fetchPlayerStats = async () => {
     const data = await axios.get(
@@ -44,10 +44,16 @@ const Routes = () => {
   };
 
   const fetchTeamStats = async () => {
+    let finalDataArr = [];
     const data = await axios.get(
       'https://statsapi.web.nhl.com/api/v1/teams/6/stats'
     );
-    setTeamStats(data.data.stats);
+    const standingsData = await axios.get(
+      'https://statsapi.web.nhl.com/api/v1/standings/byLeague'
+    );
+    finalDataArr.push(data.data.stats);
+    finalDataArr.push(standingsData.data.records);
+    setTeamStats(finalDataArr);
   };
 
   useEffect(() => {
