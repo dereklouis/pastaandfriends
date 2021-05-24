@@ -41,8 +41,6 @@ const Boxscore = () => {
     setGameData([data.data]);
   };
 
-  console.log('state-->', gameData);
-
   const flipBoxScore = () => {
     if (BSMaster.current.className === 'spin0') {
       BSMaster.current.className = 'spin1';
@@ -253,7 +251,7 @@ const Boxscore = () => {
                     <div id="scoringPlaysMaster">
                       {gameData[0].liveData.plays.scoringPlays.map(
                         (playId, idx) => (
-                          <div className="scoringPlayContainer">
+                          <div className="scoringPlayContainer" key={idx}>
                             <img
                               alt="Team Logo"
                               className="scoringPlayLogo"
