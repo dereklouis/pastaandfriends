@@ -113,3 +113,18 @@ a {
 .under {
   z-index: 1;
 }
+
+.NoGameWrapper {
+  background-color: #ffb71c;
+  padding: 15px 36px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.NoGame {
+  margin: 0px;
+}
+
+.NotYet {
+  font-style: italic;
+}

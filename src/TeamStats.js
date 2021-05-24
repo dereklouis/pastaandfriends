@@ -1,5 +1,6 @@
 import './styles/TeamStats.css';
 import Loading from './Loading';
+import { flipCard, handleCardFlipAnimation } from './CardFlip';
 import { useRef } from 'react';
 
 const TeamStats = (props) => {
@@ -8,38 +9,15 @@ const TeamStats = (props) => {
 
   const TSMaster = useRef(null);
 
-  const flipBox = () => {
-    if (TSMaster.current.className === 'spin0') {
-      TSMaster.current.className = 'spin1';
-    } else if (TSMaster.current.className === 'spin2') {
-      TSMaster.current.className = 'spin3';
-    }
-  };
-
-  const handleTSAnimation = () => {
-    if (TSMaster.current.className === 'spin1') {
-      TSMaster.current.className = 'spin2';
-      TSMaster.current.firstChild.className = 'under';
-      TSMaster.current.lastChild.className = 'over';
-    } else if (TSMaster.current.className === 'spin3') {
-      TSMaster.current.className = 'spin4';
-      TSMaster.current.firstChild.className = 'over';
-      TSMaster.current.lastChild.className = 'under';
-    } else if (TSMaster.current.className === 'spin4') {
-      TSMaster.current.className = 'spin0';
-    }
-  };
-
   return (
     <>
-      {console.log(12345, props.teamStats)}
       {props.teamStats.length ? (
         <div id="teamStatsContainer" className="FCAIC">
           <div
             id="TSBoxWrapper"
             ref={TSMaster}
-            onClick={flipBox}
-            onAnimationEnd={handleTSAnimation}
+            onClick={(e) => flipCard(e, TSMaster)}
+            onAnimationEnd={(e) => handleCardFlipAnimation(e, TSMaster)}
             className="spin0"
           >
             <div id="teamStatsBox" className="over">
@@ -163,7 +141,7 @@ const TeamStats = (props) => {
               <h1 id="TSStandingTitle">League Standings</h1>
               <div id="TSStandingColumns">
                 {props.teamStats[1][0].teamRecords.map((team) => (
-                  <div className="TSStandingRow">
+                  <div className="TSStandingRow" key={team.team.id}>
                     <p className="LeagueRank">{team.leagueRank}. </p>
                     <img
                       alt="Team Logo"
