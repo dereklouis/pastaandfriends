@@ -11,7 +11,7 @@ const NavBar = () => {
       <Link className="navLink" to="/teamstats">
         TEAM STATS
       </Link>
-      <Link to="/">
+      <Link to="/" id="navMiddleLink">
         <div id="navMiddle">
           <h1 id="navTitle">PASTA</h1>
           <img src="pastalogo.png" id="navLogo" alt="pasta" />

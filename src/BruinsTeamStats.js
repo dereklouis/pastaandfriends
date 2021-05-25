@@ -6,6 +6,15 @@ const BruinsTeamStats = (props) => {
       <h1 id="TSTitle">REGULAR SEASON TEAM STATS</h1>
       <div id="TSWrapContainer">
         <div id="TSColumnWrap">
+          <p className="teamPoints TSData">
+            <span className="TSBold">
+              {props.teamStats[0][0].splits[0].stat.pts}
+            </span>{' '}
+            <span className="TSStatType">POINTS</span>{' '}
+            <span className="TSNote">
+              ... ({props.teamStats[0][1].splits[0].stat.pts})
+            </span>
+          </p>
           <p className="teamWins TSData">
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.wins}
@@ -13,6 +22,15 @@ const BruinsTeamStats = (props) => {
             <span className="TSStatType">WINS</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.wins})
+            </span>
+          </p>
+          <p className="teamLosses TSData">
+            <span className="TSBold">
+              {props.teamStats[0][0].splits[0].stat.losses}
+            </span>{' '}
+            <span className="TSStatType">LOSSES</span>{' '}
+            <span className="TSNote">
+              ... ({props.teamStats[0][1].splits[0].stat.losses})
             </span>
           </p>
           <p className="teamOT TSData">
@@ -24,15 +42,13 @@ const BruinsTeamStats = (props) => {
               ... ({props.teamStats[0][1].splits[0].stat.ot})
             </span>
           </p>
-          <p className="teamGoalsAverage TSData">
+          <p className="teamGamesPlayed TSData">
             <span className="TSBold">
-              {props.teamStats[0][0].splits[0].stat.goalsPerGame}
+              {props.teamStats[0][0].splits[0].stat.gamesPlayed}
             </span>{' '}
-            <span className="TSStatType">GF AVG.</span>{' '}
-            <span className="TSNote">
-              ... ({props.teamStats[0][1].splits[0].stat.goalsPerGame})
-            </span>
+            <span className="TSStatType">GAMES PLAYED</span>
           </p>
+          <div className="TSBruinsDivide"></div>
           <p className="teamPP% TSData">
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.powerPlayPercentage}
@@ -42,28 +58,22 @@ const BruinsTeamStats = (props) => {
               ... ({props.teamStats[0][1].splits[0].stat.powerPlayPercentage})
             </span>
           </p>
-          <p className="teamGamesPlayed TSData">
+          <p className="teamPK% TSData">
             <span className="TSBold">
-              {props.teamStats[0][0].splits[0].stat.gamesPlayed}
+              {props.teamStats[0][0].splits[0].stat.penaltyKillPercentage}
             </span>{' '}
-            <span className="TSStatType">GAMES PLAYED</span>
-          </p>
-          <p className="teamLosses TSData">
-            <span className="TSBold">
-              {props.teamStats[0][0].splits[0].stat.losses}
-            </span>{' '}
-            <span className="TSStatType">LOSSES</span>{' '}
+            <span className="TSStatType">PK %</span>{' '}
             <span className="TSNote">
-              ... ({props.teamStats[0][1].splits[0].stat.losses})
+              ... ({props.teamStats[0][1].splits[0].stat.penaltyKillPercentage})
             </span>
           </p>
-          <p className="teamPoints TSData">
+          <p className="teamGoalsAverage TSData">
             <span className="TSBold">
-              {props.teamStats[0][0].splits[0].stat.pts}
+              {props.teamStats[0][0].splits[0].stat.goalsPerGame}
             </span>{' '}
-            <span className="TSStatType">POINTS</span>{' '}
+            <span className="TSStatType">GF AVG.</span>{' '}
             <span className="TSNote">
-              ... ({props.teamStats[0][1].splits[0].stat.pts})
+              ... ({props.teamStats[0][1].splits[0].stat.goalsPerGame})
             </span>
           </p>
           <p className="teamGoalsAgainst TSData">
@@ -73,15 +83,6 @@ const BruinsTeamStats = (props) => {
             <span className="TSStatType">GA AVG.</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.goalsAgainstPerGame})
-            </span>
-          </p>
-          <p className="teamPK% TSData">
-            <span className="TSBold">
-              {props.teamStats[0][0].splits[0].stat.penaltyKillPercentage}
-            </span>{' '}
-            <span className="TSStatType">PK %</span>{' '}
-            <span className="TSNote">
-              ... ({props.teamStats[0][1].splits[0].stat.penaltyKillPercentage})
             </span>
           </p>
           <p className="teamFO% TSData">
