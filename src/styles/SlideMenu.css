@@ -35,7 +35,7 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 605px) {
   #SMLinkBox {
     margin: 113px 0px 0px 0px;
   }
