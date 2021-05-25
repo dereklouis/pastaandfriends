@@ -42,7 +42,7 @@ const GoalieStats = (props) => {
           <>
             <p className="playerGamesPlayed">
               <span className="bold">{props.player.seasonData.games}</span>{' '}
-              Games Played
+              GAMES PLAYED
             </p>
             <p className="playerSavePercentage">
               <span className="bold">
@@ -52,7 +52,7 @@ const GoalieStats = (props) => {
                   .slice(2)
                   .join('')}
               </span>{' '}
-              Save %
+              SAVE %
             </p>
             <p className="playerGAA">
               <span className="bold">
@@ -62,18 +62,17 @@ const GoalieStats = (props) => {
             </p>
             <p className="playerShutouts">
               <span className="bold">{props.player.seasonData.shutouts}</span>{' '}
-              Shutouts
+              SHUTOUTS
             </p>
             <p className="playerWins">
-              <span className="bold">{props.player.seasonData.wins}</span> Wins
+              <span className="bold">{props.player.seasonData.wins}</span> WINS
             </p>
             <p className="playerLosses">
               <span className="bold">{props.player.seasonData.losses}</span>{' '}
-              Losses
+              LOSSES
             </p>
             <p className="playerOT">
               <span className="bold">{props.player.seasonData.ot}</span> OT
-              Losses
             </p>
             <p className="playerGA">
               <span className="bold">
@@ -89,7 +88,7 @@ const GoalieStats = (props) => {
             </p>
             <p className="playerSaves">
               <span className="bold">{props.player.seasonData.saves}</span>{' '}
-              Saves
+              SAVES
             </p>
             <p className="playerPPSavePercentage">
               <span className="bold">
@@ -97,7 +96,7 @@ const GoalieStats = (props) => {
                   props.player.seasonData.powerPlaySavePercentage
                 ).toFixed(2)}
               </span>{' '}
-              PP Save %
+              PP SAVE %
             </p>
             <p className="playerSHSavePercentage">
               <span className="bold">
@@ -105,11 +104,11 @@ const GoalieStats = (props) => {
                   props.player.seasonData.shortHandedSavePercentage
                 ).toFixed(2)}
               </span>{' '}
-              SH Save %
+              SH SAVE %
             </p>
           </>
         ) : (
-          <h4 id="noData">No Season Stats Available</h4>
+          <h4 id="noData">NO SEASON STATS AVAILABLE</h4>
         )}
       </div>
     </div>

@@ -43,7 +43,7 @@ const CSO = (props) => {
           )}
           {props.gameData[0].liveData.boxscore.teams.away.scratches.map(
             (scratchId, idx) => (
-              <p className="GRName" key={idx}>
+              <p className="GRNameScratch" key={idx}>
                 {props.scratchesObject[scratchId].toUpperCase()}
               </p>
             )
@@ -55,7 +55,7 @@ const CSO = (props) => {
           )}
           {props.gameData[0].liveData.boxscore.teams.home.scratches.map(
             (scratchId, idx) => (
-              <p className="GRName" key={idx}>
+              <p className="GRNameScratch" key={idx}>
                 {props.scratchesObject[scratchId].toUpperCase()}
               </p>
             )
@@ -76,7 +76,9 @@ const CSO = (props) => {
           {props.gameData[0].liveData.boxscore.officials.map((official) => (
             <p className="GRName" key={official.official.id}>
               {official.official.fullName.toUpperCase()}{' '}
-              <span className="officialType">({official.officialType})</span>
+              <span className="officialType">
+                ({official.officialType.toUpperCase()})
+              </span>
             </p>
           ))}
         </div>

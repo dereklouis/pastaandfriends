@@ -14,9 +14,9 @@ const LeagueStandings = (props) => {
             />
             <p className="StandingPoints">
               <span className="TSStandingsBold">{team.points}</span>{' '}
-              <span className="TSStandingPoints">PTS,</span>
+              <span className="TSStandingPoints">PTS,</span>{' '}
+              <span className="StandingGP">({team.gamesPlayed} GP)</span>
             </p>
-            <p className="StandingGP">({team.gamesPlayed} GP)</p>
           </div>
         ))}
       </div>

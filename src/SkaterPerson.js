@@ -65,12 +65,20 @@ const SkaterPerson = (props) => {
           <p className="playerBirthday">
             BIRTHDAY: <span className="bold">{props.player.birthDate}</span>
           </p>
-          {props.player.birthStateProvince && (
-            <p className="playerBirthStateProvince">
-              BIRTH STATE/PROVINCE:{' '}
-              <span className="bold">{props.player.birthStateProvince}</span>
-            </p>
-          )}
+          {props.player.birthStateProvince &&
+            props.player.birthCountry === 'USA' && (
+              <p className="playerBirthStateProvince">
+                BIRTH STATE:{' '}
+                <span className="bold">{props.player.birthStateProvince}</span>
+              </p>
+            )}
+          {props.player.birthStateProvince &&
+            props.player.birthCountry !== 'USA' && (
+              <p className="playerBirthStateProvince">
+                BIRTH PROVINCE:{' '}
+                <span className="bold">{props.player.birthStateProvince}</span>
+              </p>
+            )}
           {props.player.birthStateProvince ? (
             <p className="playerShootsCatches">
               SHOOTS/CATCHES:{' '}

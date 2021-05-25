@@ -28,7 +28,7 @@ const BruinsTeamStats = (props) => {
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.goalsPerGame}
             </span>{' '}
-            <span className="TSStatType">GOALS FOR AVG.</span>{' '}
+            <span className="TSStatType">GF AVG.</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.goalsPerGame})
             </span>
@@ -70,7 +70,7 @@ const BruinsTeamStats = (props) => {
             <span className="TSBold">
               {props.teamStats[0][0].splits[0].stat.goalsAgainstPerGame}
             </span>{' '}
-            <span className="TSStatType">GOALS AGST. AVG.</span>{' '}
+            <span className="TSStatType">GA AVG.</span>{' '}
             <span className="TSNote">
               ... ({props.teamStats[0][1].splits[0].stat.goalsAgainstPerGame})
             </span>

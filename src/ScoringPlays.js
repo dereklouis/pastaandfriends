@@ -12,10 +12,9 @@ const ScoringPlays = (props) => {
                 src={`teamLogos/team${props.gameData[0].liveData.plays.allPlays[playId].team.id}.png`}
               />
               <p className="scoringPlay" key={idx}>
-                {
-                  props.gameData[0].liveData.plays.allPlays[playId].result
-                    .description
-                }
+                {props.gameData[0].liveData.plays.allPlays[
+                  playId
+                ].result.description.toUpperCase()}
               </p>
             </div>
           ))}

@@ -58,7 +58,7 @@ const SkaterStats = (props) => {
             </p>
             <p className="playerPlusMinus">
               <span className="bold">{props.player.seasonData.plusMinus}</span>{' '}
-              PlUS/MINUS
+              PLUS/MINUS
             </p>
             <p className="playerPPG">
               <span className="bold">
@@ -94,7 +94,7 @@ const SkaterStats = (props) => {
             </p>
           </>
         ) : (
-          <h4 id="noData">No Season Stats Available</h4>
+          <h4 id="noData">NO SEASON STATS AVAILABLE</h4>
         )}
       </div>
     </div>

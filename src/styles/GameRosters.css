@@ -43,7 +43,7 @@
 
 #GRAwayTitle {
   position: absolute;
-  transform: translate(37px, -70px);
+  transform: translate(21px, -60px);
   font-size: 14px;
   font-style: italic;
   margin: 0px;
@@ -51,14 +51,14 @@
 
 #GRHomeTitle {
   position: absolute;
-  transform: translate(618px, -70px);
+  transform: translate(622px, -60px);
   font-size: 14px;
   font-style: italic;
   margin: 0px;
 }
 
 .GRTeamLogo {
-  width: 100px;
+  width: 75px;
   height: auto;
 }
 
@@ -80,7 +80,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150px;
+  width: 250px;
 }
 
 .GRScratchColumn {
@@ -88,7 +88,7 @@
   flex-direction: column;
   align-items: center;
   width: 275px;
-  height: 325px;
+  height: 350px;
   flex-wrap: wrap;
   gap: 0px 20px;
 }
@@ -117,10 +117,46 @@
   margin: 5px 0px;
 }
 
+.GRNameScratch {
+  margin: 5px 0px;
+  font-size: 12px;
+}
+
 #officialsLabel {
   margin: 20px 0px;
 }
 
 .officialType {
-  font-size: 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.goalieOnIceRow {
+  display: flex;
+  align-items: center;
+}
+
+.netLogo {
+  width: 25px;
+  height: auto;
+  margin: 0px 0px 0px 10px;
+}
+
+.skaterOnIceRow {
+  display: flex;
+  align-items: center;
+}
+
+.skaterOnIceStick {
+  width: auto;
+  height: 20px;
+  margin: 0px 0px 0px 10px;
+}
+
+.puck {
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0px 0px 0px 10px;
 }

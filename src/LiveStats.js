@@ -1,31 +1,83 @@
 const LiveStats = (props) => {
+  const secondsToMinSec = (timeRemaining) => {
+    const mins = Math.floor((timeRemaining % 3600) / 60);
+    const secs = Math.floor(timeRemaining % 60);
+    let final = '';
+    final += '' + mins + ':' + (secs < 10 ? '0' : '');
+    final += '' + secs;
+    return final;
+  };
+  console.log(
+    '--->',
+    props.gameData[0].liveData.linescore.powerPlayInfo.situationTimeRemaining
+  );
   return (
     <div id="boxscoreBoxFront" className="over">
       <div id="teamLogoRow">
-        <p id="awayTitle">AWAY</p>
-        <img
-          alt="Away Team"
-          className="BSTeamLogo"
-          src={`teamLogos/team${props.gameData[0].gameData.teams.away.id}.png`}
-        />
+        {props.gameData[0].liveData.linescore.teams.away.powerPlay && (
+          <div className="PPRowAway">
+            <p className="PPBox">PP</p>
+            <p className="PPTime">
+              {secondsToMinSec(
+                props.gameData[0].liveData.linescore.powerPlayInfo
+                  .situationTimeRemaining
+              )}
+            </p>
+          </div>
+        )}
+        <div className="BSTeamLogoContainer">
+          <p id="awayTitle">AWAY</p>
+          <div className="BSTeamLogoBox FCAIC">
+            <img
+              alt="Away Team"
+              className="BSTeamLogo"
+              src={`teamLogos/team${props.gameData[0].gameData.teams.away.id}.png`}
+            />
+          </div>
+        </div>
         <div id="timeColumn" className="FCAIC">
-          <p id="BSPeriod">
-            {props.gameData[0].liveData.linescore.currentPeriodOrdinal}{' '}
-            <span id="BSPeriodLabel">PERIOD</span>
-          </p>
-          <p id="BSTime">
-            {props.gameData[0].liveData.linescore.currentPeriodTimeRemaining}
-          </p>
+          {props.gameData[0].liveData.linescore.currentPeriodOrdinal ===
+          undefined ? (
+            <p className="GameNotStarted">GAME HAS NOT STARTED</p>
+          ) : (
+            <>
+              <p id="BSPeriod">
+                {props.gameData[0].liveData.linescore.currentPeriodOrdinal}{' '}
+                <span id="BSPeriodLabel">PERIOD</span>
+              </p>
+              <p id="BSTime">
+                {
+                  props.gameData[0].liveData.linescore
+                    .currentPeriodTimeRemaining
+                }
+              </p>
+            </>
+          )}
           <p id="venue">
             {props.gameData[0].gameData.venue.name.toUpperCase()}
           </p>
         </div>
-        <p id="homeTitle">HOME</p>
-        <img
-          alt="Home Team"
-          className="BSTeamLogo"
-          src={`teamLogos/team${props.gameData[0].gameData.teams.home.id}.png`}
-        />
+        {props.gameData[0].liveData.linescore.teams.home.powerPlay && (
+          <div className="PPRowHome">
+            <p className="PPBox">PP</p>
+            <p className="PPTime">
+              {secondsToMinSec(
+                props.gameData[0].liveData.linescore.powerPlayInfo
+                  .situationTimeRemaining
+              )}
+            </p>
+          </div>
+        )}
+        <div className="BSTeamLogoContainer">
+          <p id="homeTitle">HOME</p>
+          <div className="BSTeamLogoBox FCAIC">
+            <img
+              alt="Home Team"
+              className="BSTeamLogo"
+              src={`teamLogos/team${props.gameData[0].gameData.teams.home.id}.png`}
+            />
+          </div>
+        </div>
       </div>
       <div id="BSGSOGRow">
         <div className="BSStatsColumn">
