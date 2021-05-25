@@ -38,28 +38,28 @@
   align-items: center;
   width: 85%;
   justify-content: space-between;
-  margin: 40px 0px 5px 0px;
+  margin: 20px 0px 5px 0px;
 }
 
-#GRAwayTitle {
-  position: absolute;
-  transform: translate(21px, -60px);
+.GRAwayHome {
   font-size: 14px;
   font-style: italic;
-  margin: 0px;
+  margin: 0px 0px 10px 0px;
 }
 
-#GRHomeTitle {
-  position: absolute;
-  transform: translate(622px, -60px);
-  font-size: 14px;
-  font-style: italic;
-  margin: 0px;
+.GRLAHC {
+  height: 101px;
+}
+
+.GRTeamLogoBox {
+  width: 75px;
+  height: 75px;
+  justify-content: center;
 }
 
 .GRTeamLogo {
-  width: 75px;
-  height: auto;
+  max-width: 75px;
+  max-height: 75px;
 }
 
 .GRRowSB {

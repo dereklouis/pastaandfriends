@@ -93,10 +93,16 @@
   align-items: center;
 }
 
-.TSStandingLogo {
-  width: 36px;
-  height: auto;
+.TSStandingLogoContainer {
   margin: 7px 10px 7px 7px;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+}
+
+.TSStandingLogo {
+  max-width: 36px;
+  max-height: 36px;
 }
 
 .StandingGP {

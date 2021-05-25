@@ -2,19 +2,27 @@ const CSO = (props) => {
   return (
     <div id="gameRosterBoxBack" className="under">
       <div id="GRTeamLogoRow">
-        <p id="GRAwayTitle">AWAY</p>
-        <img
-          alt="Away Team"
-          className="GRTeamLogo"
-          src={`teamLogos/team${props.gameData[0].gameData.teams.away.id}.png`}
-        />
+        <div className="GRLAHC FCAIC">
+          <p className="GRAwayHome">AWAY</p>
+          <div className="GRTeamLogoBox FCAIC">
+            <img
+              alt="Away Team"
+              className="GRTeamLogo"
+              src={`teamLogos/team${props.gameData[0].gameData.teams.away.id}.png`}
+            />
+          </div>
+        </div>
         <h1 id="GameRostersTitle">GAME ROSTERS</h1>
-        <p id="GRHomeTitle">HOME</p>
-        <img
-          alt="Home Team"
-          className="GRTeamLogo"
-          src={`teamLogos/team${props.gameData[0].gameData.teams.home.id}.png`}
-        />
+        <div className="GRLAHC FCAIC">
+          <p className="GRAwayHome">HOME</p>
+          <div className="GRTeamLogoBox FCAIC">
+            <img
+              alt="Home Team"
+              className="GRTeamLogo"
+              src={`teamLogos/team${props.gameData[0].gameData.teams.home.id}.png`}
+            />
+          </div>
+        </div>
       </div>
       <div className="GRLine" />
       <div className="GRRowC">
