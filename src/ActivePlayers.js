@@ -35,7 +35,7 @@ const ActivePlayers = (props) => {
         <p className="GRCategory">GOALTENDERS</p>
       </div>
       <div className="GRRowSB">
-        <div className="GRStatsColumn">
+        <div className="GRStatsColumnGoaltenders">
           {!props.gameData[0].liveData.boxscore.teams.away.goalies.length && (
             <p className="NotYet">NOT YET POSTED...</p>
           )}
@@ -66,7 +66,7 @@ const ActivePlayers = (props) => {
               </p>
             ))}
         </div>
-        <div className="GRStatsColumn">
+        <div className="GRStatsColumnGoaltenders">
           {!props.gameData[0].liveData.boxscore.teams.home.goalies.length && (
             <p className="NotYet">NOT YET POSTED...</p>
           )}
@@ -103,7 +103,7 @@ const ActivePlayers = (props) => {
         <p className="GRCategory">DEFENSEMEN</p>
       </div>
       <div className="GRRowSB">
-        <div className="GRStatsColumn">
+        <div className="GRStatsColumnDefensemen">
           {!props.awaySkatersFinalState.filter(
             (id) => props.defensemenObject[id] !== undefined
           ).length && <p className="NotYet">NOT YET POSTED...</p>}
@@ -148,7 +148,7 @@ const ActivePlayers = (props) => {
               }
             })}
         </div>
-        <div className="GRStatsColumn">
+        <div className="GRStatsColumnDefensemen">
           {!props.homeSkatersFinalState.filter(
             (id) => props.defensemenObject[id] !== undefined
           ).length && <p className="NotYet">NOT YET POSTED...</p>}
@@ -199,7 +199,7 @@ const ActivePlayers = (props) => {
         <p className="GRCategory">FORWARDS</p>
       </div>
       <div className="GRRowSB">
-        <div className="GRStatsColumn">
+        <div className="GRStatsColumnForwards">
           {!props.awaySkatersFinalState.filter(
             (id) => props.forwardsObject[id] !== undefined
           ).length && <p className="NotYet">NOT YET POSTED...</p>}
@@ -244,7 +244,7 @@ const ActivePlayers = (props) => {
               }
             })}
         </div>
-        <div className="GRStatsColumn">
+        <div className="GRStatsColumnForwards">
           {!props.homeSkatersFinalState.filter(
             (id) => props.forwardsObject[id] !== undefined
           ).length && <p className="NotYet">NOT YET POSTED...</p>}

@@ -24,7 +24,7 @@ function PlayerStats(props) {
         <div id="PSMaster" className="FCAIC">
           <p id="PSSeason">{seasonArr.join('')}</p>
           <h1 id="PSTitle">REGULAR SEASON PLAYER STATS</h1>
-          <div className="container">
+          <div className="playerStatsContainer">
             {props.fullTeamStats
               .filter(
                 (player) =>

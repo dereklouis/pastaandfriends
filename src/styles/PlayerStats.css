@@ -1,6 +1,6 @@
 /* #FFB81C */
 
-.container {
+.playerStatsContainer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -65,10 +65,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 205px;
-  gap: 0px 50px;
 }
 
 #noData {
+  font-size: 16px;
   margin: 65px 0px 0px 113px;
 }
 
@@ -82,6 +82,7 @@
   align-self: flex-start;
   margin: 15px;
 }
+
 .position {
   font-size: 18px;
   margin: 0px;
@@ -98,12 +99,16 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .badge {
   width: auto;
   height: 28px;
+}
+
+.PSRow {
+  margin: 16px 0px;
+  font-size: 16px;
 }
 
 .bold {
@@ -122,4 +127,269 @@
   border: 3px solid black;
   margin: 0px 0px 0px 15px;
   justify-content: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.PSDividingLine {
+  height: 166px;
+  width: 2px;
+  background-color: black;
+  margin: auto 25px;
+  border-radius: 2px;
+}
+
+@media (max-width: 605px) {
+  #PSSeason {
+    margin: 100px 0px 0px 0px;
+    font-size: 16px;
+  }
+
+  #PSTitle {
+    letter-spacing: 1px;
+    font-size: 26px;
+  }
+
+  .cardContainer {
+    width: 385px;
+    height: 246px;
+    margin: 15px 27px;
+  }
+
+  .playerBoxStats,
+  .playerBoxPerson {
+    width: 375px;
+    height: 236px;
+    border: 5px solid black;
+    border-radius: 15px;
+  }
+
+  .playerName {
+    font-size: 14px;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 11px;
+  }
+
+  .PSCircle {
+    width: 27px;
+    height: 27px;
+    border: 3px solid black;
+    margin: 0px 0px 0px 11px;
+  }
+
+  .columnWrap {
+    margin: 0px 0px 0px 11px;
+    height: 154px;
+  }
+
+  .position {
+    font-size: 14px;
+  }
+
+  .playerNumber {
+    font-size: 12px;
+  }
+
+  .flag {
+    width: 27px;
+    height: 27px;
+  }
+
+  .badge {
+    width: auto;
+    height: 21px;
+  }
+
+  .PSRow {
+    margin: 12px 0px;
+    font-size: 12px;
+  }
+
+  .PSDividingLine {
+    height: 124px;
+    width: 2px;
+    margin: auto 19px;
+    border-radius: 2px;
+  }
+
+  #noData {
+    font-size: 12px;
+    margin: 50px 0px 0px 85px;
+  }
+}
+
+@media (max-width: 500px) {
+  #PSSeason {
+    margin: 85px 0px 0px 0px;
+    font-size: 14px;
+  }
+
+  #PSTitle {
+    letter-spacing: 1px;
+    font-size: 22px;
+  }
+
+  .cardContainer {
+    width: 329px;
+    height: 211px;
+    margin: 13px 23px;
+  }
+
+  .playerBoxStats,
+  .playerBoxPerson {
+    width: 319px;
+    height: 201px;
+    border: 5px solid black;
+    border-radius: 15px;
+  }
+
+  .playerName {
+    font-size: 12px;
+    padding: 5px 13px;
+    border-radius: 20px;
+    margin: 9px;
+  }
+
+  .PSCircle {
+    width: 23px;
+    height: 23px;
+    border: 3px solid black;
+    margin: 0px 0px 0px 9px;
+  }
+
+  .columnWrap {
+    margin: 0px 0px 0px 9px;
+    height: 131px;
+  }
+
+  .position {
+    font-size: 12px;
+  }
+
+  .playerNumber {
+    font-size: 10px;
+  }
+
+  .flag {
+    width: 23px;
+    height: 23px;
+  }
+
+  .badge {
+    width: auto;
+    height: 18px;
+  }
+
+  .PSRow {
+    margin: 10px 0px;
+    font-size: 10px;
+  }
+
+  .PSDividingLine {
+    height: 105px;
+    width: 2px;
+    margin: auto 16px;
+    border-radius: 2px;
+  }
+
+  #noData {
+    font-size: 10px;
+    margin: 43px 0px 0px 72px;
+  }
+}
+
+@media (max-width: 450px) {
+  #PSSeason {
+    margin: 100px 0px 0px 0px;
+    font-size: 11px;
+  }
+
+  #PSTitle {
+    letter-spacing: 1px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 385px) {
+  .playerStatsContainer {
+    padding: 10px 0px;
+  }
+
+  #PSSeason {
+    margin: 90px 0px 0px 0px;
+    font-size: 11px;
+  }
+
+  #PSTitle {
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+
+  .cardContainer {
+    width: 297px;
+    height: 191px;
+    margin: 12px 0px;
+  }
+
+  .playerBoxStats,
+  .playerBoxPerson {
+    width: 287px;
+    height: 181px;
+    border: 5px solid black;
+    border-radius: 15px;
+  }
+
+  .playerName {
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin: 8px;
+  }
+
+  .PSCircle {
+    width: 21px;
+    height: 21px;
+    border: 3px solid black;
+    margin: 0px 0px 0px 8px;
+  }
+
+  .columnWrap {
+    margin: 0px 0px 0px 8px;
+    height: 118px;
+  }
+
+  .position {
+    font-size: 11px;
+  }
+
+  .playerNumber {
+    font-size: 9px;
+  }
+
+  .flag {
+    width: 21px;
+    height: 21px;
+  }
+
+  .badge {
+    width: auto;
+    height: 16px;
+  }
+
+  .PSRow {
+    margin: 9px 0px;
+    font-size: 9px;
+  }
+
+  .PSDividingLine {
+    height: 94px;
+    width: 2px;
+    margin: auto 14px;
+    border-radius: 2px;
+  }
+
+  #noData {
+    font-size: 9px;
+    margin: 39px 0px 0px 65px;
+  }
 }

@@ -40,11 +40,11 @@ const GoalieStats = (props) => {
       <div className="columnWrap">
         {props.player.seasonData ? (
           <>
-            <p className="playerGamesPlayed">
+            <p className="playerGamesPlayed PSRow">
               <span className="bold">{props.player.seasonData.games}</span>{' '}
               GAMES PLAYED
             </p>
-            <p className="playerSavePercentage">
+            <p className="playerSavePercentage PSRow">
               <span className="bold">
                 {props.player.seasonData.savePercentage
                   .toString()
@@ -54,43 +54,45 @@ const GoalieStats = (props) => {
               </span>{' '}
               SAVE %
             </p>
-            <p className="playerGAA">
+            <p className="playerGAA PSRow">
               <span className="bold">
                 {Number(props.player.seasonData.goalAgainstAverage).toFixed(2)}
               </span>{' '}
               GAA
             </p>
-            <p className="playerShutouts">
+            <p className="playerShutouts PSRow">
               <span className="bold">{props.player.seasonData.shutouts}</span>{' '}
               SHUTOUTS
             </p>
-            <p className="playerWins">
+            <div className="PSDividingLine"></div>
+            <p className="playerWins PSRow">
               <span className="bold">{props.player.seasonData.wins}</span> WINS
             </p>
-            <p className="playerLosses">
+            <p className="playerLosses PSRow">
               <span className="bold">{props.player.seasonData.losses}</span>{' '}
               LOSSES
             </p>
-            <p className="playerOT">
+            <p className="playerOT PSRow">
               <span className="bold">{props.player.seasonData.ot}</span> OT
             </p>
-            <p className="playerGA">
+            <p className="playerGA PSRow">
               <span className="bold">
                 {props.player.seasonData.goalsAgainst}
               </span>{' '}
               GA
             </p>
-            <p className="playerSA">
+            <div className="PSDividingLine"></div>
+            <p className="playerSA PSRow">
               <span className="bold">
                 {props.player.seasonData.shotsAgainst}
               </span>{' '}
               SA
             </p>
-            <p className="playerSaves">
+            <p className="playerSaves PSRow">
               <span className="bold">{props.player.seasonData.saves}</span>{' '}
               SAVES
             </p>
-            <p className="playerPPSavePercentage">
+            <p className="playerPPSavePercentage PSRow">
               <span className="bold">
                 {Number(
                   props.player.seasonData.powerPlaySavePercentage
@@ -98,7 +100,7 @@ const GoalieStats = (props) => {
               </span>{' '}
               PP SAVE %
             </p>
-            <p className="playerSHSavePercentage">
+            <p className="playerSHSavePercentage PSRow">
               <span className="bold">
                 {Number(
                   props.player.seasonData.shortHandedSavePercentage

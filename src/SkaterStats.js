@@ -40,53 +40,55 @@ const SkaterStats = (props) => {
       <div className="columnWrap">
         {props.player.seasonData ? (
           <>
-            <p className="playerGamesPlayed">
+            <p className="playerGamesPlayed PSRow">
               <span className="bold">{props.player.seasonData.games}</span>{' '}
               GAMES PLAYED
             </p>
-            <p className="playerGoals">
+            <p className="playerGoals PSRow">
               <span className="bold">{props.player.seasonData.goals}</span>{' '}
               GOALS
             </p>
-            <p className="playerAssists">
+            <p className="playerAssists PSRow">
               <span className="bold">{props.player.seasonData.assists}</span>{' '}
               ASSISTS
             </p>
-            <p className="playerPoints">
+            <p className="playerPoints PSRow">
               <span className="bold">{props.player.seasonData.points}</span>{' '}
               POINTS
             </p>
-            <p className="playerPlusMinus">
+            <div className="PSDividingLine"></div>
+            <p className="playerPlusMinus PSRow">
               <span className="bold">{props.player.seasonData.plusMinus}</span>{' '}
               PLUS/MINUS
             </p>
-            <p className="playerPPG">
+            <p className="playerPPG PSRow">
               <span className="bold">
                 {props.player.seasonData.powerPlayGoals}
               </span>{' '}
               PP GOALS
             </p>
-            <p className="playerSHG">
+            <p className="playerSHG PSRow">
               <span className="bold">
                 {props.player.seasonData.shortHandedGoals}
               </span>{' '}
               SH GOALS
             </p>
-            <p className="playerShots">
+            <p className="playerShots PSRow">
               <span className="bold">{props.player.seasonData.shots}</span>{' '}
               SHOTS
             </p>
-            <p className="playerShotPercentage">
+            <div className="PSDividingLine"></div>
+            <p className="playerShotPercentage PSRow">
               <span className="bold">{props.player.seasonData.shotPct}</span>{' '}
               SHOT %
             </p>
-            <p className="playerHits">
+            <p className="playerHits PSRow">
               <span className="bold"> {props.player.seasonData.hits}</span> HITS
             </p>
-            <p className="playerPIM">
+            <p className="playerPIM PSRow">
               <span className="bold">{props.player.seasonData.pim}</span> PIM
             </p>
-            <p className="playerAVGTimeOnIce">
+            <p className="playerAVGTimeOnIce PSRow">
               <span className="bold">
                 {props.player.seasonData.timeOnIcePerGame}
               </span>{' '}

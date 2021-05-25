@@ -39,53 +39,60 @@ const SkaterPerson = (props) => {
       </div>
       <div className="wrapContainer">
         <div className="columnWrap">
-          <p className="playerHeight">
+          <p className="playerHeight PSRow">
             HEIGHT: <span className="bold">{props.player.height}</span>
           </p>
-          <p className="playerCurrentAge">
+          <p className="playerCurrentAge PSRow">
             AGE: <span className="bold">{props.player.currentAge}</span>
           </p>
-          <p className="playerBirthCountry">
+          <p className="playerBirthCountry PSRow">
             BIRTH COUNTRY:{' '}
             <span className="bold">{props.player.birthCountry}</span>
           </p>
           {props.player.birthStateProvince ? (
-            <p className="playerBirthCity">
-              BIRTH CITY: <span className="bold">{props.player.birthCity}</span>
-            </p>
+            <>
+              <p className="playerBirthCity PSRow">
+                BIRTH CITY:{' '}
+                <span className="bold">{props.player.birthCity}</span>
+              </p>
+              <div className="PSDividingLine"></div>
+            </>
           ) : (
-            <p className="playerShootsCatches">
-              SHOOTS/CATCHES:{' '}
-              <span className="bold">{props.player.shootsCatches}</span>
-            </p>
+            <>
+              <p className="playerShootsCatches PSRow">
+                SHOOTS/CATCHES:{' '}
+                <span className="bold">{props.player.shootsCatches}</span>
+              </p>
+              <div className="PSDividingLine"></div>
+            </>
           )}
-          <p className="playerWeight">
+          <p className="playerWeight PSRow">
             WEIGHT: <span className="bold">{props.player.weight}</span>
           </p>
-          <p className="playerBirthday">
+          <p className="playerBirthday PSRow">
             BIRTHDAY: <span className="bold">{props.player.birthDate}</span>
           </p>
           {props.player.birthStateProvince &&
             props.player.birthCountry === 'USA' && (
-              <p className="playerBirthStateProvince">
+              <p className="playerBirthStateProvince PSRow">
                 BIRTH STATE:{' '}
                 <span className="bold">{props.player.birthStateProvince}</span>
               </p>
             )}
           {props.player.birthStateProvince &&
             props.player.birthCountry !== 'USA' && (
-              <p className="playerBirthStateProvince">
+              <p className="playerBirthStateProvince PSRow">
                 BIRTH PROVINCE:{' '}
                 <span className="bold">{props.player.birthStateProvince}</span>
               </p>
             )}
           {props.player.birthStateProvince ? (
-            <p className="playerShootsCatches">
+            <p className="playerShootsCatches PSRow">
               SHOOTS/CATCHES:{' '}
               <span className="bold">{props.player.shootsCatches}</span>
             </p>
           ) : (
-            <p className="playerBirthCity">
+            <p className="playerBirthCity PSRow">
               BIRTH CITY: <span className="bold">{props.player.birthCity}</span>
             </p>
           )}

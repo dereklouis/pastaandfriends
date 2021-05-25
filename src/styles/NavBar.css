@@ -22,6 +22,7 @@
   margin: 0px;
   font-family: 'Roboto', sans-serif;
   color: white;
+  font-size: 32px;
 }
 
 #navMiddle {
@@ -87,9 +88,96 @@
     display: none;
   }
   #navMiddle {
-    margin: 0px 0px 0px 65px;
+    margin: 0px 0px 0px 55px;
   }
   #stickContainer {
     display: block;
+  }
+}
+
+@media (max-width: 550px) {
+  #navMiddle {
+    margin: 0px 0px 0px 41px;
+  }
+
+  #navTitle {
+    font-size: 24px;
+  }
+
+  #navLogo {
+    height: 34px;
+    margin: 0px 11px;
+  }
+
+  #stickContainer {
+    margin: 0px 49px 0px 0px;
+  }
+}
+
+@media (max-width: 421px) {
+  #navMiddle {
+    margin: 0px 0px 0px 31px;
+  }
+
+  #stickContainer {
+    margin: 0px 37px 0px 0px;
+  }
+}
+
+@media (max-width: 390px) {
+  #navMiddle {
+    margin: 0px 0px 0px 31px;
+  }
+
+  #navTitle {
+    font-size: 21px;
+  }
+
+  #navLogo {
+    height: 30px;
+    margin: 0px 10px;
+  }
+
+  #stickContainer {
+    width: 30px;
+    height: 38px;
+    margin: 0px 37px 0px 0px;
+  }
+
+  #stick0 {
+    height: 38px;
+  }
+
+  #stick1 {
+    height: 38px;
+  }
+}
+
+@media (max-width: 340px) {
+  #navMiddle {
+    margin: 0px 0px 0px 31px;
+  }
+
+  #navTitle {
+    font-size: 17px;
+  }
+
+  #navLogo {
+    height: 24px;
+    margin: 0px 8px;
+  }
+
+  #stickContainer {
+    width: 24px;
+    height: 30px;
+    margin: 0px 38px 0px 0px;
+  }
+
+  #stick0 {
+    height: 30px;
+  }
+
+  #stick1 {
+    height: 30px;
   }
 }
