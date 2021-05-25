@@ -7,10 +7,6 @@ const LiveStats = (props) => {
     final += '' + secs;
     return final;
   };
-  console.log(
-    '--->',
-    props.gameData[0].liveData.linescore.powerPlayInfo.situationTimeRemaining
-  );
   return (
     <div id="boxscoreBoxFront" className="over">
       <div id="teamLogoRow">

@@ -6,11 +6,13 @@ const ScoringPlays = (props) => {
         <div id="scoringPlaysMaster">
           {props.gameData[0].liveData.plays.scoringPlays.map((playId, idx) => (
             <div className="scoringPlayContainer" key={idx}>
-              <img
-                alt="Team Logo"
-                className="scoringPlayLogo"
-                src={`teamLogos/team${props.gameData[0].liveData.plays.allPlays[playId].team.id}.png`}
-              />
+              <div className="scoringPlayLogoContainer FCAIC">
+                <img
+                  alt="Team Logo"
+                  className="scoringPlayLogo"
+                  src={`teamLogos/team${props.gameData[0].liveData.plays.allPlays[playId].team.id}.png`}
+                />
+              </div>
               <p className="scoringPlay" key={idx}>
                 {props.gameData[0].liveData.plays.allPlays[
                   playId

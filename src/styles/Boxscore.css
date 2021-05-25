@@ -182,17 +182,25 @@
 .scoringPlayContainer {
   display: flex;
   align-items: center;
+  margin: 10px 0px;
 }
 
 .scoringPlay {
-  font-size: 18px;
-  margin: 18px 0px;
+  font-size: 17px;
+  margin: 0px;
+  line-height: 25px;
+}
+
+.scoringPlayLogoContainer {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  margin: 0px 15px;
 }
 
 .scoringPlayLogo {
-  width: 36px;
-  height: auto;
-  margin: 0px 15px;
+  max-width: 36px;
+  max-height: 36px;
 }
 
 .GameNotStarted {
