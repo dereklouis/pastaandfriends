@@ -39,7 +39,7 @@ const Boxscore = () => {
             ) : (
               <>
                 <button
-                  className="refreshButton"
+                  className="refreshButton refreshButtonBS"
                   onClick={refresh}
                   onAnimationEnd={resetButton}
                   ref={refreshButtonBS}

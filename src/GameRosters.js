@@ -59,7 +59,7 @@ const GameRosters = () => {
           ) : (
             <>
               <button
-                className="refreshButton"
+                className="refreshButton refreshButtonGR"
                 onClick={refresh}
                 onAnimationEnd={resetButton}
                 ref={refreshButtonGR}
