@@ -5,19 +5,25 @@ const ScoringPlays = (props) => {
       {props.gameData[0].liveData.plays.scoringPlays.length ? (
         <div id="scoringPlaysMaster">
           {props.gameData[0].liveData.plays.scoringPlays.map((playId, idx) => (
-            <div className="scoringPlayContainer" key={idx}>
-              <div className="scoringPlayLogoContainer FCAIC">
-                <img
-                  alt="Team Logo"
-                  className="scoringPlayLogo"
-                  src={`teamLogos/team${props.gameData[0].liveData.plays.allPlays[playId].team.id}.png`}
-                />
+            <div key={idx}>
+              <div className="scoringPlayContainer">
+                <div className="scoringPlayLogoContainer FCAIC">
+                  <img
+                    alt="Team Logo"
+                    className="scoringPlayLogo"
+                    src={`teamLogos/team${props.gameData[0].liveData.plays.allPlays[playId].team.id}.png`}
+                  />
+                </div>
+                <p className="scoringPlay" key={idx}>
+                  {props.gameData[0].liveData.plays.allPlays[
+                    playId
+                  ].result.description.toUpperCase()}
+                </p>
               </div>
-              <p className="scoringPlay" key={idx}>
-                {props.gameData[0].liveData.plays.allPlays[
-                  playId
-                ].result.description.toUpperCase()}
-              </p>
+              {idx !==
+                props.gameData[0].liveData.plays.scoringPlays.length - 1 && (
+                <div className="scoringPlayRowDivide"></div>
+              )}
             </div>
           ))}
         </div>
