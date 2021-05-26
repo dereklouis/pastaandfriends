@@ -7,8 +7,9 @@ const Loading = () => {
         <h1 id="loadingTitle">Loading</h1>
         <div id="loadingDot"></div>
       </div>
-
-      <img alt="Bruins Logo" id="bruinsLogo" src="bruinsLogo.png" />
+      <div id="loadingLogoWrapper">
+        <img alt="Bruins Logo" id="bruinsLogo" src="bruinsLogo.png" />
+      </div>
     </div>
   );
 };

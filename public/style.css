@@ -120,12 +120,14 @@ a {
 .NoGameWrapper {
   background-color: #ffb71c;
   padding: 15px 36px;
-  border-radius: 10px;
-  border: 2px solid black;
+  border-radius: 15px;
+  border: 4px solid black;
+  margin: 550px 0px 0px 0px;
 }
 
 .NoGame {
   margin: 0px;
+  font-size: 32px;
 }
 
 .NotYet {
@@ -172,4 +174,43 @@ a {
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
   animation-duration: 1s;
+}
+
+@media (max-width: 875px) {
+  .NoGameWrapper {
+    margin: 450px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 675px) {
+  .NoGameWrapper {
+    margin: 350px 0px 0px 0px;
+    padding: 12px 30px;
+  }
+  .NoGame {
+    margin: 0px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 500px) {
+  .NoGameWrapper {
+    margin: 280px 0px 0px 0px;
+    padding: 10px 24px;
+  }
+  .NoGame {
+    margin: 0px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 375px) {
+  .NoGameWrapper {
+    margin: 230px 0px 0px 0px;
+    padding: 8px 20px;
+  }
+  .NoGame {
+    margin: 0px;
+    font-size: 18px;
+  }
 }
