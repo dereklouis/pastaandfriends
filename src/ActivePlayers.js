@@ -71,7 +71,6 @@ const ActivePlayers = (props) => {
                     {props.goalieObject[goalieId].toUpperCase()}
                   </p>
                 ))}
-            <p className="GRName">NAME NAME</p>
           </div>
           <div className="GRStatsColumnGoaltenders">
             {!props.gameData[0].liveData.boxscore.teams.home.scratches
@@ -107,7 +106,6 @@ const ActivePlayers = (props) => {
                     {props.goalieObject[goalieId].toUpperCase()}
                   </p>
                 ))}
-            <p className="GRName">NAME NAME</p>
           </div>
         </div>
         <div className="GRLine" />

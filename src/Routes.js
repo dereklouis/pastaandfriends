@@ -10,6 +10,7 @@ import PlayerStats from './PlayerStats';
 import TeamStats from './TeamStats';
 import Boxscore from './Boxscore';
 import GameRosters from './GameRosters';
+import ErrorPage from './ErrorPage';
 
 const season = '20202021';
 
@@ -95,6 +96,7 @@ const Routes = () => {
           <GameRosters {...props} teamStats={teamStats} season={season} />
         )}
       />
+      <Route path="/" component={ErrorPage} />
     </>
   );
 };
