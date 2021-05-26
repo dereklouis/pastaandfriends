@@ -10,18 +10,17 @@ const LiveStats = (props) => {
   return (
     <div id="boxscoreBoxFront" className="over">
       <div id="teamLogoRow">
-        {/* {props.gameData[0].liveData.linescore.teams.away.powerPlay && ( */}
-        <div className="PPRowAway">
-          <p className="PPBox">PP</p>
-          <p className="PPTime">
-            {/* {secondsToMinSec(
+        {props.gameData[0].liveData.linescore.teams.away.powerPlay && (
+          <div className="PPRowAway">
+            <p className="PPBox">PP</p>
+            <p className="PPTime">
+              {secondsToMinSec(
                 props.gameData[0].liveData.linescore.powerPlayInfo
                   .situationTimeRemaining
-              )} */}
-            2:00
-          </p>
-        </div>
-        {/* )} */}
+              )}
+            </p>
+          </div>
+        )}
         <div className="BSTeamLogoContainer">
           <p id="awayTitle">AWAY</p>
           <div className="BSTeamLogoBox FCAIC">
@@ -54,18 +53,17 @@ const LiveStats = (props) => {
             {props.gameData[0].gameData.venue.name.toUpperCase()}
           </p>
         </div>
-        {/* {props.gameData[0].liveData.linescore.teams.home.powerPlay && ( */}
-        <div className="PPRowHome">
-          <p className="PPBox">PP</p>
-          <p className="PPTime">
-            {/* {secondsToMinSec(
+        {props.gameData[0].liveData.linescore.teams.home.powerPlay && (
+          <div className="PPRowHome">
+            <p className="PPBox">PP</p>
+            <p className="PPTime">
+              {secondsToMinSec(
                 props.gameData[0].liveData.linescore.powerPlayInfo
                   .situationTimeRemaining
-              )} */}
-            2:00
-          </p>
-        </div>
-        {/* )} */}
+              )}
+            </p>
+          </div>
+        )}
         <div className="BSTeamLogoContainer">
           <p id="homeTitle">HOME</p>
           <div className="BSTeamLogoBox FCAIC">

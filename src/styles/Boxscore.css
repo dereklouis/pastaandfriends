@@ -171,11 +171,17 @@
 }
 
 #scoringPlays {
+  color: #ffb71c;
+  background-color: black;
+  font-size: 32px;
+  padding: 6px 25px;
+  border-radius: 25px;
   margin: 36px 0px 22px 0px;
 }
 
 #NoSPYet {
   margin: auto 0px;
+  font-size: 16px;
 }
 
 #scoringPlaysMaster {
@@ -312,6 +318,18 @@
     height: 113px;
   }
 
+  #BSPeriod {
+    font-size: 16px;
+  }
+
+  #BSPeriodLabel {
+    font-size: 13px;
+  }
+
+  #BSTime {
+    font-size: 16px;
+  }
+
   .BSGoals {
     font-size: 56px;
   }
@@ -363,6 +381,36 @@
 
   .PPTime {
     font-size: 12px;
+  }
+
+  #scoringPlaysMaster {
+    height: 525px;
+  }
+  #scoringPlays {
+    font-size: 24px;
+    padding: 6px 19px;
+    border-radius: 19px;
+    margin: 27px 0px 17px 0px;
+  }
+
+  #NoSPYet {
+    font-size: 14px;
+  }
+  .scoringPlayContainer {
+    margin: 9px 0px;
+  }
+  .scoringPlayLogoContainer {
+    width: 27px;
+    height: 27px;
+    margin: 0px 11px;
+  }
+  .scoringPlayLogo {
+    max-width: 27px;
+    max-height: 27px;
+  }
+  .scoringPlay {
+    font-size: 13px;
+    line-height: 19px;
   }
 }
 
@@ -428,6 +476,18 @@
     height: 85px;
   }
 
+  #BSPeriod {
+    font-size: 14px;
+  }
+
+  #BSPeriodLabel {
+    font-size: 11px;
+  }
+
+  #BSTime {
+    font-size: 14px;
+  }
+
   .BSGoals {
     font-size: 42px;
   }
@@ -491,6 +551,36 @@
   .BSStatsColumn {
     width: 175px;
   }
+
+  #scoringPlaysMaster {
+    height: 394px;
+  }
+  #scoringPlays {
+    font-size: 18px;
+    padding: 4px 14px;
+    border-radius: 14px;
+    margin: 20px 0px 13px 0px;
+  }
+
+  #NoSPYet {
+    font-size: 12px;
+  }
+  .scoringPlayContainer {
+    margin: 8px 0px;
+  }
+  .scoringPlayLogoContainer {
+    width: 20px;
+    height: 20px;
+    margin: 0px 8px;
+  }
+  .scoringPlayLogo {
+    max-width: 20px;
+    max-height: 20px;
+  }
+  .scoringPlay {
+    font-size: 10px;
+    line-height: 14px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -553,6 +643,18 @@
 
   #timeColumn {
     height: 64px;
+  }
+
+  #BSPeriod {
+    font-size: 12px;
+  }
+
+  #BSPeriodLabel {
+    font-size: 9px;
+  }
+
+  #BSTime {
+    font-size: 12px;
   }
 
   #BSGSOGRow {
@@ -622,6 +724,35 @@
   .BSStatsColumn {
     width: 305px;
   }
+  #scoringPlaysMaster {
+    height: 296px;
+  }
+  #scoringPlays {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin: 15px 0px 10px 0px;
+  }
+
+  #NoSPYet {
+    font-size: 10px;
+  }
+  .scoringPlayContainer {
+    margin: 7px 0px;
+  }
+  .scoringPlayLogoContainer {
+    width: 15px;
+    height: 15px;
+    margin: 0px 6px;
+  }
+  .scoringPlayLogo {
+    max-width: 15px;
+    max-height: 15px;
+  }
+  .scoringPlay {
+    font-size: 8px;
+    line-height: 11px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -684,6 +815,18 @@
 
   #timeColumn {
     height: 51px;
+  }
+
+  #BSPeriod {
+    font-size: 11px;
+  }
+
+  #BSPeriodLabel {
+    font-size: 8px;
+  }
+
+  #BSTime {
+    font-size: 11px;
   }
 
   #BSGSOGRow {
@@ -752,5 +895,34 @@
 
   .BSStatsColumn {
     width: 305px;
+  }
+  #scoringPlaysMaster {
+    height: 237px;
+  }
+  #scoringPlays {
+    font-size: 11px;
+    padding: 4px 11px;
+    border-radius: 11px;
+    margin: 14px 0px 9px 0px;
+  }
+
+  #NoSPYet {
+    font-size: 9px;
+  }
+  .scoringPlayContainer {
+    margin: 6px 0px;
+  }
+  .scoringPlayLogoContainer {
+    width: 12px;
+    height: 12px;
+    margin: 0px 5px;
+  }
+  .scoringPlayLogo {
+    max-width: 12px;
+    max-height: 12px;
+  }
+  .scoringPlay {
+    font-size: 6px;
+    line-height: 9px;
   }
 }
