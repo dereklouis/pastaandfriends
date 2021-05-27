@@ -6,19 +6,20 @@
 #landingContainer {
   width: 100%;
   height: 100vh;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   background-color: rgba(255, 255, 255, 0.866);
-}
-
-#landingTitle {
-  color: black;
-  font-size: 42px;
+  min-height: 975px;
+  overflow-y: auto;
 }
 
 #tvContainer {
   position: relative;
   width: 510px;
   height: 290px;
+  margin: 250px 0px 0px 0px;
 }
 
 #tv {
@@ -45,21 +46,22 @@
 }
 
 #remoteContainer {
-  margin: 75px 125px 0px 0px;
+  margin: auto 80px auto 0px;
   height: 275px;
   width: 158px;
   position: relative;
+  transform: rotate(-10deg);
 }
 
 @keyframes clickAction {
   0% {
-    transform: rotateX(0deg);
+    transform: rotate(-10deg) rotateX(0deg);
   }
   50% {
-    transform: rotateX(10deg);
+    transform: rotate(-10deg) rotateX(10deg);
   }
   100% {
-    transform: rotateX(0deg);
+    transform: rotate(-10deg) rotateX(0deg);
   }
 }
 
@@ -122,4 +124,160 @@
   right: 0;
   opacity: 0.5;
   transform: translate(1px, 1px);
+}
+
+@media (max-width: 1100px) {
+  #landingContainer {
+    min-height: 870px;
+  }
+
+  #tvContainer {
+    margin: 200px 0px 0px 0px;
+  }
+
+  #jack {
+    width: 243px;
+  }
+}
+
+@media (max-width: 850px) {
+  #landingContainer {
+    min-height: 820px;
+  }
+
+  #tvContainer {
+    margin: 150px 0px 0px 0px;
+  }
+
+  #jack {
+    width: 220px;
+  }
+}
+
+@media (max-width: 580px) {
+  #landingContainer {
+    min-height: 710px;
+  }
+
+  #tvContainer {
+    width: 372px;
+    height: 212px;
+    margin: 130px 0px 20px 0px;
+  }
+
+  #tv {
+    width: 372px;
+    height: 212px;
+  }
+
+  #gifElement {
+    transform: translate(5px, 5px);
+    width: 365px;
+    height: 201px;
+  }
+
+  #tvBlack {
+    width: 365px;
+    height: 201px;
+    transform: translate(4px, 2px);
+  }
+
+  #jack {
+    width: 180px;
+  }
+}
+
+@media (max-width: 400px) {
+  #landingContainer {
+    min-height: 660px;
+  }
+
+  #tvContainer {
+    width: 335px;
+    height: 191px;
+    margin: 110px 0px 0px 0px;
+  }
+
+  #tv {
+    width: 335px;
+    height: 191px;
+  }
+
+  #gifElement {
+    transform: translate(5px, 5px);
+    width: 329px;
+    height: 181px;
+  }
+
+  #tvBlack {
+    width: 329px;
+    height: 181px;
+    transform: translate(4px, 2px);
+  }
+
+  #jack {
+    width: 150px;
+  }
+}
+
+@media (max-width: 370px) {
+  #landingContainer {
+    min-height: 568px;
+  }
+
+  #tvContainer {
+    width: 302px;
+    height: 172px;
+    margin: 75px 0px 20px 0px;
+  }
+
+  #tv {
+    width: 302px;
+    height: 172px;
+  }
+
+  #gifElement {
+    transform: translate(5px, 5px);
+    width: 296px;
+    height: 163px;
+  }
+
+  #tvBlack {
+    width: 296px;
+    height: 163px;
+    transform: translate(4px, 2px);
+  }
+
+  #remoteContainer {
+    margin: auto 70px auto 0px;
+    height: 248px;
+    width: 142px;
+  }
+
+  #remote {
+    height: 248px;
+    width: 142px;
+  }
+
+  #remoteButtonChange {
+    width: 21px;
+    height: 21px;
+    transform: translate(57px, 123px);
+  }
+
+  #remoteButtonFiller {
+    width: 21px;
+    height: 21px;
+    transform: translate(57px, 123px);
+  }
+
+  #remoteButtonOff {
+    width: 17px;
+    height: 17px;
+    transform: translate(106px, 27px);
+  }
+
+  #jack {
+    width: 125px;
+  }
 }

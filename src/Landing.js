@@ -39,7 +39,7 @@ const Landing = () => {
 
   return (
     <div id="landingMaster">
-      <div id="landingContainer" className="FCAIC">
+      <div id="landingContainer">
         <div id="tvContainer">
           <img id="tv" src="tv.png" alt="tv" />
           <img
