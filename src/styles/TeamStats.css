@@ -167,7 +167,7 @@
   font-size: 14px;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 900px), (max-height: 1050px) {
   #TSBoxWrapper {
     width: 612px;
     height: 518px;
@@ -281,7 +281,7 @@
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 680px), (max-height: 750px) {
   #TSBoxWrapper {
     width: 522px;
     height: 442px;
@@ -375,7 +375,7 @@
   }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 570px), (max-height: 600px) {
   #TSBoxWrapper {
     width: 420px;
     height: 356px;
@@ -489,7 +489,7 @@
   }
 }
 
-@media (max-width: 436px) {
+@media (max-width: 436px), (max-height: 490px) {
   #TSBoxWrapper {
     width: 334px;
     height: 283px;
@@ -603,7 +603,7 @@
   }
 }
 
-@media (max-width: 355px) {
+@media (max-width: 355px), (max-height: 410px) {
   #TSBoxWrapper {
     width: 301px;
     height: 256px;

@@ -94,7 +94,7 @@
   animation-timing-function: linear;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 800px), (max-height: 915px) {
   #loadingContainer {
     min-height: 850px;
   }
