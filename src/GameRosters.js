@@ -104,7 +104,6 @@ const GameRosters = () => {
                   homeSkatersFinalState={homeSkatersFinalState}
                   defensemenObject={defensemenObject}
                   forwardsObject={forwardsObject}
-                  refresh={refresh}
                 />
                 <CSO gameData={gameData} scratchesObject={scratchesObject} />
               </div>
