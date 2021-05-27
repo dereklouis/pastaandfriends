@@ -158,7 +158,6 @@
 @media (max-width: 580px) {
   #landingContainer {
     min-height: 622px;
-    height: fit-content;
   }
 
   #tvContainer {
@@ -214,7 +213,7 @@
   }
 
   #jack {
-    width: 180px;
+    width: 150px;
   }
 }
 
@@ -247,7 +246,7 @@
   }
 
   #jack {
-    width: 150px;
+    width: 120px;
   }
 }
 
@@ -309,6 +308,6 @@
   }
 
   #jack {
-    width: 125px;
+    width: 115px;
   }
 }
