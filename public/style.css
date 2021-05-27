@@ -199,15 +199,6 @@ a {
   background-color: #ffb71c92;
 }
 
-@keyframes AASpin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .AAButtonOff {
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -216,11 +207,23 @@ a {
   background-color: rgba(0, 82, 11, 0.5);
 }
 
-.autoUpdateAnimation {
-  animation-name: AASpin;
-  animation-duration: 30s;
+@keyframes buttonRingPulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+.buttonRingPulse {
+  animation-name: buttonRingPulse;
   animation-iteration-count: infinite;
+  animation-duration: 3s;
   animation-timing-function: linear;
+  animation-delay: 1.5s;
 }
 
 @media (max-width: 875px) {

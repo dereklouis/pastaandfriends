@@ -17,6 +17,7 @@ const GameRosters = () => {
   const GRMaster = useRef(null);
   const refreshButtonGR = useRef(null);
   const AAButtonGR = useRef(null);
+  const ringPulseRefGR = useRef(null);
 
   useEffect(() => {
     checkSchedule(
@@ -28,9 +29,10 @@ const GameRosters = () => {
       setForwardsObject,
       setScratchesObject
     );
+    window.gameRostersAutoUpdate = undefined;
   }, []);
 
-  const refresh = (e, buttonConf) => {
+  const refresh = () => {
     checkSchedule(
       setGameData,
       setAwaySkatersFinalState,
@@ -40,8 +42,27 @@ const GameRosters = () => {
       setForwardsObject,
       setScratchesObject
     );
-    if (buttonConf === 'button') {
-      refreshButtonGR.current.classList.add('refreshButtonSpin');
+    refreshButtonGR.current.classList.add('refreshButtonSpin');
+    console.log('Game Rosters Data Fetched');
+  };
+
+  const autoRefresh = () => {
+    if (window.gameRostersAutoUpdate === undefined) {
+      window.gameRostersAutoUpdate = setInterval(() => {
+        console.log('Game Rosters Data Fetched');
+        checkSchedule(
+          setGameData,
+          setAwaySkatersFinalState,
+          setHomeSkatersFinalState,
+          setGoalieObject,
+          setDefensemenObject,
+          setForwardsObject,
+          setScratchesObject
+        );
+      }, 3000);
+    } else {
+      clearInterval(window.gameRostersAutoUpdate);
+      window.gameRostersAutoUpdate = undefined;
     }
   };
 
@@ -50,17 +71,19 @@ const GameRosters = () => {
   };
 
   const toggleAA = () => {
-    if (!AAButtonGR.current.classList.contains('autoUpdateAnimation')) {
+    if (!AAButtonGR.current.classList.contains('AAButtonOn')) {
       AAButtonGR.current.classList.remove('AAButtonOff');
-      AAButtonGR.current.classList.add('autoUpdateAnimation', 'AAButtonOn');
+      AAButtonGR.current.classList.add('AAButtonOn');
+      ringPulseRefGR.current.className = 'buttonRingPulse';
       refreshButtonGR.current.disabled = true;
     } else {
-      AAButtonGR.current.classList.remove('autoUpdateAnimation', 'AAButtonOn');
+      AAButtonGR.current.classList.remove('AAButtonOn');
       AAButtonGR.current.classList.add('AAButtonOff');
+      ringPulseRefGR.current.className = '';
       refreshButtonGR.current.disabled = false;
     }
+    autoRefresh();
   };
-
   return (
     <>
       {!gameData.length ? (
@@ -76,7 +99,7 @@ const GameRosters = () => {
               <div className="GRRefreshButtonRow">
                 <button
                   className="refreshButton refreshButtonGR"
-                  onClick={(e) => refresh(e, 'button')}
+                  onClick={refresh}
                   onAnimationEnd={resetButton}
                   ref={refreshButtonGR}
                 >
@@ -88,6 +111,7 @@ const GameRosters = () => {
                   ref={AAButtonGR}
                 >
                   AUTO UPDATE
+                  <div id="buttonRingGR" ref={ringPulseRefGR} />
                 </button>
               </div>
               <div

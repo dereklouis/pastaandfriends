@@ -23,6 +23,20 @@
   height: 90px;
   line-height: 20px;
   margin: 0px 0px 0px 25px;
+  position: relative;
+}
+
+#buttonRingBS {
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  border: 2px solid #ffb71c;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  margin: -2px 0px 0px -2px;
+  opacity: 0;
 }
 
 #BSBoxWrapper {
@@ -463,6 +477,10 @@
     font-size: 10px;
     margin: 0px 0px 0px 20px;
   }
+  #buttonRingBS {
+    width: 66px;
+    height: 66px;
+  }
 }
 
 @media (max-width: 650px) {
@@ -655,6 +673,11 @@
     margin: 0px 0px 0px 20px;
   }
 
+  #buttonRingBS {
+    width: 56px;
+    height: 56px;
+  }
+
   #boxscoreContainer {
     min-height: 560px;
   }
@@ -845,6 +868,11 @@
     line-height: 13px;
     font-size: 8px;
     margin: 0px 0px 0px 20px;
+  }
+
+  #buttonRingBS {
+    width: 51px;
+    height: 51px;
   }
 
   #boxscoreContainer {

@@ -12,14 +12,29 @@ const Boxscore = () => {
   const BSMaster = useRef(null);
   const refreshButtonBS = useRef(null);
   const AAButtonBS = useRef(null);
+  const ringPulseRef = useRef(null);
 
   useEffect(() => {
     checkSchedule(setGameData);
+    window.boxscoreAutoUpdate = undefined;
   }, []);
 
   const refresh = () => {
     checkSchedule(setGameData);
     refreshButtonBS.current.classList.add('refreshButtonSpin');
+    console.log('Boxscore Data Fetched');
+  };
+
+  const autoRefresh = () => {
+    if (window.boxscoreAutoUpdate === undefined) {
+      window.boxscoreAutoUpdate = setInterval(() => {
+        console.log('Boxscore Data Fetched');
+        checkSchedule(setGameData);
+      }, 3000);
+    } else {
+      clearInterval(window.boxscoreAutoUpdate);
+      window.boxscoreAutoUpdate = undefined;
+    }
   };
 
   const resetButton = () => {
@@ -27,17 +42,19 @@ const Boxscore = () => {
   };
 
   const toggleAA = () => {
-    if (!AAButtonBS.current.classList.contains('autoUpdateAnimation')) {
+    if (!AAButtonBS.current.classList.contains('AAButtonOn')) {
       AAButtonBS.current.classList.remove('AAButtonOff');
-      AAButtonBS.current.classList.add('autoUpdateAnimation', 'AAButtonOn');
+      AAButtonBS.current.classList.add('AAButtonOn');
+      ringPulseRef.current.className = 'buttonRingPulse';
       refreshButtonBS.current.disabled = true;
     } else {
-      AAButtonBS.current.classList.remove('autoUpdateAnimation', 'AAButtonOn');
+      AAButtonBS.current.classList.remove('AAButtonOn');
       AAButtonBS.current.classList.add('AAButtonOff');
+      ringPulseRef.current.className = '';
       refreshButtonBS.current.disabled = false;
     }
+    autoRefresh();
   };
-
   return (
     <>
       {!gameData.length ? (
@@ -66,6 +83,7 @@ const Boxscore = () => {
                     ref={AAButtonBS}
                   >
                     AUTO UPDATE
+                    <div id="buttonRingBS" ref={ringPulseRef} />
                   </button>
                 </div>
                 <div

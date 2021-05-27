@@ -23,6 +23,20 @@
   height: 90px;
   line-height: 20px;
   margin: 0px 0px 0px 25px;
+  position: relative;
+}
+
+#buttonRingGR {
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  border: 2px solid #ffb71c;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  margin: -2px 0px 0px -2px;
+  opacity: 0;
 }
 
 #GameRostersTitle {
@@ -98,7 +112,7 @@
 }
 
 .APSkatersWrapper::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
   background-color: #ffb71c;
   border-radius: 5px;
 }
@@ -398,6 +412,10 @@
     font-size: 10px;
     margin: 0px 0px 0px 20px;
   }
+  #buttonRingGR {
+    width: 66px;
+    height: 66px;
+  }
   #gameRostersContainer {
     min-height: 745px;
   }
@@ -529,6 +547,10 @@
     line-height: 14px;
     font-size: 8px;
     margin: 0px 0px 0px 20px;
+  }
+  #buttonRingGR {
+    width: 56px;
+    height: 56px;
   }
   #gameRostersContainer {
     min-height: 600px;
@@ -675,6 +697,10 @@
     line-height: 13px;
     font-size: 8px;
     margin: 0px 0px 0px 20px;
+  }
+  #buttonRingGR {
+    width: 51px;
+    height: 51px;
   }
   #gameRostersContainer {
     min-height: 500px;
