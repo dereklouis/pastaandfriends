@@ -114,6 +114,7 @@
   cursor: pointer;
   background-color: rgb(130, 11, 11);
   z-index: 10;
+  padding: 0px;
 }
 
 #jack {
@@ -162,7 +163,7 @@
   #tvContainer {
     width: 372px;
     height: 212px;
-    margin: 130px 0px 20px 0px;
+    margin: 95px 0px 0px 0px;
   }
 
   #tv {
@@ -180,6 +181,17 @@
     width: 365px;
     height: 201px;
     transform: translate(4px, 2px);
+  }
+
+  #remoteContainer {
+    margin: auto 80px auto 0px;
+    height: 248px;
+    width: 142px;
+  }
+
+  #remote {
+    height: 248px;
+    width: 142px;
   }
 
   #jack {

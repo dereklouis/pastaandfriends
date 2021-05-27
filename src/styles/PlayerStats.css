@@ -8,6 +8,11 @@
   padding: 25px 0px 25px 0px;
 }
 
+#PSMaster {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
 #PSSeason {
   margin: 115px 0px 0px 0px;
   color: white;
