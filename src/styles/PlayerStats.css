@@ -65,7 +65,7 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 205px;
+  height: 204px;
 }
 
 #noData {
@@ -180,7 +180,7 @@
 
   .columnWrap {
     margin: 0px 0px 0px 11px;
-    height: 154px;
+    height: 152px;
   }
 
   .position {
@@ -260,7 +260,7 @@
 
   .columnWrap {
     margin: 0px 0px 0px 9px;
-    height: 131px;
+    height: 127px;
   }
 
   .position {
@@ -356,7 +356,7 @@
 
   .columnWrap {
     margin: 0px 0px 0px 8px;
-    height: 118px;
+    height: 112px;
   }
 
   .position {
