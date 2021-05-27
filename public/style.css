@@ -18,7 +18,7 @@ body {
 }
 
 .backgroundPhoto {
-  background: url('/bruinsbackground.jpg') no-repeat center center fixed;
+  background: url('/bruinsbackground.jpg') no-repeat center center fixed !important;
   height: 100vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;

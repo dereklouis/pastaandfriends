@@ -15,7 +15,7 @@ const Dimmer = () => {
       className="dimmerOff"
       onAnimationEnd={handleAnimation}
       onClick={toggleBurgerSlide}
-    ></div>
+    />
   );
 };
 
