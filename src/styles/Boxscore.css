@@ -6,11 +6,23 @@
   overflow-y: auto;
 }
 
-.refreshButtonBS {
+.BSRefreshButtonRow {
   margin: 105px 0px 45px 0px;
+  display: flex;
+}
+
+.refreshButtonBS {
   width: 90px;
   height: 90px;
   line-height: 20px;
+  margin: 0px 25px 0px 0px;
+}
+
+.AAButtonBS {
+  width: 90px;
+  height: 90px;
+  line-height: 20px;
+  margin: 0px 0px 0px 25px;
 }
 
 #BSBoxWrapper {
@@ -428,15 +440,29 @@
   }
 }
 
-@media (max-width: 650px) {
-  .refreshButtonBS {
+@media (max-width: 675px) {
+  .BSRefreshButtonRow {
     margin: 95px 0px 35px 0px;
+  }
+
+  .refreshButtonBS {
     width: 70px;
     height: 70px;
     line-height: 16px;
     font-size: 10px;
+    margin: 0px 20px 0px 0px;
   }
 
+  .AAButtonBS {
+    width: 70px;
+    height: 70px;
+    line-height: 16px;
+    font-size: 10px;
+    margin: 0px 0px 0px 20px;
+  }
+}
+
+@media (max-width: 650px) {
   #boxscoreContainer {
     min-height: 700px;
   }
@@ -603,12 +629,24 @@
 }
 
 @media (max-width: 500px) {
-  .refreshButtonBS {
+  .BSRefreshButtonRow {
     margin: 92px 0px 30px 0px;
+  }
+
+  .refreshButtonBS {
     width: 60px;
     height: 60px;
     line-height: 14px;
     font-size: 8px;
+    margin: 0px 20px 0px 0px;
+  }
+
+  .AAButtonBS {
+    width: 60px;
+    height: 60px;
+    line-height: 14px;
+    font-size: 8px;
+    margin: 0px 0px 0px 20px;
   }
 
   #boxscoreContainer {
@@ -629,7 +667,7 @@
   }
 
   #teamLogoRow {
-    margin: 7px 0px 13px 0px;
+    margin: 4px 0px 12px 0px;
   }
 
   .BSTeamLogoContainer {
@@ -647,7 +685,7 @@
   }
 
   #venue {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   #awayTitle {
@@ -661,7 +699,7 @@
   }
 
   #timeColumn {
-    height: 64px;
+    min-height: 64px;
   }
 
   #BSPeriod {
@@ -780,12 +818,24 @@
 }
 
 @media (max-width: 375px) {
-  .refreshButtonBS {
+  .BSRefreshButtonRow {
     margin: 87px 0px 25px 0px;
+  }
+
+  .refreshButtonBS {
     width: 55px;
     height: 55px;
     line-height: 13px;
     font-size: 8px;
+    margin: 0px 20px 0px 0px;
+  }
+
+  .AAButtonBS {
+    width: 55px;
+    height: 55px;
+    line-height: 13px;
+    font-size: 8px;
+    margin: 0px 0px 0px 20px;
   }
 
   #boxscoreContainer {
@@ -806,7 +856,7 @@
   }
 
   #teamLogoRow {
-    margin: 6px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
   }
 
   .BSTeamLogoContainer {
@@ -824,7 +874,7 @@
   }
 
   #venue {
-    font-size: 11px;
+    font-size: 9px;
   }
 
   #awayTitle {
@@ -838,7 +888,7 @@
   }
 
   #timeColumn {
-    height: 51px;
+    min-height: 51px;
   }
 
   #BSPeriod {
@@ -871,7 +921,7 @@
   }
 
   .BSData {
-    margin: 3px;
+    margin: 2px;
     font-size: 11px;
   }
 
@@ -914,7 +964,8 @@
   }
 
   #BSStatsRow {
-    width: 75%;
+    width: 85%;
+    height: 125px;
   }
 
   .BSStatsColumn {

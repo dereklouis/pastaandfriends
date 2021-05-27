@@ -148,7 +148,29 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.refreshButton:hover {
+.refreshButton:enabled:hover {
+  background-color: #ffb71c6d;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+}
+
+.refreshButton:disabled {
+  cursor: none;
+  opacity: 0.3;
+}
+
+.AAButton {
+  outline: none;
+  z-index: 4;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid #ffb71c;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  font-family: 'Roboto', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.AAButton:hover {
   background-color: #ffb71c6d;
   border: 2px solid rgba(0, 0, 0, 0.9);
 }
@@ -174,6 +196,31 @@ a {
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
   animation-duration: 1s;
+  background-color: #ffb71c92;
+}
+
+@keyframes AASpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.AAButtonOff {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.AAButtonOn {
+  background-color: rgba(0, 82, 11, 0.5);
+}
+
+.autoUpdateAnimation {
+  animation-name: AASpin;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 @media (max-width: 875px) {

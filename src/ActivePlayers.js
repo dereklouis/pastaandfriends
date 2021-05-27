@@ -5,7 +5,15 @@ const ActivePlayers = (props) => {
     .filter((play, idx) => scoringPlaysArr.includes(idx))
     .map((play) => play.players[0].player.id);
 
-  console.log(111, props.gameData[0].liveData);
+  let prevWidth = window.innerWidth;
+
+  window.addEventListener('resize', (e) => {
+    if (prevWidth >= 676 && window.innerWidth <= 675) {
+      window.location.reload();
+    } else if (prevWidth <= 675 && window.innerWidth >= 676) {
+      window.location.reload();
+    }
+  });
   return (
     <div id="gameRosterBoxFront" className="over">
       <div id="GRTeamLogoRow">
@@ -31,281 +39,331 @@ const ActivePlayers = (props) => {
           </div>
         </div>
       </div>
-      <div className="GRLine" />
+      <div className="GRLineTop" />
       <div className="APSkatersWrapper FCAIC">
-        <div className="GRRowC">
-          <p className="GRCategory">GOALTENDERS</p>
-        </div>
-        <div className="GRRowSB">
-          <div className="GRStatsColumnGoaltenders">
-            {!props.gameData[0].liveData.boxscore.teams.away.scratches
-              .length ? (
-              <p className="NotYet">NOT YET POSTED...</p>
-            ) : (
-              props.gameData[0].liveData.boxscore.teams.away.goalies
-                .filter((goalieId) =>
-                  props.gameData[0].liveData.boxscore.teams.away.onIce.includes(
-                    goalieId
-                  )
-                )
-                .map((goalieId, idx) => (
-                  <div className="goalieOnIceRow" key={idx}>
-                    <p className="GRName">
-                      {props.goalieObject[goalieId].toUpperCase()}
-                    </p>
-                    <img alt="Net" className="netLogo" src="net.png" />
-                  </div>
-                ))
-            )}
-            {!!props.gameData[0].liveData.boxscore.teams.away.scratches
-              .length &&
-              props.gameData[0].liveData.boxscore.teams.away.goalies
-                .filter(
-                  (goalieId) =>
-                    !props.gameData[0].liveData.boxscore.teams.away.onIce.includes(
+        <div className="PreWrap FCAIC">
+          <div className="GRRowC">
+            <p className="GRCategory">GOALTENDERS</p>
+          </div>
+          <div className="GRRowSB">
+            <div className="GRStatsColumnGoaltenders">
+              {!props.gameData[0].liveData.boxscore.teams.away.scratches
+                .length ? (
+                <p className="NotYet">NOT YET POSTED...</p>
+              ) : (
+                props.gameData[0].liveData.boxscore.teams.away.goalies
+                  .filter((goalieId) =>
+                    props.gameData[0].liveData.boxscore.teams.away.onIce.includes(
                       goalieId
                     )
-                )
-                .map((goalieId, idx) => (
-                  <p className="GRName" key={idx}>
-                    {props.goalieObject[goalieId].toUpperCase()}
-                  </p>
-                ))}
-          </div>
-          <div className="GRStatsColumnGoaltenders">
-            {!props.gameData[0].liveData.boxscore.teams.home.scratches
-              .length ? (
-              <p className="NotYet">NOT YET POSTED...</p>
-            ) : (
-              props.gameData[0].liveData.boxscore.teams.home.goalies
-                .filter((goalieId) =>
-                  props.gameData[0].liveData.boxscore.teams.home.onIce.includes(
-                    goalieId
                   )
-                )
-                .map((goalieId, idx) => (
-                  <div className="goalieOnIceRow" key={idx}>
-                    <p className="GRName">
-                      {props.goalieObject[goalieId].toUpperCase()}
+                  .map((goalieId, idx) => (
+                    <div className="goalieOnIceRow" key={`${idx}(65)`}>
+                      <p className="GRName">
+                        {window.innerWidth > 675
+                          ? props.goalieObject[goalieId].toUpperCase()
+                          : props.goalieObject[goalieId]
+                              .toUpperCase()
+                              .split(' ')[1]}
+                      </p>
+                      <img alt="Net" className="netLogo" src="net.png" />
+                    </div>
+                  ))
+              )}
+              {!!props.gameData[0].liveData.boxscore.teams.away.scratches
+                .length &&
+                props.gameData[0].liveData.boxscore.teams.away.goalies
+                  .filter(
+                    (goalieId) =>
+                      !props.gameData[0].liveData.boxscore.teams.away.onIce.includes(
+                        goalieId
+                      )
+                  )
+                  .map((goalieId, idx) => (
+                    <p className="GRName" key={`${idx}(87)`}>
+                      {window.innerWidth > 675
+                        ? props.goalieObject[goalieId].toUpperCase()
+                        : props.goalieObject[goalieId]
+                            .toUpperCase()
+                            .split(' ')[1]}
                     </p>
-                    <img alt="Net" className="netLogo" src="net.png" />
-                  </div>
-                ))
-            )}
-            {!!props.gameData[0].liveData.boxscore.teams.home.scratches
-              .length &&
-              props.gameData[0].liveData.boxscore.teams.home.goalies
-                .filter(
-                  (goalieId) =>
-                    !props.gameData[0].liveData.boxscore.teams.home.onIce.includes(
+                  ))}
+            </div>
+            <div className="GRStatsColumnGoaltenders">
+              {!props.gameData[0].liveData.boxscore.teams.home.scratches
+                .length ? (
+                <p className="NotYet">NOT YET POSTED...</p>
+              ) : (
+                props.gameData[0].liveData.boxscore.teams.home.goalies
+                  .filter((goalieId) =>
+                    props.gameData[0].liveData.boxscore.teams.home.onIce.includes(
                       goalieId
                     )
-                )
-                .map((goalieId, idx) => (
-                  <p className="GRName" key={idx}>
-                    {props.goalieObject[goalieId].toUpperCase()}
-                  </p>
-                ))}
+                  )
+                  .map((goalieId, idx) => (
+                    <div className="goalieOnIceRow" key={`${idx}(108)`}>
+                      <p className="GRName">
+                        {window.innerWidth > 675
+                          ? props.goalieObject[goalieId].toUpperCase()
+                          : props.goalieObject[goalieId]
+                              .toUpperCase()
+                              .split(' ')[1]}
+                      </p>
+                      <img alt="Net" className="netLogo" src="net.png" />
+                    </div>
+                  ))
+              )}
+              {!!props.gameData[0].liveData.boxscore.teams.home.scratches
+                .length &&
+                props.gameData[0].liveData.boxscore.teams.home.goalies
+                  .filter(
+                    (goalieId) =>
+                      !props.gameData[0].liveData.boxscore.teams.home.onIce.includes(
+                        goalieId
+                      )
+                  )
+                  .map((goalieId, idx) => (
+                    <p className="GRName" key={`${idx}(130)`}>
+                      {window.innerWidth > 675
+                        ? props.goalieObject[goalieId].toUpperCase()
+                        : props.goalieObject[goalieId]
+                            .toUpperCase()
+                            .split(' ')[1]}
+                    </p>
+                  ))}
+            </div>
           </div>
-        </div>
-        <div className="GRLine" />
-        <div className="GRRowC">
-          <p className="GRCategory">DEFENSEMEN</p>
-        </div>
-        <div className="GRRowSB">
-          <div className="GRStatsColumnDefensemen">
-            {!props.gameData[0].liveData.boxscore.teams.away.scratches
-              .length ? (
-              <p className="NotYet">NOT YET POSTED...</p>
-            ) : (
-              props.awaySkatersFinalState
-                .filter((id) => props.defensemenObject[id] !== undefined)
-                .map((skaterId, idx) => {
-                  if (
-                    props.gameData[0].liveData.boxscore.teams.away.onIce.includes(
-                      skaterId
-                    )
-                  ) {
-                    return (
-                      <div className="skaterOnIceRow" key={idx}>
-                        <p className="GRName">
-                          {props.defensemenObject[skaterId].toUpperCase()}
-                        </p>
-                        {goalScorerIdArr
-                          .filter((id) => id === skaterId)
-                          .map((goal) => (
-                            <div className="puck" key={goal}></div>
-                          ))}
-                        <img
-                          alt="Stick"
-                          className="skaterOnIceStick"
-                          src="stick.png"
-                        />
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div className="skaterOnIceRow" key={idx}>
-                        <p className="GRName">
-                          {props.defensemenObject[skaterId].toUpperCase()}
-                        </p>
-                        {goalScorerIdArr
-                          .filter((id) => id === skaterId)
-                          .map((goal) => (
-                            <div className="puck" key={goal}></div>
-                          ))}
-                      </div>
-                    );
-                  }
-                })
-            )}
+          <div className="GRLine" />
+          <div className="GRRowC">
+            <p className="GRCategory">DEFENSEMEN</p>
           </div>
-          <div className="GRStatsColumnDefensemen">
-            {!props.gameData[0].liveData.boxscore.teams.home.scratches
-              .length ? (
-              <p className="NotYet">NOT YET POSTED...</p>
-            ) : (
-              props.homeSkatersFinalState
-                .filter((id) => props.defensemenObject[id] !== undefined)
-                .map((skaterId, idx) => {
-                  if (
-                    props.gameData[0].liveData.boxscore.teams.home.onIce.includes(
-                      skaterId
-                    )
-                  ) {
-                    return (
-                      <div className="skaterOnIceRow" key={idx}>
-                        <p className="GRName">
-                          {props.defensemenObject[skaterId].toUpperCase()}
-                        </p>
-                        {goalScorerIdArr
-                          .filter((id) => id === skaterId)
-                          .map((goal) => (
-                            <div className="puck" key={goal}></div>
-                          ))}
-                        <img
-                          alt="Stick"
-                          className="skaterOnIceStick"
-                          src="stick.png"
-                        />
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div className="skaterOnIceRow" key={idx}>
-                        <p className="GRName">
-                          {props.defensemenObject[skaterId].toUpperCase()}
-                        </p>
-                        {goalScorerIdArr
-                          .filter((id) => id === skaterId)
-                          .map((goal) => (
-                            <div className="puck" key={goal}></div>
-                          ))}
-                      </div>
-                    );
-                  }
-                })
-            )}
+          <div className="GRRowSB">
+            <div className="GRStatsColumnDefensemen">
+              {!props.gameData[0].liveData.boxscore.teams.away.scratches
+                .length ? (
+                <p className="NotYet">NOT YET POSTED...</p>
+              ) : (
+                props.awaySkatersFinalState
+                  .filter((id) => props.defensemenObject[id] !== undefined)
+                  .map((skaterId, idx) => {
+                    if (
+                      props.gameData[0].liveData.boxscore.teams.away.onIce.includes(
+                        skaterId
+                      )
+                    ) {
+                      return (
+                        <div className="skaterOnIceRow" key={`${idx}(159)`}>
+                          <p className="GRName">
+                            {window.innerWidth > 675
+                              ? props.defensemenObject[skaterId].toUpperCase()
+                              : props.defensemenObject[skaterId]
+                                  .toUpperCase()
+                                  .split(' ')[1]}
+                          </p>
+                          {goalScorerIdArr
+                            .filter((id) => id === skaterId)
+                            .map((goal, idx) => (
+                              <div className="puck" key={`${idx}(170)`}></div>
+                            ))}
+                          <img
+                            alt="Stick"
+                            className="skaterOnIceStick"
+                            src="stick.png"
+                          />
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div className="skaterOnIceRow" key={`${idx}(181)`}>
+                          <p className="GRName">
+                            {window.innerWidth > 675
+                              ? props.defensemenObject[skaterId].toUpperCase()
+                              : props.defensemenObject[skaterId]
+                                  .toUpperCase()
+                                  .split(' ')[1]}
+                          </p>
+                          {goalScorerIdArr
+                            .filter((id) => id === skaterId)
+                            .map((goal, idx) => (
+                              <div className="puck" key={`${idx}(192)`}></div>
+                            ))}
+                        </div>
+                      );
+                    }
+                  })
+              )}
+            </div>
+            <div className="GRStatsColumnDefensemen">
+              {!props.gameData[0].liveData.boxscore.teams.home.scratches
+                .length ? (
+                <p className="NotYet">NOT YET POSTED...</p>
+              ) : (
+                props.homeSkatersFinalState
+                  .filter((id) => props.defensemenObject[id] !== undefined)
+                  .map((skaterId, idx) => {
+                    if (
+                      props.gameData[0].liveData.boxscore.teams.home.onIce.includes(
+                        skaterId
+                      )
+                    ) {
+                      return (
+                        <div className="skaterOnIceRow" key={`${idx}(214)`}>
+                          <p className="GRName">
+                            {window.innerWidth > 675
+                              ? props.defensemenObject[skaterId].toUpperCase()
+                              : props.defensemenObject[skaterId]
+                                  .toUpperCase()
+                                  .split(' ')[1]}
+                          </p>
+                          {goalScorerIdArr
+                            .filter((id) => id === skaterId)
+                            .map((goal, idx) => (
+                              <div className="puck" key={`${idx}(225)`}></div>
+                            ))}
+                          <img
+                            alt="Stick"
+                            className="skaterOnIceStick"
+                            src="stick.png"
+                          />
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div className="skaterOnIceRow" key={`${idx}(236)`}>
+                          <p className="GRName">
+                            {window.innerWidth > 675
+                              ? props.defensemenObject[skaterId].toUpperCase()
+                              : props.defensemenObject[skaterId]
+                                  .toUpperCase()
+                                  .split(' ')[1]}
+                          </p>
+                          {goalScorerIdArr
+                            .filter((id) => id === skaterId)
+                            .map((goal, idx) => (
+                              <div className="puck" key={`${idx}(247)`}></div>
+                            ))}
+                        </div>
+                      );
+                    }
+                  })
+              )}
+            </div>
           </div>
-        </div>
-        <div className="GRLine" />
-        <div className="GRRowC">
-          <p className="GRCategory">FORWARDS</p>
-        </div>
-        <div className="GRRowSB">
-          <div className="GRStatsColumnForwards">
-            {!props.gameData[0].liveData.boxscore.teams.away.scratches
-              .length ? (
-              <p className="NotYet">NOT YET POSTED...</p>
-            ) : (
-              props.awaySkatersFinalState
-                .filter((id) => props.forwardsObject[id] !== undefined)
-                .map((skaterId, idx) => {
-                  if (
-                    props.gameData[0].liveData.boxscore.teams.away.onIce.includes(
-                      skaterId
-                    )
-                  ) {
-                    return (
-                      <div className="skaterOnIceRow" key={idx}>
-                        <p className="GRName">
-                          {props.forwardsObject[skaterId].toUpperCase()}
-                        </p>
-                        {goalScorerIdArr
-                          .filter((id) => id === skaterId)
-                          .map((goal) => (
-                            <div className="puck" key={goal}></div>
-                          ))}
-                        <img
-                          alt="Stick"
-                          className="skaterOnIceStick"
-                          src="stick.png"
-                        />
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div className="skaterOnIceRow" key={idx}>
-                        <p className="GRName">
-                          {props.forwardsObject[skaterId].toUpperCase()}
-                        </p>
-                        {goalScorerIdArr
-                          .filter((id) => id === skaterId)
-                          .map((goal) => (
-                            <div className="puck" key={goal}></div>
-                          ))}
-                      </div>
-                    );
-                  }
-                })
-            )}
+          <div className="GRLine" />
+          <div className="GRRowC">
+            <p className="GRCategory">FORWARDS</p>
           </div>
-          <div className="GRStatsColumnForwards">
-            {!props.gameData[0].liveData.boxscore.teams.home.scratches
-              .length ? (
-              <p className="NotYet">NOT YET POSTED...</p>
-            ) : (
-              props.homeSkatersFinalState
-                .filter((id) => props.forwardsObject[id] !== undefined)
-                .map((skaterId, idx) => {
-                  if (
-                    props.gameData[0].liveData.boxscore.teams.home.onIce.includes(
-                      skaterId
-                    )
-                  ) {
-                    return (
-                      <div className="skaterOnIceRow" key={idx}>
-                        <p className="GRName">
-                          {props.forwardsObject[skaterId].toUpperCase()}
-                        </p>
-                        {goalScorerIdArr
-                          .filter((id) => id === skaterId)
-                          .map((goal) => (
-                            <div className="puck" key={goal}></div>
-                          ))}
-                        <img
-                          alt="Stick"
-                          className="skaterOnIceStick"
-                          src="stick.png"
-                        />
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div className="skaterOnIceRow" key={idx}>
-                        <p className="GRName">
-                          {props.forwardsObject[skaterId].toUpperCase()}
-                        </p>
-                        {goalScorerIdArr
-                          .filter((id) => id === skaterId)
-                          .map((goal) => (
-                            <div className="puck" key={goal}></div>
-                          ))}
-                      </div>
-                    );
-                  }
-                })
-            )}
+          <div className="GRRowSB">
+            <div className="GRStatsColumnForwards">
+              {!props.gameData[0].liveData.boxscore.teams.away.scratches
+                .length ? (
+                <p className="NotYet">NOT YET POSTED...</p>
+              ) : (
+                props.awaySkatersFinalState
+                  .filter((id) => props.forwardsObject[id] !== undefined)
+                  .map((skaterId, idx) => {
+                    if (
+                      props.gameData[0].liveData.boxscore.teams.away.onIce.includes(
+                        skaterId
+                      )
+                    ) {
+                      return (
+                        <div className="skaterOnIceRow" key={`${idx}(275)`}>
+                          <p className="GRName">
+                            {window.innerWidth > 675
+                              ? props.forwardsObject[skaterId].toUpperCase()
+                              : props.forwardsObject[skaterId]
+                                  .toUpperCase()
+                                  .split(' ')[1]}
+                          </p>
+                          {goalScorerIdArr
+                            .filter((id) => id === skaterId)
+                            .map((goal, idx) => (
+                              <div className="puck" key={`${idx}(286)`}></div>
+                            ))}
+                          <img
+                            alt="Stick"
+                            className="skaterOnIceStick"
+                            src="stick.png"
+                          />
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div className="skaterOnIceRow" key={`${idx}(297)`}>
+                          <p className="GRName">
+                            {window.innerWidth > 675
+                              ? props.forwardsObject[skaterId].toUpperCase()
+                              : props.forwardsObject[skaterId]
+                                  .toUpperCase()
+                                  .split(' ')[1]}
+                          </p>
+                          {goalScorerIdArr
+                            .filter((id) => id === skaterId)
+                            .map((goal, idx) => (
+                              <div className="puck" key={`${idx}(308)`}></div>
+                            ))}
+                        </div>
+                      );
+                    }
+                  })
+              )}
+            </div>
+            <div className="GRStatsColumnForwards">
+              {!props.gameData[0].liveData.boxscore.teams.home.scratches
+                .length ? (
+                <p className="NotYet">NOT YET POSTED...</p>
+              ) : (
+                props.homeSkatersFinalState
+                  .filter((id) => props.forwardsObject[id] !== undefined)
+                  .map((skaterId, idx) => {
+                    if (
+                      props.gameData[0].liveData.boxscore.teams.home.onIce.includes(
+                        skaterId
+                      )
+                    ) {
+                      return (
+                        <div className="skaterOnIceRow" key={`${idx}(330)`}>
+                          <p className="GRName">
+                            {window.innerWidth > 675
+                              ? props.forwardsObject[skaterId].toUpperCase()
+                              : props.forwardsObject[skaterId]
+                                  .toUpperCase()
+                                  .split(' ')[1]}
+                          </p>
+                          {goalScorerIdArr
+                            .filter((id) => id === skaterId)
+                            .map((goal, idx) => (
+                              <div className="puck" key={`${idx}(341)`}></div>
+                            ))}
+                          <img
+                            alt="Stick"
+                            className="skaterOnIceStick"
+                            src="stick.png"
+                          />
+                        </div>
+                      );
+                    } else {
+                      return (
+                        <div className="skaterOnIceRow" key={`${idx}(351)`}>
+                          <p className="GRName">
+                            {window.innerWidth > 675
+                              ? props.forwardsObject[skaterId].toUpperCase()
+                              : props.forwardsObject[skaterId]
+                                  .toUpperCase()
+                                  .split(' ')[1]}
+                          </p>
+                          {goalScorerIdArr
+                            .filter((id) => id === skaterId)
+                            .map((goal, idx) => (
+                              <div className="puck" key={`${idx}(363)`}></div>
+                            ))}
+                        </div>
+                      );
+                    }
+                  })
+              )}
+            </div>
           </div>
         </div>
       </div>

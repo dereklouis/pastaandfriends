@@ -3,10 +3,12 @@ import toggleBurgerSlide from './ToggleBurgerSlide';
 import { Link } from 'react-router-dom';
 
 const SlideMenu = () => {
-  const slideMenu = document.getElementById('SMContainer');
+  const slideMenuElement = document.getElementById('SMContainer');
   window.onresize = () => {
-    if (slideMenu.className === 'SMOpen' && window.innerWidth > 800) {
-      toggleBurgerSlide();
+    if (slideMenuElement) {
+      if (slideMenuElement.className === 'SMOpen' && window.innerWidth > 800) {
+        toggleBurgerSlide();
+      }
     }
   };
 

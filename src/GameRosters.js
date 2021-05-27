@@ -16,6 +16,7 @@ const GameRosters = () => {
   const [scratchesObject, setScratchesObject] = useState({});
   const GRMaster = useRef(null);
   const refreshButtonGR = useRef(null);
+  const AAButtonGR = useRef(null);
 
   useEffect(() => {
     checkSchedule(
@@ -29,7 +30,7 @@ const GameRosters = () => {
     );
   }, []);
 
-  const refresh = () => {
+  const refresh = (e, buttonConf) => {
     checkSchedule(
       setGameData,
       setAwaySkatersFinalState,
@@ -39,11 +40,25 @@ const GameRosters = () => {
       setForwardsObject,
       setScratchesObject
     );
-    refreshButtonGR.current.classList.add('refreshButtonSpin');
+    if (buttonConf === 'button') {
+      refreshButtonGR.current.classList.add('refreshButtonSpin');
+    }
   };
 
   const resetButton = () => {
     refreshButtonGR.current.classList.remove('refreshButtonSpin');
+  };
+
+  const toggleAA = () => {
+    if (!AAButtonGR.current.classList.contains('autoUpdateAnimation')) {
+      AAButtonGR.current.classList.remove('AAButtonOff');
+      AAButtonGR.current.classList.add('autoUpdateAnimation', 'AAButtonOn');
+      refreshButtonGR.current.disabled = true;
+    } else {
+      AAButtonGR.current.classList.remove('autoUpdateAnimation', 'AAButtonOn');
+      AAButtonGR.current.classList.add('AAButtonOff');
+      refreshButtonGR.current.disabled = false;
+    }
   };
 
   return (
@@ -58,14 +73,23 @@ const GameRosters = () => {
             </div>
           ) : (
             <>
-              <button
-                className="refreshButton refreshButtonGR"
-                onClick={refresh}
-                onAnimationEnd={resetButton}
-                ref={refreshButtonGR}
-              >
-                REFRESH STATS
-              </button>
+              <div className="GRRefreshButtonRow">
+                <button
+                  className="refreshButton refreshButtonGR"
+                  onClick={(e) => refresh(e, 'button')}
+                  onAnimationEnd={resetButton}
+                  ref={refreshButtonGR}
+                >
+                  REFRESH STATS
+                </button>
+                <button
+                  className="AAButton AAButtonGR AAButtonOff"
+                  onClick={toggleAA}
+                  ref={AAButtonGR}
+                >
+                  AUTO UPDATE
+                </button>
+              </div>
               <div
                 id="GRBoxWrapper"
                 onClick={(e) => flipCard(e, GRMaster)}
@@ -80,6 +104,7 @@ const GameRosters = () => {
                   homeSkatersFinalState={homeSkatersFinalState}
                   defensemenObject={defensemenObject}
                   forwardsObject={forwardsObject}
+                  refresh={refresh}
                 />
                 <CSO gameData={gameData} scratchesObject={scratchesObject} />
               </div>

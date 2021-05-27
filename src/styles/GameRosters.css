@@ -6,11 +6,23 @@
   overflow-y: auto;
 }
 
-.refreshButtonGR {
+.GRRefreshButtonRow {
   margin: 105px 0px 45px 0px;
+  display: flex;
+}
+
+.refreshButtonGR {
   width: 90px;
   height: 90px;
   line-height: 20px;
+  margin: 0px 25px 0px 0px;
+}
+
+.AAButtonGR {
+  width: 90px;
+  height: 90px;
+  line-height: 20px;
+  margin: 0px 0px 0px 25px;
 }
 
 #GameRostersTitle {
@@ -65,10 +77,6 @@
   margin: 0px 0px 10px 0px;
 }
 
-.GRLAHC {
-  height: 101px;
-}
-
 .GRTeamLogoBox {
   width: 75px;
   height: 75px;
@@ -90,10 +98,13 @@
 }
 
 .APSkatersWrapper::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
   background-color: #ffb71c;
   border-radius: 5px;
-  transform: translate(-10px, 0px);
+}
+
+.PreWrap {
+  width: 100%;
 }
 
 .GRRowSB {
@@ -146,9 +157,10 @@
   flex-direction: column;
   align-items: center;
   width: 275px;
-  height: 350px;
+  height: 340px;
   flex-wrap: wrap;
   gap: 0px 20px;
+  margin: 10px 0px 0px 0px;
 }
 
 .GRStatsColumnOfficials {
@@ -156,6 +168,7 @@
   flex-direction: column;
   align-items: center;
   width: 250px;
+  padding: 0px 0px 20px 0px;
 }
 
 .GRLine {
@@ -165,6 +178,13 @@
   margin: 10px 0px 0px 0px;
 }
 
+.GRLineTop {
+  height: 1px;
+  width: 85%;
+  background-color: black;
+  margin: 6px 0px 0px 0px;
+}
+
 .GRCategory {
   font-size: 20px;
   font-weight: bold;
@@ -172,7 +192,7 @@
   background-color: black;
   padding: 4px 20px;
   border-radius: 20px;
-  margin: 12px 0px 2px 0px;
+  margin: 12px 0px 4px 0px;
 }
 
 .GRName {
@@ -213,29 +233,25 @@
 .skaterOnIceStick {
   width: auto;
   height: 20px;
-  margin: 0px 0px 0px 10px;
+  margin: 0px 0px 0px 8px;
   align-self: flex-start;
 }
 
 .puck {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   background-color: black;
   border-radius: 50%;
-  margin: 0px 0px 0px 5px;
+  margin: 2px 0px 0px 5px;
+}
+
+#CSOWrapper {
+  width: 90%;
 }
 
 @media (max-width: 875px) {
   #gameRostersContainer {
     min-height: 950px;
-  }
-
-  .refreshButtonGR {
-    margin: 100px 0px 40px 0px;
-    width: 85px;
-    height: 85px;
-    line-height: 20px;
-    font-size: 13px;
   }
 
   #GameRostersTitle {
@@ -268,9 +284,6 @@
     margin: 0px 0px 8px 0px;
   }
 
-  .GRLAHC {
-    height: 76px;
-  }
   .GRTeamLogoBox {
     width: 56px;
     height: 56px;
@@ -291,12 +304,15 @@
 
   .GRStatsColumnDefensemen {
     width: 188px;
-    height: 131px;
+    height: 138px;
   }
 
   .GRStatsColumnForwards {
     width: 188px;
     height: 263px;
+  }
+  .GRLineTop {
+    margin: 4px 0px 4px 0px;
   }
   .GRLine {
     height: 1px;
@@ -307,7 +323,7 @@
     font-size: 15px;
     padding: 4px 15px;
     border-radius: 15px;
-    margin: 9px 0px 2px 0px;
+    margin: 5px 0px 7px 0px;
   }
 
   .GRName {
@@ -322,29 +338,68 @@
 
   .skaterOnIceStick {
     height: 15px;
-    margin: 0px 0px 0px 8px;
+    margin: 2px 0px 0px 7px;
   }
 
   .puck {
     width: 6px;
     height: 6px;
-    background-color: black;
     border-radius: 50%;
-    margin: 0px 0px 0px 5px;
+    margin: 2px 0px 0px 5px;
+  }
+  #CSOWrapper {
+    overflow-y: auto;
+  }
+
+  #CSOWrapper::-webkit-scrollbar-thumb {
+    background: rgba(113, 113, 113, 0.7);
+    border-radius: 5px;
+  }
+
+  #CSOWrapper::-webkit-scrollbar {
+    width: 6px;
+    background-color: #ffb71c;
+    border-radius: 5px;
+  }
+  .GRScratchColumn {
+    width: 275px;
+    height: auto;
+    flex-wrap: nowrap;
+    gap: 0px;
+    align-self: flex-start;
+    margin: 0px 0px 5px 0px;
+  }
+  .GRStatsColumnOfficials {
+    padding: 0px 0px 10px 0px;
+  }
+  .GRNameScratch {
+    margin: 4px 0px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 675px) {
-  #gameRostersContainer {
-    min-height: 745px;
+  .GRRefreshButtonRow {
+    margin: 95px 0px 35px 0px;
   }
 
   .refreshButtonGR {
-    margin: 95px 0px 30px 0px;
-    width: 75px;
-    height: 75px;
-    line-height: 18px;
-    font-size: 12px;
+    width: 70px;
+    height: 70px;
+    line-height: 16px;
+    font-size: 10px;
+    margin: 0px 20px 0px 0px;
+  }
+
+  .AAButtonGR {
+    width: 70px;
+    height: 70px;
+    line-height: 16px;
+    font-size: 10px;
+    margin: 0px 0px 0px 20px;
+  }
+  #gameRostersContainer {
+    min-height: 745px;
   }
 
   #GameRostersTitle {
@@ -377,10 +432,6 @@
     margin: 0px 0px 7px 0px;
   }
 
-  .GRLAHC {
-    height: 57px;
-  }
-
   .GRTeamLogoBox {
     width: 50px;
     height: 50px;
@@ -390,9 +441,10 @@
     max-width: 50px;
     max-height: 50px;
   }
-  /* .APSkatersWrapper {
+  .APSkatersWrapper {
     overflow-y: auto;
-  } */
+    height: 415px;
+  }
   .GRStatsColumn {
     width: 188px;
   }
@@ -404,18 +456,23 @@
 
   .GRStatsColumnDefensemen {
     width: 188px;
-    height: 131px;
+    height: 142px;
   }
 
   .GRStatsColumnForwards {
     width: 188px;
-    height: 263px;
+    height: 288px;
   }
-
+  .GRRowSB {
+    width: 85%;
+  }
+  .GRLineTop {
+    margin: 4px 0px 0px 0px;
+  }
   .GRLine {
     height: 1px;
     width: 85%;
-    margin: 12px 0px 2px 0px;
+    margin: 4px 0px 2px 0px;
   }
   .GRCategory {
     font-size: 15px;
@@ -426,7 +483,7 @@
 
   .GRName {
     margin: 3px 0px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .netLogo {
@@ -436,14 +493,310 @@
 
   .skaterOnIceStick {
     height: 15px;
-    margin: 0px 0px 0px 8px;
+    margin: 3px 0px 0px 3px;
   }
 
   .puck {
     width: 6px;
     height: 6px;
-    background-color: black;
     border-radius: 50%;
+    margin: 3px 0px 0px 5px;
+  }
+  #CSOWrapper::-webkit-scrollbar {
+    width: 5px;
+  }
+  .GRStatsColumnOfficials {
+    padding: 0px 0px 9px 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .GRRefreshButtonRow {
+    margin: 92px 0px 30px 0px;
+  }
+
+  .refreshButtonGR {
+    width: 60px;
+    height: 60px;
+    line-height: 14px;
+    font-size: 8px;
+    margin: 0px 20px 0px 0px;
+  }
+
+  .AAButtonGR {
+    width: 60px;
+    height: 60px;
+    line-height: 14px;
+    font-size: 8px;
+    margin: 0px 0px 0px 20px;
+  }
+  #gameRostersContainer {
+    min-height: 600px;
+  }
+
+  #GameRostersTitle {
+    padding: 5px 16px;
+    border-radius: 19px;
+    font-size: 14px;
+    margin: 14px 0px;
+  }
+
+  #GRBoxWrapper {
+    width: 350px;
+    height: 392px;
+    border-radius: 15px;
+  }
+
+  #gameRosterBoxFront,
+  #gameRosterBoxBack {
+    width: 338px;
+    height: 380px;
+    border-radius: 15px;
+    border: 6px solid black;
+    border-radius: 15px;
+  }
+  #GRTeamLogoRow {
+    margin: 7px 0px 8px 0px;
+  }
+
+  .GRAwayHome {
+    font-size: 8px;
+    margin: 0px 0px 6px 0px;
+  }
+
+  .GRTeamLogoBox {
+    width: 50px;
+    height: 50px;
+  }
+
+  .GRTeamLogo {
+    max-width: 50px;
+    max-height: 50px;
+  }
+  .APSkatersWrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 280px;
+  }
+  .GRStatsColumn {
+    width: 188px;
+  }
+
+  .GRStatsColumnGoaltenders {
+    width: 188px;
+    min-height: 23px;
+  }
+
+  .GRStatsColumnDefensemen {
+    width: 188px;
+    height: 142px;
+  }
+
+  .GRStatsColumnForwards {
+    width: 188px;
+    height: 288px;
+  }
+
+  .GRRowSB {
+    width: 90%;
+  }
+  .GRLineTop {
+    margin: 4px 0px 0px 0px;
+  }
+  .GRLine {
+    height: 1px;
+    width: 85%;
+    margin: 4px 0px 2px 0px;
+  }
+  .GRCategory {
+    font-size: 13px;
+    padding: 4px 13px;
+    border-radius: 13px;
+    margin: 8px 0px 9px 0px;
+  }
+
+  .GRName {
+    margin: 3px 0px;
+    font-size: 15px;
+  }
+
+  .netLogo {
+    width: 18px;
+    margin: 0px 0px 0px 6px;
+  }
+
+  .skaterOnIceStick {
+    height: 15px;
+    margin: 0px 0px 0px 3px;
+  }
+
+  .puck {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: 3px 0px 0px 3px;
+  }
+  .APSkatersWrapper::-webkit-scrollbar {
+    width: 4px;
+  }
+  #CSOWrapper::-webkit-scrollbar {
+    width: 4px;
+  }
+  .GRScratchColumn {
+    width: 275px;
+    margin: 0px 0px 3px 0px;
+  }
+  .GRNameScratch {
+    margin: 3px 0px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .GRStatsColumnOfficials {
+    padding: 0px 0px 8px 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .GRRefreshButtonRow {
+    margin: 87px 0px 25px 0px;
+  }
+
+  .refreshButtonGR {
+    width: 55px;
+    height: 55px;
+    line-height: 13px;
+    font-size: 8px;
+    margin: 0px 20px 0px 0px;
+  }
+
+  .AAButtonGR {
+    width: 55px;
+    height: 55px;
+    line-height: 13px;
+    font-size: 8px;
+    margin: 0px 0px 0px 20px;
+  }
+  #gameRostersContainer {
+    min-height: 500px;
+  }
+
+  #GameRostersTitle {
+    padding: 4px 14px;
+    border-radius: 19px;
+    font-size: 13px;
+    margin: 12px 0px;
+  }
+
+  #GRBoxWrapper {
+    width: 278px;
+    height: 312px;
+    border-radius: 15px;
+  }
+
+  #gameRosterBoxFront,
+  #gameRosterBoxBack {
+    width: 270px;
+    height: 304px;
+    border-radius: 15px;
+    border: 4px solid black;
+    border-radius: 15px;
+  }
+  #GRTeamLogoRow {
+    margin: 7px 0px 8px 0px;
+  }
+
+  .GRAwayHome {
+    font-size: 8px;
+    margin: 0px 0px 6px 0px;
+  }
+
+  .GRTeamLogoBox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .GRTeamLogo {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  .APSkatersWrapper {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 225px;
+  }
+  .GRStatsColumn {
+    width: 188px;
+  }
+
+  .GRStatsColumnGoaltenders {
+    width: 188px;
+    min-height: 23px;
+  }
+
+  .GRStatsColumnDefensemen {
+    width: 188px;
+    height: 121px;
+  }
+
+  .GRStatsColumnForwards {
+    width: 188px;
+    height: 242px;
+  }
+
+  .GRRowSB {
+    width: 95%;
+  }
+  .GRLineTop {
+    margin: 4px 0px 0px 0px;
+  }
+  .GRLine {
+    height: 1px;
+    width: 85%;
+    margin: 4px 0px 2px 0px;
+  }
+  .GRCategory {
+    font-size: 13px;
+    padding: 4px 13px;
+    border-radius: 13px;
+    margin: 8px 0px 7px 0px;
+  }
+
+  .GRName {
+    margin: 3px 0px;
+    font-size: 12px;
+  }
+
+  .netLogo {
+    width: 15px;
     margin: 0px 0px 0px 5px;
+  }
+
+  .skaterOnIceStick {
+    height: 15px;
+    margin: 0px 0px 0px 2px;
+  }
+
+  .puck {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: 3px 0px 0px 2px;
+  }
+  .APSkatersWrapper::-webkit-scrollbar {
+    width: 2px;
+  }
+  #CSOWrapper::-webkit-scrollbar {
+    width: 2px;
+  }
+  .GRScratchColumn {
+    margin: 0px 0px 2px 0px;
+  }
+  .GRNameScratch {
+    margin: 3px 0px;
+    font-size: 10px;
+    text-align: center;
+  }
+  .GRStatsColumnOfficials {
+    padding: 0px 0px 6px 0px;
   }
 }

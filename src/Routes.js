@@ -1,11 +1,10 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
 import SlideMenu from './SlideMenu';
 import Dimmer from './Dimmer';
 import Landing from './Landing';
-import Loading from './Loading';
 import PlayerStats from './PlayerStats';
 import TeamStats from './TeamStats';
 import Boxscore from './Boxscore';
@@ -66,37 +65,38 @@ const Routes = () => {
       <NavBar />
       <SlideMenu />
       <Dimmer />
-      <Route path="/loading" component={Loading} />
-      <Route exact path="/" component={Landing} />
-      <Route
-        path="/playerstats"
-        render={(props) => (
-          <PlayerStats
-            {...props}
-            fullTeamStats={fullTeamStats}
-            season={season}
-          />
-        )}
-      />
-      <Route
-        path="/teamstats"
-        render={(props) => (
-          <TeamStats {...props} teamStats={teamStats} season={season} />
-        )}
-      />
-      <Route
-        path="/boxscore"
-        render={(props) => (
-          <Boxscore {...props} teamStats={teamStats} season={season} />
-        )}
-      />
-      <Route
-        path="/gamerosters"
-        render={(props) => (
-          <GameRosters {...props} teamStats={teamStats} season={season} />
-        )}
-      />
-      <Route path="/" component={ErrorPage} />
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route
+          path="/playerstats"
+          render={(props) => (
+            <PlayerStats
+              {...props}
+              fullTeamStats={fullTeamStats}
+              season={season}
+            />
+          )}
+        />
+        <Route
+          path="/teamstats"
+          render={(props) => (
+            <TeamStats {...props} teamStats={teamStats} season={season} />
+          )}
+        />
+        <Route
+          path="/boxscore"
+          render={(props) => (
+            <Boxscore {...props} teamStats={teamStats} season={season} />
+          )}
+        />
+        <Route
+          path="/gamerosters"
+          render={(props) => (
+            <GameRosters {...props} teamStats={teamStats} season={season} />
+          )}
+        />
+        <Route path="/" component={ErrorPage} />
+      </Switch>
     </>
   );
 };
