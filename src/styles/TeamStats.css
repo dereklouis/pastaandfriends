@@ -111,13 +111,18 @@
   border-radius: 25px;
 }
 
-#TSStandingColumns {
+#TSStandingColumnsRow {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: space-evenly;
   height: 590px;
   width: 90%;
+}
+
+.LSColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .TSStandingRow {
@@ -231,8 +236,8 @@
     border-radius: 17px;
   }
 
-  #TSStandingColumns {
-    height: 443px;
+  #TSStandingColumnsRow {
+    height: 425px;
   }
 
   .TSStandingsDivide {
@@ -345,47 +350,27 @@
     border-radius: 14px;
   }
 
-  #TSStandingColumns {
-    height: 377px;
+  #TSStandingColumnsRow {
+    height: 360px;
+    width: 95%;
+    overflow-y: auto;
+  }
+
+  #TSStandingColumnsRow::-webkit-scrollbar-thumb {
+    background: rgba(113, 113, 113, 0.7);
+    border-radius: 5px;
+  }
+
+  #TSStandingColumnsRow::-webkit-scrollbar {
+    width: 6px;
+    background-color: #ffb71c;
+    border-radius: 5px;
   }
 
   .TSStandingsDivide {
-    height: 351px;
+    margin: 9px 0px 0px 0px;
+    height: 400px;
     width: 2px;
-  }
-
-  .TSStandingRow {
-    height: 32px;
-  }
-
-  .TSStandingLogoContainer {
-    margin: 4px 7px 4px 4px;
-    width: 23px;
-    height: 23px;
-  }
-
-  .LeagueRank {
-    font-size: 10px;
-    margin: 10px 0px;
-  }
-
-  .TSStandingLogo {
-    max-width: 23px;
-    max-height: 23px;
-  }
-
-  .StandingGP {
-    margin: 0px;
-    font-size: 9px;
-  }
-
-  .StandingPoints {
-    font-size: 10px;
-    margin: 10px 0px;
-  }
-
-  .TSStandingPoints {
-    font-size: 9px;
   }
 }
 
@@ -459,23 +444,24 @@
     border-radius: 11px;
   }
 
-  #TSStandingColumns {
-    height: 302px;
+  #TSStandingColumnsRow {
+    height: 285px;
+  }
+
+  #TSStandingColumnsRow::-webkit-scrollbar {
+    width: 4px;
   }
 
   .TSStandingsDivide {
-    height: 281px;
+    margin: 9px 0px 0px 0px;
+    height: 325px;
     width: 2px;
-  }
-
-  .TSStandingRow {
-    height: 26px;
   }
 
   .TSStandingLogoContainer {
     margin: 3px 6px 3px 3px;
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
 
   .LeagueRank {
@@ -484,22 +470,21 @@
   }
 
   .TSStandingLogo {
-    max-width: 18px;
-    max-height: 18px;
+    max-width: 24px;
+    max-height: 24px;
   }
 
   .StandingGP {
-    margin: 0px;
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .StandingPoints {
     font-size: 10px;
-    margin: 8px 0px;
+    margin: 10px 0px;
   }
 
   .TSStandingPoints {
-    font-size: 9px;
+    font-size: 10px;
   }
 }
 
@@ -572,24 +557,25 @@
     padding: 3px 9px;
     border-radius: 9px;
   }
+  #TSStandingColumnsRow {
+    height: 226px;
+    width: 97%;
+  }
 
-  #TSStandingColumns {
-    height: 242px;
+  #TSStandingColumnsRow::-webkit-scrollbar {
+    width: 3px;
   }
 
   .TSStandingsDivide {
-    height: 225px;
-    width: 1px;
-  }
-
-  .TSStandingRow {
-    height: 21px;
+    margin: 6px 0px 0px 0px;
+    height: 264px;
+    width: 2px;
   }
 
   .TSStandingLogoContainer {
-    margin: 2px 5px 2px 2px;
-    width: 14px;
-    height: 14px;
+    margin: 3px 3px 3px 2px;
+    width: 19px;
+    height: 19px;
   }
 
   .LeagueRank {
@@ -598,18 +584,17 @@
   }
 
   .TSStandingLogo {
-    max-width: 14px;
-    max-height: 14px;
+    max-width: 19px;
+    max-height: 19px;
   }
 
   .StandingGP {
-    margin: 0px;
     font-size: 8px;
   }
 
   .StandingPoints {
     font-size: 8px;
-    margin: 6px 0px;
+    margin: 8px 0px;
   }
 
   .TSStandingPoints {
@@ -687,43 +672,44 @@
     border-radius: 8px;
   }
 
-  #TSStandingColumns {
-    height: 218px;
+  #TSStandingColumnsRow {
+    height: 205px;
+    width: 98%;
+  }
+
+  #TSStandingColumnsRow::-webkit-scrollbar {
+    width: 2px;
   }
 
   .TSStandingsDivide {
-    height: 203px;
+    margin: 6px 0px 0px 0px;
+    height: 253px;
     width: 1px;
   }
 
-  .TSStandingRow {
-    height: 19px;
-  }
-
   .TSStandingLogoContainer {
-    margin: 2px 5px 2px 2px;
-    width: 13px;
-    height: 13px;
+    margin: 3px 3px 3px 2px;
+    width: 18px;
+    height: 18px;
   }
 
   .LeagueRank {
     font-size: 7px;
-    margin: 6px 0px;
+    margin: 7px 0px;
   }
 
   .TSStandingLogo {
-    max-width: 13px;
-    max-height: 13px;
+    max-width: 18px;
+    max-height: 18px;
   }
 
   .StandingGP {
-    margin: 0px;
     font-size: 7px;
   }
 
   .StandingPoints {
     font-size: 7px;
-    margin: 6px 0px;
+    margin: 7px 0px;
   }
 
   .TSStandingPoints {

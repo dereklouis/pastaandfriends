@@ -9,9 +9,13 @@ const ActivePlayers = (props) => {
 
   window.addEventListener('resize', (e) => {
     if (prevWidth >= 676 && window.innerWidth <= 675) {
-      window.location.reload();
+      if (window.location.pathname === '/gamerosters') {
+        window.location.reload();
+      }
     } else if (prevWidth <= 675 && window.innerWidth >= 676) {
-      window.location.reload();
+      if (window.location.pathname === '/gamerosters') {
+        window.location.reload();
+      }
     }
   });
   return (

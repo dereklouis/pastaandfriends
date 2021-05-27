@@ -13,60 +13,66 @@ const LeagueStandings = (props) => {
     <div id="TSStandingsBox" className="under">
       <p id="TSStandingSeason">{props.seasonArr.join('')}</p>
       <h1 id="TSStandingTitle">LEAGUE STANDINGS</h1>
-      <div id="TSStandingColumns">
-        {columnOne.map((team) => (
-          <div className="TSStandingRow" key={team.team.id}>
-            <p className="LeagueRank">{team.leagueRank}. </p>
-            <div className="TSStandingLogoContainer FCAIC">
-              <img
-                alt="Team Logo"
-                className="TSStandingLogo"
-                src={`teamLogos/team${team.team.id}.png`}
-              />
+      <div id="TSStandingColumnsRow">
+        <div className="LSColumn">
+          {columnOne.map((team) => (
+            <div className="TSStandingRow" key={team.team.id}>
+              <p className="LeagueRank">{team.leagueRank}. </p>
+              <div className="TSStandingLogoContainer FCAIC">
+                <img
+                  alt="Team Logo"
+                  className="TSStandingLogo"
+                  src={`teamLogos/team${team.team.id}.png`}
+                />
+              </div>
+              <p className="StandingPoints">
+                <span className="TSStandingsBold">{team.points}</span>{' '}
+                <span className="TSStandingPoints">PTS,</span>{' '}
+                <span className="StandingGP">({team.gamesPlayed} GP)</span>
+              </p>
             </div>
-            <p className="StandingPoints">
-              <span className="TSStandingsBold">{team.points}</span>{' '}
-              <span className="TSStandingPoints">PTS,</span>{' '}
-              <span className="StandingGP">({team.gamesPlayed} GP)</span>
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
         <div className="TSStandingsDivide"></div>
-        {columnTwo.map((team) => (
-          <div className="TSStandingRow" key={team.team.id}>
-            <p className="LeagueRank">{team.leagueRank}. </p>
-            <div className="TSStandingLogoContainer FCAIC">
-              <img
-                alt="Team Logo"
-                className="TSStandingLogo"
-                src={`teamLogos/team${team.team.id}.png`}
-              />
+        <div className="LSColumn">
+          {columnTwo.map((team) => (
+            <div className="TSStandingRow" key={team.team.id}>
+              <p className="LeagueRank">{team.leagueRank}. </p>
+              <div className="TSStandingLogoContainer FCAIC">
+                <img
+                  alt="Team Logo"
+                  className="TSStandingLogo"
+                  src={`teamLogos/team${team.team.id}.png`}
+                />
+              </div>
+              <p className="StandingPoints">
+                <span className="TSStandingsBold">{team.points}</span>{' '}
+                <span className="TSStandingPoints">PTS,</span>{' '}
+                <span className="StandingGP">({team.gamesPlayed} GP)</span>
+              </p>
             </div>
-            <p className="StandingPoints">
-              <span className="TSStandingsBold">{team.points}</span>{' '}
-              <span className="TSStandingPoints">PTS,</span>{' '}
-              <span className="StandingGP">({team.gamesPlayed} GP)</span>
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
         <div className="TSStandingsDivide"></div>
-        {columnThree.map((team) => (
-          <div className="TSStandingRow" key={team.team.id}>
-            <p className="LeagueRank">{team.leagueRank}. </p>
-            <div className="TSStandingLogoContainer FCAIC">
-              <img
-                alt="Team Logo"
-                className="TSStandingLogo"
-                src={`teamLogos/team${team.team.id}.png`}
-              />
+        <div className="LSColumn">
+          {columnThree.map((team) => (
+            <div className="TSStandingRow" key={team.team.id}>
+              <p className="LeagueRank">{team.leagueRank}. </p>
+              <div className="TSStandingLogoContainer FCAIC">
+                <img
+                  alt="Team Logo"
+                  className="TSStandingLogo"
+                  src={`teamLogos/team${team.team.id}.png`}
+                />
+              </div>
+              <p className="StandingPoints">
+                <span className="TSStandingsBold">{team.points}</span>{' '}
+                <span className="TSStandingPoints">PTS,</span>{' '}
+                <span className="StandingGP">({team.gamesPlayed} GP)</span>
+              </p>
             </div>
-            <p className="StandingPoints">
-              <span className="TSStandingsBold">{team.points}</span>{' '}
-              <span className="TSStandingPoints">PTS,</span>{' '}
-              <span className="StandingGP">({team.gamesPlayed} GP)</span>
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
