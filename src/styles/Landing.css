@@ -157,7 +157,7 @@
 
 @media (max-width: 580px) {
   #landingContainer {
-    min-height: 710px;
+    min-height: 622px;
   }
 
   #tvContainer {
@@ -184,7 +184,7 @@
   }
 
   #remoteContainer {
-    margin: auto 80px auto 0px;
+    margin: auto 80px 50px 0px;
     height: 248px;
     width: 142px;
   }
@@ -192,6 +192,24 @@
   #remote {
     height: 248px;
     width: 142px;
+  }
+
+  #remoteButtonOff {
+    width: 17px;
+    height: 17px;
+    transform: translate(107px, 29px);
+  }
+
+  #remoteButtonChange {
+    width: 21px;
+    height: 21px;
+    transform: translate(57px, 122px);
+  }
+
+  #remoteButtonFiller {
+    width: 21px;
+    height: 21px;
+    transform: translate(57px, 122px);
   }
 
   #jack {
@@ -261,7 +279,7 @@
   }
 
   #remoteContainer {
-    margin: auto 70px auto 0px;
+    margin: auto 70px 45px 0px;
     height: 248px;
     width: 142px;
   }
