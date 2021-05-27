@@ -299,7 +299,7 @@
   margin: 0px 0px 0px auto;
 }
 
-@media (max-width: 875px) {
+@media (max-width: 1500px) {
   #boxscoreContainer {
     min-height: 900px;
   }

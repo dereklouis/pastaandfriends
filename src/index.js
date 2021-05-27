@@ -4,6 +4,15 @@ import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
 import reportWebVitals from './reportWebVitals';
 
+if (window.location.host === 'pastaandfriends.herokuapp.com') {
+  if (
+    window.location.protocol === 'http' ||
+    window.location.protocol === 'http:'
+  ) {
+    window.location.protocol = 'https';
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>

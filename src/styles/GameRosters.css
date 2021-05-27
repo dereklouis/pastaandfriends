@@ -263,7 +263,7 @@
   width: 90%;
 }
 
-@media (max-width: 875px) {
+@media (max-width: 1500px) {
   #gameRostersContainer {
     min-height: 950px;
   }

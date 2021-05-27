@@ -127,35 +127,7 @@
   transform: translate(1px, 1px);
 }
 
-@media (max-width: 1100px) {
-  #landingContainer {
-    min-height: 870px;
-  }
-
-  #tvContainer {
-    margin: 200px 0px 0px 0px;
-  }
-
-  #jack {
-    width: 243px;
-  }
-}
-
-@media (max-width: 850px) {
-  #landingContainer {
-    min-height: 820px;
-  }
-
-  #tvContainer {
-    margin: 150px 0px 0px 0px;
-  }
-
-  #jack {
-    width: 220px;
-  }
-}
-
-@media (max-width: 580px) {
+@media (max-height: 915px), (max-width: 400px) {
   #landingContainer {
     min-height: 622px;
   }
@@ -214,39 +186,6 @@
 
   #jack {
     width: 150px;
-  }
-}
-
-@media (max-width: 400px) {
-  #landingContainer {
-    min-height: 660px;
-  }
-
-  #tvContainer {
-    width: 335px;
-    height: 191px;
-    margin: 110px 0px 0px 0px;
-  }
-
-  #tv {
-    width: 335px;
-    height: 191px;
-  }
-
-  #gifElement {
-    transform: translate(5px, 5px);
-    width: 329px;
-    height: 181px;
-  }
-
-  #tvBlack {
-    width: 329px;
-    height: 181px;
-    transform: translate(4px, 2px);
-  }
-
-  #jack {
-    width: 120px;
   }
 }
 
