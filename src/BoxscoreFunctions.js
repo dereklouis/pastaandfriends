@@ -5,7 +5,7 @@ export const checkSchedule = async (SGD) => {
   const gamesArr = data.data.dates[0].games;
   if (gamesArr.length) {
     const bruinsGame = gamesArr.filter((game) => {
-      if (game.teams.away.team.id === 2 || game.teams.home.team.id === 2) {
+      if (game.teams.away.team.id === 18 || game.teams.home.team.id === 18) {
         return true;
       }
       return false;
