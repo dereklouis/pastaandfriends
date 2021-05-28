@@ -3,6 +3,12 @@ import toggleBurgerSlide from './ToggleBurgerSlide';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
+  const pastaClose = () => {
+    const slideMenu = document.getElementById('SMContainer');
+    if (slideMenu.className === 'SMOpen') {
+      toggleBurgerSlide();
+    }
+  };
   return (
     <div id="navBarWrapper">
       <Link className="navLink" to="/playerstats">
@@ -11,7 +17,7 @@ const NavBar = () => {
       <Link className="navLink" to="/teamstats">
         TEAM STATS
       </Link>
-      <Link to="/" id="navMiddleLink">
+      <Link to="/" id="navMiddleLink" onClick={pastaClose}>
         <div id="navMiddle">
           <h1 id="navTitle">PASTA</h1>
           <img src="pastalogo.png" id="navLogo" alt="pasta" />

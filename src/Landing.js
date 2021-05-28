@@ -1,31 +1,30 @@
 import './styles/Landing.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const Landing = () => {
   const [currentGif, setCurrentGif] = useState(0);
+  const gifClip = useRef(null);
+  const remoteRef = useRef(null);
 
   const tvOffOn = () => {
-    const gif = document.getElementById('gifElement');
-    if (gif.className === 'opacityShow') {
-      gif.className = 'opacityHide';
+    if (gifClip.current.className === 'opacityShow') {
+      gifClip.current.className = 'opacityHide';
     } else {
-      gif.className = 'opacityShow';
+      gifClip.current.className = 'opacityShow';
     }
   };
 
   const changeClip = () => {
-    const gif = document.getElementById('gifElement');
-    const remote = document.getElementById('remoteContainer');
-    if (gif.className === 'opacityShow') {
+    if (gifClip.current.className === 'opacityShow') {
       if (currentGif === 6) {
         setCurrentGif(0);
       } else {
         setCurrentGif(currentGif + 1);
       }
     }
-    remote.className = '';
-    void remote.offsetWidth;
-    remote.className = 'click';
+    remoteRef.current.className = '';
+    void remoteRef.current.offsetWidth;
+    remoteRef.current.className = 'click';
   };
 
   const downUp = () => {
@@ -47,10 +46,11 @@ const Landing = () => {
             src={`gifs/gif${currentGif}.gif`}
             alt="gif"
             className="opacityShow"
+            ref={gifClip}
           />
           <div id="tvBlack"></div>
         </div>
-        <div id="remoteContainer">
+        <div id="remoteContainer" ref={remoteRef}>
           <button type="button" id="remoteButtonOff" onClick={tvOffOn}></button>
           <button
             type="button"

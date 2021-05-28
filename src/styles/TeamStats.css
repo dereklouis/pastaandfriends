@@ -11,7 +11,7 @@
   border-radius: 15px;
   position: relative;
   -webkit-tap-highlight-color: transparent;
-  margin: 100px 0px;
+  margin: 150px 0px 100px 0px;
 }
 
 #teamStatsBox,
@@ -375,7 +375,7 @@
   }
 }
 
-@media (max-width: 570px), (max-height: 600px) {
+@media (max-width: 570px), (max-height: 655px) {
   #TSBoxWrapper {
     width: 420px;
     height: 356px;
@@ -489,11 +489,12 @@
   }
 }
 
-@media (max-width: 436px), (max-height: 490px) {
+@media (max-width: 436px), (max-height: 565px) {
   #TSBoxWrapper {
     width: 334px;
     height: 283px;
     border-radius: 15px;
+    margin: 125px 0px 100px 0px;
   }
 
   #teamStatsBox,
@@ -603,7 +604,10 @@
   }
 }
 
-@media (max-width: 355px), (max-height: 410px) {
+@media (max-width: 355px), (max-height: 445px) {
+  #teamStatsContainer {
+    min-height: 440px;
+  }
   #TSBoxWrapper {
     width: 301px;
     height: 256px;
