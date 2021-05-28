@@ -8,7 +8,7 @@ import { useEffect, useState, useRef } from 'react';
 
 window.scrollTo(0, 0);
 
-const Boxscore = () => {
+const Boxscore = (props) => {
   const [gameData, setGameData] = useState([]);
 
   const BSMaster = useRef(null);
@@ -17,12 +17,12 @@ const Boxscore = () => {
   const ringPulseRef = useRef(null);
 
   useEffect(() => {
-    checkSchedule(setGameData);
+    checkSchedule(props.teamSelection, setGameData);
     window.boxscoreAutoUpdate = undefined;
   }, []);
 
   const refresh = () => {
-    checkSchedule(setGameData);
+    checkSchedule(props.teamSelection, setGameData);
     refreshButtonBS.current.classList.add('refreshButtonSpin');
     console.log('Boxscore Data Fetched');
   };
@@ -31,7 +31,7 @@ const Boxscore = () => {
     if (window.boxscoreAutoUpdate === undefined) {
       window.boxscoreAutoUpdate = setInterval(() => {
         console.log('Boxscore Data Fetched');
-        checkSchedule(setGameData);
+        checkSchedule(props.teamSelection, setGameData);
       }, 3000);
     } else {
       clearInterval(window.boxscoreAutoUpdate);

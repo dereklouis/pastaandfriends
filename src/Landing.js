@@ -1,13 +1,16 @@
 import './styles/Landing.css';
-import { teamIdKey } from './Keys';
+import { teamIdKey, reverseTeamIdKey } from './Keys';
 import { useState, useRef } from 'react';
 
 window.scrollTo(0, 0);
 
-const Landing = () => {
-  const [currentTeam, setCurrentTeam] = useState(2);
+const Landing = (props) => {
+  const [currentTeam, setCurrentTeam] = useState(
+    reverseTeamIdKey[props.teamSelection]
+  );
   const [currentGif, setCurrentGif] = useState(0);
   const gifClip = useRef(null);
+  const teamTVLogo = useRef(null);
   const rink = useRef(null);
   const remoteRef = useRef(null);
   const upButton = useRef(null);
@@ -87,12 +90,19 @@ const Landing = () => {
 
   const changeMode = () => {
     if (rink.current.className === 'opacityShow') {
+      teamTVLogo.current.className = 'opacityHide';
       rink.current.className = 'opacityHide';
       gifClip.current.className = 'opacityShow';
     } else {
+      teamTVLogo.current.className = 'opacityShow';
       rink.current.className = 'opacityShow';
       gifClip.current.className = 'opacityHide';
     }
+  };
+
+  const selectTeam = () => {
+    localStorage.setItem('teamSelection', teamIdKey[currentTeam]);
+    window.location.reload();
   };
 
   return (
@@ -103,7 +113,9 @@ const Landing = () => {
           <div id="teamTVLogoContainer">
             <img
               alt="Team Logo"
-              className="teamTVLogo"
+              id="teamTVLogo"
+              className="opacityShow"
+              ref={teamTVLogo}
               src={`/teamLogos/team${teamIdKey[currentTeam]}.png`}
             />
           </div>
@@ -161,6 +173,7 @@ const Landing = () => {
             type="button"
             id="okButton"
             onClick={() => {
+              selectTeam();
               remoteShake();
             }}
             onMouseDown={(e) => press(e, okButton)}

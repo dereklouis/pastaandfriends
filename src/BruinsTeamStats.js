@@ -1,7 +1,13 @@
 const BruinsTeamStats = (props) => {
   return (
     <div id="teamStatsBox" className="over">
-      <img alt="Bruins Logo" src="bruinsLogo.png" id="TSBruinsLogo" />
+      <div id="TSLogoContainer">
+        <img
+          alt="Bruins Logo"
+          src={`teamLogos/team${props.teamSelection}.png`}
+          id="TSBruinsLogo"
+        />
+      </div>
       <p id="TSSeason">{props.seasonArr.join('')}</p>
       <h1 id="TSTitle">REGULAR SEASON TEAM STATS</h1>
       <div id="TSWrapContainer">

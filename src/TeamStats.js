@@ -25,6 +25,7 @@ const TeamStats = (props) => {
             <BruinsTeamStats
               teamStats={props.teamStats}
               seasonArr={seasonArr}
+              teamSelection={props.teamSelection}
             />
             <LeagueStandings
               teamStats={props.teamStats}

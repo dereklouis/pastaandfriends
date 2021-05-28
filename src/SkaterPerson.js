@@ -15,7 +15,7 @@ const SkaterPerson = (props) => {
           <img
             alt="flag"
             className="flag"
-            src={`/flags/${props.player.nationality}.png`}
+            src={`/flags/${props.player.birthCountry}.png`}
           />
         </div>
         {props.player.captain === true ? (

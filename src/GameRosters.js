@@ -8,7 +8,7 @@ import Loading from './Loading';
 
 window.scrollTo(0, 0);
 
-const GameRosters = () => {
+const GameRosters = (props) => {
   const [gameData, setGameData] = useState([]);
   const [awaySkatersFinalState, setAwaySkatersFinalState] = useState([]);
   const [homeSkatersFinalState, setHomeSkatersFinalState] = useState([]);
@@ -23,6 +23,7 @@ const GameRosters = () => {
 
   useEffect(() => {
     checkSchedule(
+      props.teamSelection,
       setGameData,
       setAwaySkatersFinalState,
       setHomeSkatersFinalState,
@@ -36,6 +37,7 @@ const GameRosters = () => {
 
   const refresh = () => {
     checkSchedule(
+      props.teamSelection,
       setGameData,
       setAwaySkatersFinalState,
       setHomeSkatersFinalState,
@@ -53,6 +55,7 @@ const GameRosters = () => {
       window.gameRostersAutoUpdate = setInterval(() => {
         console.log('Game Rosters Data Fetched');
         checkSchedule(
+          props.teamSelection,
           setGameData,
           setAwaySkatersFinalState,
           setHomeSkatersFinalState,

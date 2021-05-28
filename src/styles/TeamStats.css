@@ -45,11 +45,19 @@
   border-radius: 25px;
 }
 
-#TSBruinsLogo {
+#TSLogoContainer {
   width: 75px;
-  height: auto;
+  height: 75px;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transform: translate(-346px, 14px);
+}
+
+#TSBruinsLogo {
+  max-height: 75px;
+  max-width: 75px;
 }
 
 #TSWrapContainer {
@@ -194,9 +202,15 @@
     margin: 19px 0px 0px 0px;
   }
 
-  #TSBruinsLogo {
+  #TSLogoContainer {
     width: 56px;
+    height: 56px;
     transform: translate(-255px, 14px);
+  }
+
+  #TSBruinsLogo {
+    max-height: 56px;
+    max-width: 56px;
   }
 
   #TSWrapContainer {
@@ -308,9 +322,15 @@
     margin: 17px 0px 0px 0px;
   }
 
-  #TSBruinsLogo {
+  #TSLogoContainer {
     width: 48px;
+    height: 48px;
     transform: translate(-217px, 12px);
+  }
+
+  #TSBruinsLogo {
+    max-height: 48px;
+    max-width: 48px;
   }
 
   #TSWrapContainer {
@@ -402,9 +422,15 @@
     margin: 15px 0px 0px 0px;
   }
 
-  #TSBruinsLogo {
+  #TSLogoContainer {
     width: 34px;
+    height: 34px;
     transform: translate(-180px, 6px);
+  }
+
+  #TSBruinsLogo {
+    max-height: 34px;
+    max-width: 34px;
   }
 
   #TSWrapContainer {
@@ -517,9 +543,15 @@
     margin: 13px 0px 0px 0px;
   }
 
-  #TSBruinsLogo {
+  #TSLogoContainer {
     width: 28px;
+    height: 28px;
     transform: translate(-144px, 5px);
+  }
+
+  #TSBruinsLogo {
+    max-height: 28px;
+    max-width: 28px;
   }
 
   #TSWrapContainer {
@@ -634,9 +666,15 @@
     margin: 12px 0px 0px 0px;
   }
 
-  #TSBruinsLogo {
+  #TSLogoContainer {
     width: 25px;
+    height: 25px;
     transform: translate(-128px, 5px);
+  }
+
+  #TSBruinsLogo {
+    max-height: 25px;
+    max-width: 25px;
   }
 
   #TSWrapContainer {

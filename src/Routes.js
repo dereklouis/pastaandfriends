@@ -17,9 +17,15 @@ const Routes = () => {
   const [fullTeamStats, setFullTeamStats] = useState([]);
   const [teamStats, setTeamStats] = useState([]);
 
+  if (window.localStorage.getItem('teamSelection') === null) {
+    window.localStorage.setItem('teamSelection', 6);
+  }
+
+  const teamSelection = Number(window.localStorage.getItem('teamSelection'));
+
   const fetchPlayerStats = async () => {
     const data = await axios.get(
-      'https://statsapi.web.nhl.com/api/v1/teams/6/roster'
+      `https://statsapi.web.nhl.com/api/v1/teams/${teamSelection}/roster`
     );
     let finalData = [];
     for (let player of data.data.roster) {
@@ -46,7 +52,7 @@ const Routes = () => {
   const fetchTeamStats = async () => {
     let finalDataArr = [];
     const data = await axios.get(
-      'https://statsapi.web.nhl.com/api/v1/teams/6/stats'
+      `https://statsapi.web.nhl.com/api/v1/teams/${teamSelection}/stats`
     );
     const standingsData = await axios.get(
       'https://statsapi.web.nhl.com/api/v1/standings/byLeague'
@@ -66,7 +72,13 @@ const Routes = () => {
       <SlideMenu />
       <Dimmer />
       <Switch>
-        <Route exact path="/" component={Landing} />
+        <Route
+          exact
+          path="/"
+          render={(props) => (
+            <Landing {...props} teamSelection={teamSelection} />
+          )}
+        />
         <Route
           path="/playerstats"
           render={(props) => (
@@ -80,19 +92,34 @@ const Routes = () => {
         <Route
           path="/teamstats"
           render={(props) => (
-            <TeamStats {...props} teamStats={teamStats} season={season} />
+            <TeamStats
+              {...props}
+              teamStats={teamStats}
+              teamSelection={teamSelection}
+              season={season}
+            />
           )}
         />
         <Route
           path="/boxscore"
           render={(props) => (
-            <Boxscore {...props} teamStats={teamStats} season={season} />
+            <Boxscore
+              {...props}
+              teamStats={teamStats}
+              teamSelection={teamSelection}
+              season={season}
+            />
           )}
         />
         <Route
           path="/gamerosters"
           render={(props) => (
-            <GameRosters {...props} teamStats={teamStats} season={season} />
+            <GameRosters
+              {...props}
+              teamStats={teamStats}
+              teamSelection={teamSelection}
+              season={season}
+            />
           )}
         />
         <Route path="/" component={ErrorPage} />
