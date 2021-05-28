@@ -2,6 +2,8 @@ import './styles/Landing.css';
 import { teamIdKey } from './Keys';
 import { useState, useRef } from 'react';
 
+window.scrollTo(0, 0);
+
 const Landing = () => {
   const [currentTeam, setCurrentTeam] = useState(2);
   const [currentGif, setCurrentGif] = useState(0);

@@ -51,7 +51,7 @@ const CSO = (props) => {
           <div className="GRRowSB">
             <div className="GRScratchColumn">
               {!props.gameData[0].liveData.boxscore.teams.away.scratches
-                .length && <p className="NotYet">NOT YET POSTED...</p>}
+                .length && <p className="waiting">WAITING...</p>}
               {props.gameData[0].liveData.boxscore.teams.away.scratches.map(
                 (scratchId, idx) => (
                   <p className="GRNameScratch" key={idx}>
@@ -62,7 +62,7 @@ const CSO = (props) => {
             </div>
             <div className="GRScratchColumn">
               {!props.gameData[0].liveData.boxscore.teams.home.scratches
-                .length && <p className="NotYet">NOT YET POSTED...</p>}
+                .length && <p className="waiting">WAITING...</p>}
               {props.gameData[0].liveData.boxscore.teams.home.scratches.map(
                 (scratchId, idx) => (
                   <p className="GRNameScratch" key={idx}>
@@ -81,7 +81,7 @@ const CSO = (props) => {
           <div className="GRRowC">
             <div className="GRStatsColumnOfficials">
               {!props.gameData[0].liveData.boxscore.officials.length && (
-                <p className="NotYet">NOT YET POSTED...</p>
+                <p className="waiting">WAITING...</p>
               )}
               {props.gameData[0].liveData.boxscore.officials.map((official) => (
                 <p className="GRName" key={official.official.id}>

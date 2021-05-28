@@ -9,25 +9,36 @@ const NavBar = () => {
       toggleBurgerSlide();
     }
   };
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <div id="navBarWrapper">
-      <Link className="navLink" to="/playerstats">
+      <Link className="navLink" to="/playerstats" onClick={scrollToTop}>
         PLAYER STATS
       </Link>
-      <Link className="navLink" to="/teamstats">
+      <Link className="navLink" to="/teamstats" onClick={scrollToTop}>
         TEAM STATS
       </Link>
-      <Link to="/" id="navMiddleLink" onClick={pastaClose}>
+      <Link
+        to="/"
+        id="navMiddleLink"
+        onClick={() => {
+          pastaClose();
+          scrollToTop();
+        }}
+      >
         <div id="navMiddle">
           <h1 id="navTitle">PASTA</h1>
           <img src="pastalogo.png" id="navLogo" alt="pasta" />
           <h1 id="navTitle">FRIENDS</h1>
         </div>
       </Link>
-      <Link className="navLink" to="/boxscore">
+      <Link className="navLink" to="/boxscore" onClick={scrollToTop}>
         BOXSCORE
       </Link>
-      <Link className="navLink" to="/gamerosters">
+      <Link className="navLink" to="/gamerosters" onClick={scrollToTop}>
         GAME ROSTERS
       </Link>
       <div id="stickContainer" onClick={toggleBurgerSlide}>

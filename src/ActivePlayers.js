@@ -53,7 +53,7 @@ const ActivePlayers = (props) => {
             <div className="GRStatsColumnGoaltenders">
               {!props.gameData[0].liveData.boxscore.teams.away.scratches
                 .length ? (
-                <p className="NotYet">NOT YET POSTED...</p>
+                <p className="waiting">WAITING...</p>
               ) : (
                 props.gameData[0].liveData.boxscore.teams.away.goalies
                   .filter((goalieId) =>
@@ -96,7 +96,7 @@ const ActivePlayers = (props) => {
             <div className="GRStatsColumnGoaltenders">
               {!props.gameData[0].liveData.boxscore.teams.home.scratches
                 .length ? (
-                <p className="NotYet">NOT YET POSTED...</p>
+                <p className="waiting">WAITING...</p>
               ) : (
                 props.gameData[0].liveData.boxscore.teams.home.goalies
                   .filter((goalieId) =>
@@ -145,7 +145,7 @@ const ActivePlayers = (props) => {
             <div className="GRStatsColumnDefensemen">
               {!props.gameData[0].liveData.boxscore.teams.away.scratches
                 .length ? (
-                <p className="NotYet">NOT YET POSTED...</p>
+                <p className="waiting">WAITING...</p>
               ) : (
                 props.awaySkatersFinalState
                   .filter((id) => props.defensemenObject[id] !== undefined)
@@ -200,7 +200,7 @@ const ActivePlayers = (props) => {
             <div className="GRStatsColumnDefensemen">
               {!props.gameData[0].liveData.boxscore.teams.home.scratches
                 .length ? (
-                <p className="NotYet">NOT YET POSTED...</p>
+                <p className="waiting">WAITING...</p>
               ) : (
                 props.homeSkatersFinalState
                   .filter((id) => props.defensemenObject[id] !== undefined)
@@ -261,7 +261,7 @@ const ActivePlayers = (props) => {
             <div className="GRStatsColumnForwards">
               {!props.gameData[0].liveData.boxscore.teams.away.scratches
                 .length ? (
-                <p className="NotYet">NOT YET POSTED...</p>
+                <p className="waiting">WAITING...</p>
               ) : (
                 props.awaySkatersFinalState
                   .filter((id) => props.forwardsObject[id] !== undefined)
@@ -316,7 +316,7 @@ const ActivePlayers = (props) => {
             <div className="GRStatsColumnForwards">
               {!props.gameData[0].liveData.boxscore.teams.home.scratches
                 .length ? (
-                <p className="NotYet">NOT YET POSTED...</p>
+                <p className="waiting">WAITING...</p>
               ) : (
                 props.homeSkatersFinalState
                   .filter((id) => props.forwardsObject[id] !== undefined)

@@ -6,6 +6,8 @@ import ActivePlayers from './ActivePlayers';
 import CSO from './CSO';
 import Loading from './Loading';
 
+window.scrollTo(0, 0);
+
 const GameRosters = () => {
   const [gameData, setGameData] = useState([]);
   const [awaySkatersFinalState, setAwaySkatersFinalState] = useState([]);

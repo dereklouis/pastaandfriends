@@ -7,6 +7,8 @@ import GoalieStats from './GoalieStats';
 import GoaliePerson from './GoaliePerson';
 import './styles/PlayerStats.css';
 
+window.scrollTo(0, 0);
+
 function PlayerStats(props) {
   let seasonArr = props.season.split('');
   seasonArr.splice(4, 0, ' - ');

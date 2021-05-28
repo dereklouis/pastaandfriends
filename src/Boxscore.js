@@ -6,6 +6,8 @@ import ScoringPlays from './ScoringPlays';
 import { flipCard, handleCardFlipAnimation } from './CardFlip';
 import { useEffect, useState, useRef } from 'react';
 
+window.scrollTo(0, 0);
+
 const Boxscore = () => {
   const [gameData, setGameData] = useState([]);
 
