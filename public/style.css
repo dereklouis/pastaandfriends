@@ -11,6 +11,10 @@ body {
   width: 100%;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .FCAIC {
   display: flex;
   flex-direction: column;

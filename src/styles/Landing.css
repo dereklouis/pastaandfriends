@@ -107,6 +107,7 @@
   width: 23px;
   height: 23px;
   border-radius: 50%;
+  border: none;
   position: absolute;
   transform: translate(64px, 135px);
   cursor: pointer;
@@ -223,7 +224,7 @@
   transform: translate(1px, 1px);
 }
 
-@media (max-height: 915px), (max-width: 400px) {
+@media (max-height: 915px), (max-width: 550px) {
   #landingContainer {
     min-height: 622px;
   }
@@ -245,10 +246,24 @@
     height: 201px;
   }
 
+  #rink {
+    width: 365px;
+    height: 201px;
+  }
+
+  #teamTVLogoContainer {
+    width: 365px;
+    height: 201px;
+  }
+
+  .teamTVLogo {
+    max-width: 125px;
+    max-height: 125px;
+  }
+
   #tvBlack {
     width: 365px;
     height: 201px;
-    transform: translate(4px, 2px);
   }
 
   #remoteContainer {
@@ -262,22 +277,52 @@
     width: 142px;
   }
 
+  #modeButton {
+    width: 17px;
+    height: 17px;
+    transform: translate(72px, 18px);
+  }
+
   #remoteButtonOff {
     width: 17px;
     height: 17px;
     transform: translate(107px, 29px);
   }
 
+  #upButton {
+    width: 60px;
+    height: 56px;
+    transform: translate(53px, 54px) rotate(18deg);
+  }
+
+  #upButtonFiller {
+    width: 58px;
+    height: 54px;
+    transform: translate(54px, 55px) rotate(18deg);
+  }
+
   #okButton {
-    width: 21px;
-    height: 21px;
-    transform: translate(57px, 122px);
+    width: 48px;
+    height: 48px;
+    transform: translate(44px, 108px);
   }
 
   #okButtonFiller {
     width: 21px;
     height: 21px;
     transform: translate(57px, 122px);
+  }
+
+  #downButton {
+    width: 60px;
+    height: 42px;
+    transform: translate(19px, 167px) rotate(18deg);
+  }
+
+  #downButtonFiller {
+    width: 58px;
+    height: 40px;
+    transform: translate(21px, 168px) rotate(18deg);
   }
 
   #jack {
@@ -305,6 +350,21 @@
     transform: translate(5px, 5px);
     width: 296px;
     height: 163px;
+  }
+
+  #rink {
+    width: 296px;
+    height: 163px;
+  }
+
+  #teamTVLogoContainer {
+    width: 296px;
+    height: 163px;
+  }
+
+  .teamTVLogo {
+    max-width: 100px;
+    max-height: 100px;
   }
 
   #tvBlack {
