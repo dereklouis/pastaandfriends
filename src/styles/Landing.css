@@ -61,6 +61,7 @@
 #teamTVLogo {
   max-width: 150px;
   max-height: 150px;
+  transition-duration: 0.75s;
 }
 
 #tvBlack {

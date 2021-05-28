@@ -94,13 +94,33 @@ const Landing = (props) => {
       rink.current.className = 'opacityHide';
       gifClip.current.className = 'opacityShow';
     } else {
-      teamTVLogo.current.className = 'opacityShow';
+      if (teamIdKey[currentTeam] === props.teamSelection) {
+        teamTVLogo.current.className = 'opacityShow';
+      } else {
+        teamTVLogo.current.className = 'opacityHalf';
+      }
       rink.current.className = 'opacityShow';
       gifClip.current.className = 'opacityHide';
     }
   };
 
   const selectTeam = () => {
+    if (teamIdKey[currentTeam] !== props.teamSelection) {
+      teamTVLogo.current.className = 'selectAnimation';
+    } else {
+      teamTVLogo.current.className = 'nudge';
+    }
+  };
+
+  const handleAnimation = (e) => {
+    if (e.target.className === 'nudge') {
+      teamTVLogo.current.className = 'opacityShow';
+    } else if (e.target.className === 'selectAnimation') {
+      reloadWithNewTeam();
+    }
+  };
+
+  const reloadWithNewTeam = () => {
     localStorage.setItem('teamSelection', teamIdKey[currentTeam]);
     window.location.reload();
   };
@@ -114,9 +134,14 @@ const Landing = (props) => {
             <img
               alt="Team Logo"
               id="teamTVLogo"
-              className="opacityShow"
+              className={
+                teamIdKey[currentTeam] === props.teamSelection
+                  ? 'opacityShow'
+                  : 'opacityHalf'
+              }
               ref={teamTVLogo}
               src={`/teamLogos/team${teamIdKey[currentTeam]}.png`}
+              onAnimationEnd={handleAnimation}
             />
           </div>
           <img
