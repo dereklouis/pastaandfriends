@@ -24,7 +24,9 @@ const CSO = (props) => {
           </div>
         </div>
       </div>
-      <div className="GRLine" />
+      <div id="CSOLineFix">
+        <div className="GRLine" />
+      </div>
       <div id="CSOWrapper" className="FCAIC">
         <div className="PreWrap FCAIC">
           <div className="GRRowC">

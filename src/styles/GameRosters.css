@@ -198,6 +198,12 @@
   margin: 6px 0px 0px 0px;
 }
 
+#CSOLineFix {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .GRCategory {
   font-size: 20px;
   font-weight: bold;

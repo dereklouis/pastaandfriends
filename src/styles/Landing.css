@@ -37,6 +37,32 @@
   padding: 0px;
 }
 
+#rink {
+  position: absolute;
+  z-index: 3;
+  transform: translate(5px, 5px);
+  width: 500px;
+  height: 275px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#teamTVLogoContainer {
+  position: absolute;
+  transform: translate(5px, 5px);
+  width: 500px;
+  height: 275px;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamTVLogo {
+  max-width: 150px;
+  max-height: 150px;
+}
+
 #tvBlack {
   width: 500px;
   height: 276px;
@@ -77,7 +103,7 @@
   position: absolute;
 }
 
-#remoteButtonChange {
+#okButton {
   width: 23px;
   height: 23px;
   border-radius: 50%;
@@ -86,23 +112,45 @@
   cursor: pointer;
   opacity: 0;
   z-index: 10;
+  padding: 0px;
 }
 
-#remoteButtonFiller {
+#okButtonFiller {
   width: 23px;
   height: 23px;
   border-radius: 50%;
   position: absolute;
   transform: translate(64px, 135px);
   z-index: 4;
+  padding: 0px;
 }
 
-.buttonUp {
+.okButtonOff {
   background-color: rgb(156, 228, 83);
 }
 
-.buttonDown {
+.okButtonOn {
   background-color: rgb(142, 210, 75);
+}
+
+.arrowButtonOff {
+  background-color: #ffb81c;
+}
+
+.arrowButtonOn {
+  background-color: #d59711;
+}
+
+#modeButton {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  transform: translate(80px, 20px);
+  z-index: 10;
+  padding: 0px;
 }
 
 #remoteButtonOff {
@@ -115,6 +163,54 @@
   background-color: rgb(130, 11, 11);
   z-index: 10;
   padding: 0px;
+}
+
+#upButton {
+  position: absolute;
+  padding: 0px;
+  z-index: 10;
+  width: 60px;
+  height: 56px;
+  border: none;
+  transform: translate(63px, 63px) rotate(18deg);
+  border-radius: 3px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#upButtonFiller {
+  position: absolute;
+  padding: 0px;
+  z-index: 4;
+  width: 58px;
+  height: 54px;
+  border: none;
+  transform: translate(64px, 64px) rotate(18deg);
+  border-radius: 3px;
+}
+
+#downButton {
+  position: absolute;
+  padding: 0px;
+  z-index: 10;
+  width: 60px;
+  height: 42px;
+  border: none;
+  transform: translate(25px, 188px) rotate(18deg);
+  border-radius: 3px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#downButtonFiller {
+  position: absolute;
+  padding: 0px;
+  z-index: 4;
+  width: 58px;
+  height: 40px;
+  border: none;
+  transform: translate(27px, 189px) rotate(18deg);
+  border-radius: 3px;
 }
 
 #jack {
@@ -172,13 +268,13 @@
     transform: translate(107px, 29px);
   }
 
-  #remoteButtonChange {
+  #okButton {
     width: 21px;
     height: 21px;
     transform: translate(57px, 122px);
   }
 
-  #remoteButtonFiller {
+  #okButtonFiller {
     width: 21px;
     height: 21px;
     transform: translate(57px, 122px);
@@ -189,7 +285,7 @@
   }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 380px) {
   #landingContainer {
     min-height: 568px;
   }
@@ -218,7 +314,7 @@
   }
 
   #remoteContainer {
-    margin: auto 70px 45px 0px;
+    margin: 20px 70px 45px 0px;
     height: 248px;
     width: 142px;
   }
@@ -228,13 +324,13 @@
     width: 142px;
   }
 
-  #remoteButtonChange {
+  #okButton {
     width: 21px;
     height: 21px;
     transform: translate(57px, 123px);
   }
 
-  #remoteButtonFiller {
+  #okButtonFiller {
     width: 21px;
     height: 21px;
     transform: translate(57px, 123px);

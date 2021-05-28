@@ -1,38 +1,95 @@
 import './styles/Landing.css';
+import { teamIdKey } from './Keys';
 import { useState, useRef } from 'react';
 
 const Landing = () => {
+  const [currentTeam, setCurrentTeam] = useState(2);
   const [currentGif, setCurrentGif] = useState(0);
   const gifClip = useRef(null);
+  const rink = useRef(null);
   const remoteRef = useRef(null);
+  const upButton = useRef(null);
+  const okButton = useRef(null);
+  const downButton = useRef(null);
+  const lastModeOn = useRef(null);
 
   const tvOffOn = () => {
-    if (gifClip.current.className === 'opacityShow') {
+    if (rink.current.className === 'opacityShow') {
+      rink.current.className = 'opacityHide';
+      lastModeOn.current = rink;
+    } else if (gifClip.current.className === 'opacityShow') {
       gifClip.current.className = 'opacityHide';
+      lastModeOn.current = gifClip;
     } else {
-      gifClip.current.className = 'opacityShow';
+      lastModeOn.current.current.className = 'opacityShow';
     }
   };
 
-  const changeClip = () => {
-    if (gifClip.current.className === 'opacityShow') {
-      if (currentGif === 6) {
-        setCurrentGif(0);
+  const changeTeam = (command) => {
+    if (rink.current.className === 'opacityShow') {
+      if (command === 'plus') {
+        if (currentTeam === 31) {
+          setCurrentTeam(0);
+        } else {
+          setCurrentTeam(currentTeam + 1);
+        }
       } else {
-        setCurrentGif(currentGif + 1);
+        if (currentTeam === 0) {
+          setCurrentTeam(31);
+        } else {
+          setCurrentTeam(currentTeam - 1);
+        }
       }
     }
+  };
+
+  const changeClip = (command) => {
+    if (gifClip.current.className === 'opacityShow') {
+      if (command === 'plus') {
+        if (currentGif === 6) {
+          setCurrentGif(0);
+        } else {
+          setCurrentGif(currentGif + 1);
+        }
+      } else {
+        if (currentGif === 0) {
+          setCurrentGif(6);
+        } else {
+          setCurrentGif(currentGif - 1);
+        }
+      }
+    }
+  };
+
+  const remoteShake = () => {
     remoteRef.current.className = '';
     void remoteRef.current.offsetWidth;
     remoteRef.current.className = 'click';
   };
 
-  const downUp = () => {
-    const button = document.getElementById('remoteButtonFiller');
-    if (button.className === 'buttonUp') {
-      button.className = 'buttonDown';
+  const press = (e, button) => {
+    if (button.current.id === 'okButtonFiller') {
+      if (button.current.className === 'okButtonOff') {
+        button.current.className = 'okButtonOn';
+      } else {
+        button.current.className = 'okButtonOff';
+      }
     } else {
-      button.className = 'buttonUp';
+      if (button.current.className === 'arrowButtonOff') {
+        button.current.className = 'arrowButtonOn';
+      } else {
+        button.current.className = 'arrowButtonOff';
+      }
+    }
+  };
+
+  const changeMode = () => {
+    if (rink.current.className === 'opacityShow') {
+      rink.current.className = 'opacityHide';
+      gifClip.current.className = 'opacityShow';
+    } else {
+      rink.current.className = 'opacityShow';
+      gifClip.current.className = 'opacityHide';
     }
   };
 
@@ -41,25 +98,90 @@ const Landing = () => {
       <div id="landingContainer">
         <div id="tvContainer">
           <img id="tv" src="tv.png" alt="tv" />
+          <div id="teamTVLogoContainer">
+            <img
+              alt="Team Logo"
+              className="teamTVLogo"
+              src={`/teamLogos/team${teamIdKey[currentTeam]}.png`}
+            />
+          </div>
+          <img
+            id="rink"
+            src="rink.jpg"
+            alt="TD Garden"
+            className="opacityShow"
+            ref={rink}
+          />
           <img
             id="gifElement"
             src={`gifs/gif${currentGif}.gif`}
             alt="gif"
-            className="opacityShow"
+            className="opacityHide"
             ref={gifClip}
           />
           <div id="tvBlack"></div>
         </div>
         <div id="remoteContainer" ref={remoteRef}>
-          <button type="button" id="remoteButtonOff" onClick={tvOffOn}></button>
           <button
             type="button"
-            id="remoteButtonChange"
-            onClick={changeClip}
-            onMouseDown={downUp}
-            onMouseUp={downUp}
-          ></button>
-          <div id="remoteButtonFiller" className="buttonUp"></div>
+            id="remoteButtonOff"
+            onClick={() => {
+              tvOffOn();
+              remoteShake();
+            }}
+          />
+          <button
+            type="button"
+            id="modeButton"
+            onClick={() => {
+              changeMode();
+              remoteShake();
+            }}
+          />
+          <button
+            type="button"
+            id="upButton"
+            onClick={() => {
+              changeTeam('plus');
+              changeClip('plus');
+              remoteShake();
+            }}
+            onMouseDown={(e) => press(e, upButton)}
+            onMouseUp={(e) => press(e, upButton)}
+          />
+          <button
+            type="button"
+            id="upButtonFiller"
+            className="arrowButtonOff"
+            ref={upButton}
+          />
+          <button
+            type="button"
+            id="okButton"
+            onClick={() => {
+              remoteShake();
+            }}
+            onMouseDown={(e) => press(e, okButton)}
+            onMouseUp={(e) => press(e, okButton)}
+          />
+          <div id="okButtonFiller" className="okButtonOff" ref={okButton} />
+          <button
+            type="button"
+            id="downButton"
+            onClick={() => {
+              changeTeam('minus');
+              changeClip('minus');
+              remoteShake();
+            }}
+            onMouseDown={(e) => press(e, downButton)}
+            onMouseUp={(e) => press(e, downButton)}
+          />
+          <button
+            type="button"
+            id="downButtonFiller"
+            className="arrowButtonOff"
+            ref={downButton}
+          />
           <img id="remote" alt="remote" src="remote.png" />
         </div>
         <img alt="Jack" id="jack" src="jackbw.png" />
