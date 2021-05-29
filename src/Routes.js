@@ -10,7 +10,6 @@ import TeamStats from './TeamStats';
 import Boxscore from './Boxscore';
 import GameRosters from './GameRosters';
 import ErrorPage from './ErrorPage';
-import FlipTutorial from './FlipTutorial';
 
 const season = '20202021';
 
@@ -69,8 +68,6 @@ const Routes = () => {
 
   return (
     <>
-      {localStorage.getItem('flipTutorial') === null &&
-        window.location.pathname !== '/mancave' && <FlipTutorial />}
       <NavBar />
       <SlideMenu />
       <Dimmer />

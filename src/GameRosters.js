@@ -4,6 +4,7 @@ import { flipCard, handleCardFlipAnimation } from './CardFlip';
 import { checkSchedule } from './RosterFunctions';
 import ActivePlayers from './ActivePlayers';
 import CSO from './CSO';
+import FlipTutorial from './FlipTutorial';
 import Loading from './Loading';
 
 window.scrollTo(0, 0);
@@ -91,6 +92,7 @@ const GameRosters = (props) => {
   };
   return (
     <>
+      {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
       {!gameData.length ? (
         <Loading />
       ) : (

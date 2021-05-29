@@ -3,6 +3,7 @@ import Loading from './Loading';
 import { checkSchedule } from './BoxscoreFunctions';
 import LiveStats from './LiveStats';
 import ScoringPlays from './ScoringPlays';
+import FlipTutorial from './FlipTutorial';
 import { flipCard, handleCardFlipAnimation } from './CardFlip';
 import { useEffect, useState, useRef } from 'react';
 
@@ -59,6 +60,7 @@ const Boxscore = (props) => {
   };
   return (
     <>
+      {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
       {!gameData.length ? (
         <Loading />
       ) : (

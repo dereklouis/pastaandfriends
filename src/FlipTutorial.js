@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import './styles/FlipTutorial.css';
 
+window.scrollTo(0, 0);
+
 const FlipTutorial = () => {
   const flipContainer = useRef(null);
 

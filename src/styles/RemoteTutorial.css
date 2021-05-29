@@ -1,0 +1,161 @@
+#remoteTutorialContainer {
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  opacity: 0;
+}
+
+#RTTitle {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin: 100px 0px 125px 0px;
+  letter-spacing: 2px;
+  font-size: 45px;
+  text-align: center;
+}
+
+#RTInstruction {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 24px;
+  margin: 0px 0px 100px 0px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#RTV {
+  width: 605px;
+  height: 705px;
+  border: 7px solid #ffb81c;
+  border-radius: 36px;
+}
+
+@media (max-width: 1175px), (max-height: 1200px) {
+  #RTTitle {
+    margin: 80px 0px 100px 0px;
+    letter-spacing: 2px;
+    font-size: 36px;
+  }
+
+  #RTInstruction {
+    font-size: 19px;
+    margin: 0px 0px 80px 0px;
+    letter-spacing: 1px;
+  }
+
+  #RTV {
+    width: 484px;
+    height: 564px;
+    border: 6px solid #ffb81c;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 815px), (max-height: 975px) {
+  #RTTitle {
+    margin: 64px 0px 80px 0px;
+    letter-spacing: 2px;
+    font-size: 29px;
+  }
+
+  #RTInstruction {
+    font-size: 17px;
+    margin: 0px 0px 64px 0px;
+    letter-spacing: 1px;
+  }
+
+  #RTV {
+    width: 387px;
+    height: 451px;
+    border: 5px solid #ffb81c;
+    border-radius: 28px;
+  }
+}
+
+@media (max-width: 600px), (max-height: 780px) {
+  #RTTitle {
+    margin: 51px 0px 64px 0px;
+    letter-spacing: 2px;
+    font-size: 23px;
+  }
+
+  #RTInstruction {
+    font-size: 16px;
+    margin: 0px 0px 51px 0px;
+    letter-spacing: 1px;
+  }
+
+  #RTV {
+    width: 310px;
+    height: 361px;
+    border: 5px solid #ffb81c;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 475px), (max-height: 630px) {
+  #RTTitle {
+    margin: 41px 0px 51px 0px;
+    letter-spacing: 2px;
+    font-size: 18px;
+  }
+
+  #RTInstruction {
+    font-size: 13px;
+    margin: 0px 0px 41px 0px;
+    letter-spacing: 1px;
+  }
+
+  #RTV {
+    width: 248px;
+    height: 289px;
+    border: 4px solid #ffb81c;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 475px), (max-height: 630px) {
+  #RTTitle {
+    margin: 41px 0px 51px 0px;
+    letter-spacing: 2px;
+    font-size: 18px;
+  }
+
+  #RTInstruction {
+    font-size: 13px;
+    margin: 0px 0px 41px 0px;
+    letter-spacing: 1px;
+  }
+
+  #RTV {
+    width: 248px;
+    height: 289px;
+    border: 4px solid #ffb81c;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 360px), (max-height: 500px) {
+  #RTTitle {
+    margin: 37px 0px 46px 0px;
+    letter-spacing: 2px;
+    font-size: 16px;
+  }
+
+  #RTInstruction {
+    font-size: 12px;
+    margin: 0px 0px 37px 0px;
+    letter-spacing: 1px;
+  }
+
+  #RTV {
+    width: 223px;
+    height: 260px;
+    border: 4px solid #ffb81c;
+    border-radius: 20px;
+  }
+}

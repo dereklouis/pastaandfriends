@@ -2,6 +2,7 @@ import './styles/TeamStats.css';
 import Loading from './Loading';
 import BruinsTeamStats from './BruinsTeamStats';
 import LeagueStandings from './LeagueStandings';
+import FlipTutorial from './FlipTutorial';
 import { flipCard, handleCardFlipAnimation } from './CardFlip';
 import { useRef } from 'react';
 
@@ -13,6 +14,7 @@ const TeamStats = (props) => {
 
   return (
     <>
+      {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
       {props.teamStats.length ? (
         <div id="teamStatsContainer" className="FCAIC">
           <div

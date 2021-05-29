@@ -1,6 +1,7 @@
 import './styles/Landing.css';
 import { teamIdKey, reverseTeamIdKey } from './Keys';
 import { useState, useRef } from 'react';
+import RemoteTutorial from './RemoteTutorial';
 
 window.scrollTo(0, 0);
 
@@ -124,111 +125,115 @@ const Landing = (props) => {
 
   const reloadWithNewTeam = () => {
     localStorage.setItem('teamSelection', teamIdKey[currentTeam]);
+    props.history.push('/playerstats');
     window.location.reload();
   };
 
   return (
-    <div id="landingMaster">
-      <div id="landingContainer">
-        <div id="tvContainer">
-          <img id="tv" src="tv.png" alt="tv" />
-          <div id="teamTVLogoContainer">
+    <>
+      {localStorage.getItem('remoteTutorial') === null && <RemoteTutorial />}
+      <div id="landingMaster">
+        <div id="landingContainer">
+          <div id="tvContainer">
+            <img id="tv" src="tv.png" alt="tv" />
+            <div id="teamTVLogoContainer">
+              <img
+                alt="Team Logo"
+                id="teamTVLogo"
+                className={
+                  teamIdKey[currentTeam] === props.teamSelection
+                    ? 'opacityShow'
+                    : 'opacityHalf'
+                }
+                ref={teamTVLogo}
+                src={`/teamLogos/team${teamIdKey[currentTeam]}.png`}
+                onAnimationEnd={handleAnimation}
+              />
+            </div>
             <img
-              alt="Team Logo"
-              id="teamTVLogo"
-              className={
-                teamIdKey[currentTeam] === props.teamSelection
-                  ? 'opacityShow'
-                  : 'opacityHalf'
-              }
-              ref={teamTVLogo}
-              src={`/teamLogos/team${teamIdKey[currentTeam]}.png`}
-              onAnimationEnd={handleAnimation}
+              id="rink"
+              src="rink.jpg"
+              alt="TD Garden"
+              className="opacityShow"
+              ref={rink}
             />
+            <img
+              id="gifElement"
+              src={`gifs/gif${currentGif}.gif`}
+              alt="gif"
+              className="opacityHide"
+              ref={gifClip}
+            />
+            <div id="tvBlack"></div>
           </div>
-          <img
-            id="rink"
-            src="rink.jpg"
-            alt="TD Garden"
-            className="opacityShow"
-            ref={rink}
-          />
-          <img
-            id="gifElement"
-            src={`gifs/gif${currentGif}.gif`}
-            alt="gif"
-            className="opacityHide"
-            ref={gifClip}
-          />
-          <div id="tvBlack"></div>
+          <div id="remoteContainer" ref={remoteRef}>
+            <button
+              type="button"
+              id="remoteButtonOff"
+              onClick={() => {
+                tvOffOn();
+                remoteShake();
+              }}
+            />
+            <button
+              type="button"
+              id="modeButton"
+              onClick={() => {
+                changeMode();
+                remoteShake();
+              }}
+            />
+            <button
+              type="button"
+              id="upButton"
+              onClick={() => {
+                changeTeam('plus');
+                changeClip('plus');
+                remoteShake();
+              }}
+              onMouseDown={(e) => press(e, upButton)}
+              onMouseUp={(e) => press(e, upButton)}
+            />
+            <button
+              type="button"
+              id="upButtonFiller"
+              className="arrowButtonOff"
+              ref={upButton}
+            />
+            <button
+              type="button"
+              id="okButton"
+              onClick={() => {
+                selectTeam();
+                remoteShake();
+              }}
+              onMouseDown={(e) => press(e, okButton)}
+              onMouseUp={(e) => press(e, okButton)}
+            />
+            <div id="okButtonFiller" className="okButtonOff" ref={okButton} />
+            <button
+              type="button"
+              id="downButton"
+              onClick={() => {
+                changeTeam('minus');
+                changeClip('minus');
+                remoteShake();
+              }}
+              onMouseDown={(e) => press(e, downButton)}
+              onMouseUp={(e) => press(e, downButton)}
+            />
+            <button
+              type="button"
+              id="downButtonFiller"
+              className="arrowButtonOff"
+              ref={downButton}
+            />
+            <img id="remote" alt="remote" src="remote.png" />
+          </div>
+          <img alt="Jack" id="jack" src="jackbw.png" />
         </div>
-        <div id="remoteContainer" ref={remoteRef}>
-          <button
-            type="button"
-            id="remoteButtonOff"
-            onClick={() => {
-              tvOffOn();
-              remoteShake();
-            }}
-          />
-          <button
-            type="button"
-            id="modeButton"
-            onClick={() => {
-              changeMode();
-              remoteShake();
-            }}
-          />
-          <button
-            type="button"
-            id="upButton"
-            onClick={() => {
-              changeTeam('plus');
-              changeClip('plus');
-              remoteShake();
-            }}
-            onMouseDown={(e) => press(e, upButton)}
-            onMouseUp={(e) => press(e, upButton)}
-          />
-          <button
-            type="button"
-            id="upButtonFiller"
-            className="arrowButtonOff"
-            ref={upButton}
-          />
-          <button
-            type="button"
-            id="okButton"
-            onClick={() => {
-              selectTeam();
-              remoteShake();
-            }}
-            onMouseDown={(e) => press(e, okButton)}
-            onMouseUp={(e) => press(e, okButton)}
-          />
-          <div id="okButtonFiller" className="okButtonOff" ref={okButton} />
-          <button
-            type="button"
-            id="downButton"
-            onClick={() => {
-              changeTeam('minus');
-              changeClip('minus');
-              remoteShake();
-            }}
-            onMouseDown={(e) => press(e, downButton)}
-            onMouseUp={(e) => press(e, downButton)}
-          />
-          <button
-            type="button"
-            id="downButtonFiller"
-            className="arrowButtonOff"
-            ref={downButton}
-          />
-          <img id="remote" alt="remote" src="remote.png" />
-        </div>
-        <img alt="Jack" id="jack" src="jackbw.png" />
       </div>
-    </div>
+    </>
   );
 };
 

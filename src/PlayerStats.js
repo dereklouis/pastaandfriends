@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import Loading from './Loading';
 import { flipCard, handleAnimation } from './PlayerStatsFunctions';
+import FlipTutorial from './FlipTutorial';
 import SkaterStats from './SkaterStats';
 import SkaterPerson from './SkaterPerson';
 import GoalieStats from './GoalieStats';
@@ -20,10 +21,9 @@ function PlayerStats(props) {
   let skaterCount = 0;
   let goalieCount = 0;
 
-  console.log('render');
-
   return (
     <>
+      {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
       {props.fullTeamStats.length ? (
         <div id="PSMaster" className="FCAIC">
           <p id="PSSeason">{seasonArr.join('')}</p>
