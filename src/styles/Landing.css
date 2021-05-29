@@ -52,11 +52,10 @@
   transform: translate(5px, 5px);
   width: 500px;
   height: 275px;
-  z-index: 24;
+  z-index: 4;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: cyan;
 }
 
 #teamTVLogo {
