@@ -229,11 +229,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.refreshButton:enabled:hover {
-  background-color: #ffb71c6d;
-  border: 2px solid rgba(0, 0, 0, 0.9);
-}
-
 .refreshButton:disabled {
   cursor: none;
   opacity: 0.3;
@@ -251,23 +246,26 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.AAButton:hover {
-  background-color: #ffb71c6d;
-  border: 2px solid rgba(0, 0, 0, 0.9);
-}
-
 @keyframes refreshButton {
   0% {
     transform: rotate(0deg) scale(1);
+    background-color: rgba(0, 0, 0, 0.3);
   }
   20% {
     transform: rotate(-30deg) scale(0.95);
+  }
+  30% {
+    background-color: #ffb71c92;
+  }
+  60% {
+    background-color: #ffb71c92;
   }
   70% {
     transform: rotate(400deg) scale(1.01);
   }
   100% {
     transform: rotate(360deg) scale(1);
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -277,7 +275,7 @@ a {
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
   animation-duration: 1s;
-  background-color: #ffb71c92;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .AAButtonOff {
@@ -305,6 +303,31 @@ a {
   animation-duration: 3s;
   animation-timing-function: linear;
   animation-delay: 1.5s;
+}
+
+@media (min-width: 450px) and (min-height: 450px) {
+  @keyframes refreshButton {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    20% {
+      transform: rotate(-30deg) scale(0.95);
+    }
+    70% {
+      transform: rotate(400deg) scale(1.01);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  .AAButton:hover {
+    background-color: #ffb71c6d;
+    border: 2px solid rgba(0, 0, 0, 0.9);
+  }
+  .refreshButton:enabled:hover {
+    background-color: #ffb71c6d;
+    border: 2px solid rgba(0, 0, 0, 0.9);
+  }
 }
 
 @media (max-width: 875px) {
