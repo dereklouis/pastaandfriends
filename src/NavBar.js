@@ -22,7 +22,7 @@ const NavBar = () => {
         TEAM STATS
       </Link>
       <Link
-        to="/"
+        to="/mancave"
         id="navMiddleLink"
         onClick={() => {
           pastaClose();

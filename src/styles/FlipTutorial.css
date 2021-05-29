@@ -1,0 +1,140 @@
+#flipTutorialContainer {
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  opacity: 0;
+}
+
+#FTTitle {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin: 150px 0px 125px 0px;
+  letter-spacing: 2px;
+  font-size: 45px;
+  text-align: center;
+}
+
+#FTInstruction {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 24px;
+  margin: 0px 0px 100px 0px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#FTV {
+  width: 600px;
+  height: 417px;
+  border: 7px solid #ffb81c;
+  border-radius: 36px;
+}
+
+@media (max-width: 1100px), (max-height: 1000px) {
+  #FTTitle {
+    margin: 120px 0px 100px 0px;
+    letter-spacing: 2px;
+    font-size: 36px;
+  }
+
+  #FTInstruction {
+    margin: 0px 0px 80px 0px;
+    letter-spacing: 1px;
+    font-size: 19px;
+  }
+
+  #FTV {
+    width: 480px;
+    height: 337px;
+    border: 7px solid #ffb81c;
+    border-radius: 32px;
+  }
+}
+
+@media (max-width: 750px), (max-height: 800px) {
+  #FTTitle {
+    margin: 96px 0px 80px 0px;
+    letter-spacing: 2px;
+    font-size: 29px;
+  }
+
+  #FTInstruction {
+    margin: 0px 0px 64px 0px;
+    letter-spacing: 1px;
+    font-size: 15px;
+  }
+
+  #FTV {
+    width: 384px;
+    height: 270px;
+    border: 6px solid #ffb81c;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 575px), (max-height: 625px) {
+  #FTTitle {
+    margin: 77px 0px 64px 0px;
+    letter-spacing: 2px;
+    font-size: 23px;
+  }
+
+  #FTInstruction {
+    margin: 0px 0px 51px 0px;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+  #FTV {
+    width: 307px;
+    height: 216px;
+    border: 5px solid #ffb81c;
+    border-radius: 28px;
+  }
+}
+
+@media (max-width: 450px), (max-height: 525px) {
+  #FTTitle {
+    margin: 69px 0px 58px 0px;
+    letter-spacing: 2px;
+    font-size: 21px;
+  }
+
+  #FTInstruction {
+    margin: 0px 0px 46px 0px;
+    letter-spacing: 1px;
+    font-size: 13px;
+  }
+
+  #FTV {
+    width: 276px;
+    height: 194px;
+    border: 4px solid #ffb81c;
+    border-radius: 26px;
+  }
+}
+
+@media (max-width: 400px), (max-height: 450px) {
+  #FTTitle {
+    margin: 62px 0px 52px 0px;
+    letter-spacing: 2px;
+    font-size: 19px;
+  }
+
+  #FTInstruction {
+    margin: 0px 0px 41px 0px;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+
+  #FTV {
+    width: 248px;
+    height: 175px;
+    border: 4px solid #ffb81c;
+    border-radius: 24px;
+  }
+}

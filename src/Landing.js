@@ -105,10 +105,12 @@ const Landing = (props) => {
   };
 
   const selectTeam = () => {
-    if (teamIdKey[currentTeam] !== props.teamSelection) {
-      teamTVLogo.current.className = 'selectAnimation';
-    } else {
-      teamTVLogo.current.className = 'nudge';
+    if (rink.current.className === 'opacityShow') {
+      if (teamIdKey[currentTeam] !== props.teamSelection) {
+        teamTVLogo.current.className = 'selectAnimation';
+      } else {
+        teamTVLogo.current.className = 'nudge';
+      }
     }
   };
 

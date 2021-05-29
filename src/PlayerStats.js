@@ -20,6 +20,8 @@ function PlayerStats(props) {
   let skaterCount = 0;
   let goalieCount = 0;
 
+  console.log('render');
+
   return (
     <>
       {props.fullTeamStats.length ? (
