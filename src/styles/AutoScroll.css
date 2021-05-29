@@ -1,0 +1,115 @@
+#autoScrollButton {
+  position: fixed;
+  z-index: 10;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 50%;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  background-color: #ffb71c5f;
+  cursor: pointer;
+  transition-duration: 1s;
+}
+
+#autoScrollButton:disabled {
+  opacity: 0;
+  cursor: default;
+}
+
+#scrollArrow {
+  width: 25px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.downPosition {
+  transform: rotate(180deg);
+}
+
+.containerDownPosition {
+  bottom: 0;
+  right: 0;
+  margin: 0px 70px 50px 0px;
+}
+
+.containerUpPosition {
+  top: 0;
+  right: 0;
+  margin: 100px 70px 0px 0px;
+}
+
+@media (min-width: 450px) and (min-height: 450px) {
+  #autoScrollButton:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 800px), (max-height: 975px) {
+  #autoScrollButton {
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+  }
+  #scrollArrow {
+    width: 20px;
+    height: auto;
+  }
+  .containerDownPosition {
+    bottom: 0;
+    right: 0;
+    margin: 0px 60px 50px 0px;
+  }
+
+  .containerUpPosition {
+    top: 0;
+    right: 0;
+    margin: 100px 60px 0px 0px;
+  }
+}
+
+@media (max-width: 700px), (max-height: 800px) {
+  #autoScrollButton {
+    width: 38px;
+    height: 38px;
+    border: 2px solid black;
+  }
+  #scrollArrow {
+    width: 19px;
+    height: auto;
+  }
+  .containerDownPosition {
+    bottom: 0;
+    right: 0;
+    margin: 0px 55px 50px 0px;
+  }
+
+  .containerUpPosition {
+    top: 0;
+    right: 0;
+    margin: 100px 55px 0px 0px;
+  }
+}
+
+@media (max-width: 550px), (max-height: 600px) {
+  #autoScrollButton {
+    width: 36px;
+    height: 36px;
+    border: 2px solid black;
+  }
+  #scrollArrow {
+    width: 18px;
+    height: auto;
+  }
+  .containerDownPosition {
+    bottom: 0;
+    right: 0;
+    margin: 0px 20px 20px 0px;
+  }
+
+  .containerUpPosition {
+    top: 0;
+    right: 0;
+    margin: 80px 20px 0px 0px;
+  }
+}
