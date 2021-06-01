@@ -22,12 +22,16 @@ const Landing = (props) => {
   const tvOffOn = () => {
     if (rink.current.className === 'opacityShow') {
       rink.current.className = 'opacityHide';
+      teamTVLogo.current.className = 'opacityHide';
       lastModeOn.current = rink;
     } else if (gifClip.current.className === 'opacityShow') {
       gifClip.current.className = 'opacityHide';
       lastModeOn.current = gifClip;
     } else {
       lastModeOn.current.current.className = 'opacityShow';
+      teamIdKey[currentTeam] === props.teamSelection
+        ? (teamTVLogo.current.className = 'opacityShow')
+        : (teamTVLogo.current.className = 'opacityHalf');
     }
   };
 
