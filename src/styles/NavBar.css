@@ -83,7 +83,10 @@
 }
 
 @media (min-width: 450px) and (min-height: 450px) {
-  #centerLogoLink:hover,
+  #centerLogoLink:hover {
+    transform: scale(1.01);
+  }
+
   .navLink:hover {
     transform: scale(1.05);
   }
