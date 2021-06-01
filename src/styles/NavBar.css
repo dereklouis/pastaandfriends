@@ -105,6 +105,9 @@
   #stickContainer {
     display: block;
   }
+  #centerLogoLink:active {
+    transform: scale(0.98);
+  }
 }
 
 @media (max-width: 550px) {
