@@ -35,7 +35,7 @@
   transform: scale(0.98);
 }
 
-@media (max-width: 605px) {
+@media (max-width: 605px), (max-height: 900px) {
   #SMLinkBox {
     margin: 113px 0px 0px 0px;
   }
@@ -45,19 +45,19 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 500px), (max-height: 800px) {
   .SMLink {
     font-size: 16px;
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 415px), (max-height: 700px) {
   .SMLink {
     font-size: 14px;
   }
 }
 
-@media (max-width: 385px) {
+@media (max-width: 385px), (max-height: 550px) {
   #SMLinkBox {
     margin: 105px 0px 0px 0px;
   }
@@ -65,5 +65,16 @@
   .SMLink {
     font-size: 12px;
     margin: 0px 0px 50px 30px;
+  }
+}
+
+@media (max-height: 350px) {
+  #SMLinkBox {
+    margin: 90px 0px 0px 0px;
+  }
+
+  .SMLink {
+    font-size: 11px;
+    margin: 0px 0px 50px 20px;
   }
 }

@@ -1,11 +1,22 @@
 #mancaveLink {
   position: fixed;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+  transition-duration: 1s;
+}
+
+.RILeft {
   bottom: 0;
   left: 0;
-  z-index: 10;
   width: 50px;
   margin: 0px 0px 30px 40px;
-  -webkit-tap-highlight-color: transparent;
+}
+
+.RIRight {
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  margin: 0px 30px 0px 40px;
 }
 
 #remoteIcon {
@@ -20,22 +31,34 @@
 }
 
 @media (max-width: 605px), (max-height: 1000px) {
-  #mancaveLink {
+  .RILeft {
     width: 45px;
     margin: 0px 0px 25px 35px;
+  }
+  .RIRight {
+    width: 45px;
+    margin: 0px 25px 0px 35px;
   }
 }
 
 @media (max-width: 500px), (max-height: 800px) {
-  #mancaveLink {
+  .RILeft {
     width: 40px;
     margin: 0px 0px 10px 16px;
+  }
+  .RIRight {
+    width: 40px;
+    margin: 0px 16px 10px 0px;
   }
 }
 
 @media (max-width: 385px), (max-height: 550px) {
-  #mancaveLink {
+  .RILeft {
     width: 36px;
     margin: 0px 0px 8px 13px;
+  }
+  .RIRight {
+    width: 36px;
+    margin: 0px 13px 8px 0px;
   }
 }

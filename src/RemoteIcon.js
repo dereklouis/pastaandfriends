@@ -10,7 +10,12 @@ const RemoteIcon = () => {
     }
   };
   return (
-    <Link to="/mancave" id="mancaveLink" onClick={handleToggle}>
+    <Link
+      to="/mancave"
+      id="mancaveLink"
+      className="RILeft"
+      onClick={handleToggle}
+    >
       <img src="/remoteIcon.png" alt="Remote Icon" id="remoteIcon" />
     </Link>
   );
