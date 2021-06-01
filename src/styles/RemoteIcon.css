@@ -1,0 +1,40 @@
+#mancaveLink {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 50px;
+  margin: 0px 0px 30px 40px;
+}
+
+#remoteIcon {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 450px) and (min-height: 450px) {
+  #mancaveLink:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 605px), (max-height: 1000px) {
+  #mancaveLink {
+    width: 45px;
+    margin: 0px 0px 25px 35px;
+  }
+}
+
+@media (max-width: 500px), (max-height: 800px) {
+  #mancaveLink {
+    width: 40px;
+    margin: 0px 0px 10px 16px;
+  }
+}
+
+@media (max-width: 385px), (max-height: 550px) {
+  #mancaveLink {
+    width: 36px;
+    margin: 0px 0px 8px 13px;
+  }
+}

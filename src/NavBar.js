@@ -21,11 +21,13 @@ const NavBar = () => {
       <Link className="navLink" to="/teamstats" onClick={scrollToTop}>
         TEAM STATS
       </Link>
-      <div id="navMiddle">
-        <h1 id="navTitle">PASTA</h1>
-        <img src="pastalogo.png" id="navLogo" alt="pasta" />
-        <h1 id="navTitle">FRIENDS</h1>
-      </div>
+      <Link to="/playerstats" id="centerLogoLink">
+        <div id="navMiddle">
+          <h1 id="navTitle">PASTA</h1>
+          <img src="pastalogo.png" id="navLogo" alt="pasta" />
+          <h1 id="navTitle">FRIENDS</h1>
+        </div>
+      </Link>
       <Link className="navLink" to="/boxscore" onClick={scrollToTop}>
         BOXSCORE
       </Link>

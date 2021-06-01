@@ -6,6 +6,7 @@ import ActivePlayers from './ActivePlayers';
 import CSO from './CSO';
 import FlipTutorial from './FlipTutorial';
 import Loading from './Loading';
+import RemoteIcon from './RemoteIcon';
 
 window.scrollTo(0, 0);
 
@@ -96,51 +97,54 @@ const GameRosters = (props) => {
       {!gameData.length ? (
         <Loading />
       ) : (
-        <div id="gameRostersContainer" className="FCAIC">
-          {typeof gameData === 'string' ? (
-            <div className="NoGameWrapper">
-              <h1 className="NoGame">{gameData}</h1>
-            </div>
-          ) : (
-            <>
-              <div className="GRRefreshButtonRow">
-                <button
-                  className="refreshButton refreshButtonGR"
-                  onClick={refresh}
-                  onAnimationEnd={resetButton}
-                  ref={refreshButtonGR}
-                >
-                  REFRESH STATS
-                </button>
-                <button
-                  className="AAButton AAButtonGR AAButtonOff"
-                  onClick={toggleAA}
-                  ref={AAButtonGR}
-                >
-                  AUTO UPDATE
-                  <div id="buttonRingGR" ref={ringPulseRefGR} />
-                </button>
+        <>
+          <RemoteIcon />
+          <div id="gameRostersContainer" className="FCAIC">
+            {typeof gameData === 'string' ? (
+              <div className="NoGameWrapper">
+                <h1 className="NoGame">{gameData}</h1>
               </div>
-              <div
-                id="GRBoxWrapper"
-                onClick={(e) => flipCard(e, GRMaster)}
-                onAnimationEnd={(e) => handleCardFlipAnimation(e, GRMaster)}
-                className="spin0"
-                ref={GRMaster}
-              >
-                <ActivePlayers
-                  gameData={gameData}
-                  goalieObject={goalieObject}
-                  awaySkatersFinalState={awaySkatersFinalState}
-                  homeSkatersFinalState={homeSkatersFinalState}
-                  defensemenObject={defensemenObject}
-                  forwardsObject={forwardsObject}
-                />
-                <CSO gameData={gameData} scratchesObject={scratchesObject} />
-              </div>
-            </>
-          )}
-        </div>
+            ) : (
+              <>
+                <div className="GRRefreshButtonRow">
+                  <button
+                    className="refreshButton refreshButtonGR"
+                    onClick={refresh}
+                    onAnimationEnd={resetButton}
+                    ref={refreshButtonGR}
+                  >
+                    REFRESH STATS
+                  </button>
+                  <button
+                    className="AAButton AAButtonGR AAButtonOff"
+                    onClick={toggleAA}
+                    ref={AAButtonGR}
+                  >
+                    AUTO UPDATE
+                    <div id="buttonRingGR" ref={ringPulseRefGR} />
+                  </button>
+                </div>
+                <div
+                  id="GRBoxWrapper"
+                  onClick={(e) => flipCard(e, GRMaster)}
+                  onAnimationEnd={(e) => handleCardFlipAnimation(e, GRMaster)}
+                  className="spin0"
+                  ref={GRMaster}
+                >
+                  <ActivePlayers
+                    gameData={gameData}
+                    goalieObject={goalieObject}
+                    awaySkatersFinalState={awaySkatersFinalState}
+                    homeSkatersFinalState={homeSkatersFinalState}
+                    defensemenObject={defensemenObject}
+                    forwardsObject={forwardsObject}
+                  />
+                  <CSO gameData={gameData} scratchesObject={scratchesObject} />
+                </div>
+              </>
+            )}
+          </div>
+        </>
       )}
     </>
   );

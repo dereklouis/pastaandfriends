@@ -6,6 +6,7 @@ import ScoringPlays from './ScoringPlays';
 import FlipTutorial from './FlipTutorial';
 import { flipCard, handleCardFlipAnimation } from './CardFlip';
 import { useEffect, useState, useRef } from 'react';
+import RemoteIcon from './RemoteIcon';
 
 window.scrollTo(0, 0);
 
@@ -65,6 +66,7 @@ const Boxscore = (props) => {
         <Loading />
       ) : (
         <>
+          <RemoteIcon />
           <div id="boxscoreContainer" className="FCAIC">
             {typeof gameData === 'string' ? (
               <div className="NoGameWrapper">
