@@ -16,6 +16,7 @@ const Boxscore = (props) => {
   const BSMaster = useRef(null);
   const refreshButtonBS = useRef(null);
   const AAButtonBS = useRef(null);
+  const RefreshRingPulseRef = useRef(null);
   const ringPulseRef = useRef(null);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const Boxscore = (props) => {
 
   const refresh = () => {
     checkSchedule(props.teamSelection, setGameData);
-    refreshButtonBS.current.classList.add('refreshButtonSpin');
+    RefreshRingPulseRef.current.className = 'buttonRingPulseOnce';
     console.log('Boxscore Data Fetched');
   };
 
@@ -42,7 +43,7 @@ const Boxscore = (props) => {
   };
 
   const resetButton = () => {
-    refreshButtonBS.current.classList.remove('refreshButtonSpin');
+    RefreshRingPulseRef.current.className = '';
   };
 
   const toggleAA = () => {
@@ -82,6 +83,7 @@ const Boxscore = (props) => {
                     ref={refreshButtonBS}
                   >
                     REFRESH STATS
+                    <div id="buttonRingBS" ref={RefreshRingPulseRef} />
                   </button>
                   <button
                     className="AAButton AAButtonBS AAButtonOff"

@@ -19,6 +19,7 @@ const GameRosters = (props) => {
   const [forwardsObject, setForwardsObject] = useState({});
   const [scratchesObject, setScratchesObject] = useState({});
   const GRMaster = useRef(null);
+  const RefreshRingPulseRefGR = useRef(null);
   const refreshButtonGR = useRef(null);
   const AAButtonGR = useRef(null);
   const ringPulseRefGR = useRef(null);
@@ -48,7 +49,7 @@ const GameRosters = (props) => {
       setForwardsObject,
       setScratchesObject
     );
-    refreshButtonGR.current.classList.add('refreshButtonSpin');
+    RefreshRingPulseRefGR.current.className = 'buttonRingPulseOnce';
     console.log('Game Rosters Data Fetched');
   };
 
@@ -74,7 +75,7 @@ const GameRosters = (props) => {
   };
 
   const resetButton = () => {
-    refreshButtonGR.current.classList.remove('refreshButtonSpin');
+    RefreshRingPulseRefGR.current.className = '';
   };
 
   const toggleAA = () => {
@@ -114,6 +115,7 @@ const GameRosters = (props) => {
                     ref={refreshButtonGR}
                   >
                     REFRESH STATS
+                    <div id="buttonRingGR" ref={RefreshRingPulseRefGR} />
                   </button>
                   <button
                     className="AAButton AAButtonGR AAButtonOff"
