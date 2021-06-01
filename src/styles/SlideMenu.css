@@ -31,8 +31,8 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.SMLink:hover {
-  transform: scale(1.05);
+.SMLink:active {
+  transform: scale(0.98);
 }
 
 @media (max-width: 605px) {
