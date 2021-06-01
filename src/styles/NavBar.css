@@ -30,14 +30,6 @@
   align-items: center;
 }
 
-#navMiddleLink {
-  -webkit-tap-highlight-color: transparent;
-}
-
-#navMiddleLink:active {
-  transform: scale(0.99);
-}
-
 .navLink {
   color: white;
   font-family: 'Roboto', sans-serif;
