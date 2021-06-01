@@ -1,6 +1,7 @@
 {
-  "name": "pastaandfriends",
+  "name": "pastafriends",
   "version": "0.1.0",
+  "author": "Derek Louis",
   "private": true,
   "engines": {
     "node": "12.x"
