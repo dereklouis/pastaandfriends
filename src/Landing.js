@@ -222,8 +222,8 @@ const Landing = (props) => {
               }}
               onMouseDown={(e) => press(e, okButton)}
               onMouseUp={(e) => press(e, okButton)}
-              onTouchStart={(e) => press(e, upButton)}
-              onTouchEnd={(e) => press(e, upButton)}
+              onTouchStart={(e) => press(e, okButton)}
+              onTouchEnd={(e) => press(e, okButton)}
             />
             <div id="okButtonFiller" className="okButtonOff" ref={okButton} />
             <button
@@ -236,8 +236,8 @@ const Landing = (props) => {
               }}
               onMouseDown={(e) => press(e, downButton)}
               onMouseUp={(e) => press(e, downButton)}
-              onTouchStart={(e) => press(e, upButton)}
-              onTouchEnd={(e) => press(e, upButton)}
+              onTouchStart={(e) => press(e, downButton)}
+              onTouchEnd={(e) => press(e, downButton)}
             />
             <button
               type="button"
