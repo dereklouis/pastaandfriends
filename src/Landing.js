@@ -29,9 +29,11 @@ const Landing = (props) => {
       lastModeOn.current = gifClip;
     } else {
       lastModeOn.current.current.className = 'opacityShow';
-      teamIdKey[currentTeam] === props.teamSelection
-        ? (teamTVLogo.current.className = 'opacityShow')
-        : (teamTVLogo.current.className = 'opacityHalf');
+      if (rink.current.className === 'opacityShow') {
+        teamIdKey[currentTeam] === props.teamSelection
+          ? (teamTVLogo.current.className = 'opacityShow')
+          : (teamTVLogo.current.className = 'opacityHalf');
+      }
     }
   };
 
@@ -94,18 +96,23 @@ const Landing = (props) => {
   };
 
   const changeMode = () => {
-    if (rink.current.className === 'opacityShow') {
-      teamTVLogo.current.className = 'opacityHide';
-      rink.current.className = 'opacityHide';
-      gifClip.current.className = 'opacityShow';
-    } else {
-      if (teamIdKey[currentTeam] === props.teamSelection) {
-        teamTVLogo.current.className = 'opacityShow';
+    if (
+      rink.current.className === 'opacityShow' ||
+      gifClip.current.className === 'opacityShow'
+    ) {
+      if (rink.current.className === 'opacityShow') {
+        teamTVLogo.current.className = 'opacityHide';
+        rink.current.className = 'opacityHide';
+        gifClip.current.className = 'opacityShow';
       } else {
-        teamTVLogo.current.className = 'opacityHalf';
+        if (teamIdKey[currentTeam] === props.teamSelection) {
+          teamTVLogo.current.className = 'opacityShow';
+        } else {
+          teamTVLogo.current.className = 'opacityHalf';
+        }
+        rink.current.className = 'opacityShow';
+        gifClip.current.className = 'opacityHide';
       }
-      rink.current.className = 'opacityShow';
-      gifClip.current.className = 'opacityHide';
     }
   };
 
@@ -197,6 +204,8 @@ const Landing = (props) => {
               }}
               onMouseDown={(e) => press(e, upButton)}
               onMouseUp={(e) => press(e, upButton)}
+              onTouchStart={(e) => press(e, upButton)}
+              onTouchEnd={(e) => press(e, upButton)}
             />
             <button
               type="button"
@@ -213,6 +222,8 @@ const Landing = (props) => {
               }}
               onMouseDown={(e) => press(e, okButton)}
               onMouseUp={(e) => press(e, okButton)}
+              onTouchStart={(e) => press(e, upButton)}
+              onTouchEnd={(e) => press(e, upButton)}
             />
             <div id="okButtonFiller" className="okButtonOff" ref={okButton} />
             <button
@@ -225,6 +236,8 @@ const Landing = (props) => {
               }}
               onMouseDown={(e) => press(e, downButton)}
               onMouseUp={(e) => press(e, downButton)}
+              onTouchStart={(e) => press(e, upButton)}
+              onTouchEnd={(e) => press(e, upButton)}
             />
             <button
               type="button"

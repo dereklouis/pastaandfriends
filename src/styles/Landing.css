@@ -332,6 +332,15 @@
   }
 }
 
+@media (max-width: 450px), (max-height: 450px) {
+  #modeButton:active {
+    background-color: rgb(58, 109, 203);
+  }
+  #remoteButtonOff:active {
+    background-color: rgb(86, 4, 4);
+  }
+}
+
 @media (max-width: 380px) {
   #landingContainer {
     min-height: 568px;
