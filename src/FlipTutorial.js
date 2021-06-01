@@ -26,7 +26,7 @@ const FlipTutorial = () => {
       ref={flipContainer}
       onAnimationEnd={handleAnimation}
     >
-      <h1 id="FTTitle">WELCOME TO PASTA & FRIENDS</h1>
+      <h1 id="FTTitle">WELCOME TO PASTA FRIENDS</h1>
       <h2 id="FTInstruction">CLICK OR TAP CONTAINERS TO FLIP THEM!</h2>
       <video id="FTV" autoPlay muted loop playsInline>
         <source src="containerFlip.mov" type="video/mp4" />
