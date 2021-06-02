@@ -64,7 +64,7 @@ const GoalieStats = (props) => {
               <span className="bold">{props.player.seasonData.shutouts}</span>{' '}
               SHUTOUTS
             </p>
-            <div className="PSDividingLine"></div>
+            <div className="PSDividingLine blackBG"></div>
             <p className="playerWins PSRow">
               <span className="bold">{props.player.seasonData.wins}</span> WINS
             </p>
@@ -81,7 +81,7 @@ const GoalieStats = (props) => {
               </span>{' '}
               GA
             </p>
-            <div className="PSDividingLine"></div>
+            <div className="PSDividingLine blackBG"></div>
             <p className="playerSA PSRow">
               <span className="bold">
                 {props.player.seasonData.shotsAgainst}

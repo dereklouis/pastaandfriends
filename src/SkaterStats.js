@@ -56,7 +56,7 @@ const SkaterStats = (props) => {
               <span className="bold">{props.player.seasonData.points}</span>{' '}
               POINTS
             </p>
-            <div className="PSDividingLine"></div>
+            <div className="PSDividingLine blackBG"></div>
             <p className="playerPlusMinus PSRow">
               <span className="bold">{props.player.seasonData.plusMinus}</span>{' '}
               PLUS/MINUS
@@ -77,7 +77,7 @@ const SkaterStats = (props) => {
               <span className="bold">{props.player.seasonData.shots}</span>{' '}
               SHOTS
             </p>
-            <div className="PSDividingLine"></div>
+            <div className="PSDividingLine blackBG"></div>
             <p className="playerShotPercentage PSRow">
               <span className="bold">{props.player.seasonData.shotPct}</span>{' '}
               SHOT %

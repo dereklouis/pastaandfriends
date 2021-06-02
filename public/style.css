@@ -21,6 +21,18 @@ button {
   align-items: center;
 }
 
+.yellow {
+  color: #ffb81c;
+}
+
+.yellowBG {
+  background-color: #ffb81c;
+}
+
+.blackBG {
+  background-color: black;
+}
+
 .backgroundPhoto {
   background: url('/bruinsbackground.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
