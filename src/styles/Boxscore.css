@@ -122,6 +122,7 @@
   margin: 0px 0px 0px 0px;
   letter-spacing: 2px;
   text-align: center;
+  line-height: 20px;
 }
 
 #awayTitle {
@@ -521,6 +522,7 @@
 
   #venue {
     font-size: 13px;
+    line-height: 17px;
   }
 
   #awayTitle {
@@ -715,6 +717,7 @@
 
   #venue {
     font-size: 11px;
+    line-height: 15px;
   }
 
   #awayTitle {
@@ -912,6 +915,7 @@
 
   #venue {
     font-size: 9px;
+    line-height: 13px;
   }
 
   #awayTitle {
