@@ -20,7 +20,7 @@ const ActivePlayers = (props) => {
   });
   return (
     <div id="gameRosterBoxFront" className="over">
-      <div id="GRTeamLogoRow">
+      <div id="GRTeamLogoRowBack">
         <div className="GRLAHC FCAIC">
           <p className="GRAwayHome">AWAY</p>
           <div className="GRTeamLogoBox FCAIC">

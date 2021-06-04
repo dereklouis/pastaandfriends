@@ -76,7 +76,8 @@
   transform: scaleX(-1);
 }
 
-#GRTeamLogoRow {
+#GRTeamLogoRow,
+#GRTeamLogoRowBack {
   display: flex;
   align-items: center;
   width: 85%;
@@ -304,6 +305,10 @@
     margin: 10px 0px 4px 0px;
   }
 
+  #GRTeamLogoRowBack {
+    margin: 5px 0px 0px 0px;
+  }
+
   .GRAwayHome {
     font-size: 10px;
     margin: 0px 0px 8px 0px;
@@ -452,7 +457,8 @@
     border: 6px solid black;
     border-radius: 15px;
   }
-  #GRTeamLogoRow {
+  #GRTeamLogoRow,
+  #GRTeamLogoRowBack {
     margin: 9px 0px 3px 0px;
   }
 
@@ -588,10 +594,10 @@
     border: 6px solid black;
     border-radius: 15px;
   }
-  #GRTeamLogoRow {
+  #GRTeamLogoRow,
+  #GRTeamLogoRowBack {
     margin: 7px 0px 8px 0px;
   }
-
   .GRAwayHome {
     font-size: 8px;
     margin: 0px 0px 6px 0px;
@@ -738,7 +744,8 @@
     border: 4px solid black;
     border-radius: 15px;
   }
-  #GRTeamLogoRow {
+  #GRTeamLogoRow,
+  #GRTeamLogoRowBack {
     margin: 7px 0px 8px 0px;
   }
 
