@@ -3,7 +3,7 @@ import './styles/RemoteTutorial.css';
 
 window.scrollTo(0, 0);
 
-const RemoteTutorial = () => {
+const RemoteTutorial = (props) => {
   const remoteContainer = useRef(null);
 
   const handleClick = () => {
@@ -21,7 +21,7 @@ const RemoteTutorial = () => {
   return (
     <div
       id="remoteTutorialContainer"
-      className="FCAIC fadeIn"
+      className={`FCAIC fadeIn ${props.isMobile ? 'mobile' : 'desktop'}`}
       onClick={handleClick}
       ref={remoteContainer}
       onAnimationEnd={handleAnimation}

@@ -1,8 +1,11 @@
 import './styles/ErrorPage.css';
 
-const ErrorPage = () => {
+const ErrorPage = (props) => {
   return (
-    <div id="errorPageContainer" className="FCAIC">
+    <div
+      id="errorPageContainer"
+      className={`FCAIC ${props.isMobile ? 'mobile' : 'desktop'}`}
+    >
       <div id="errorRow">
         <p className="four">4</p>
         <img alt="Bruins Logo" id="errorLogo" src="bruinsLogo.png" />

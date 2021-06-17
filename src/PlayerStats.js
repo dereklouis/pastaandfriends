@@ -57,7 +57,9 @@ function PlayerStats(props) {
 
   return (
     <>
-      {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
+      {localStorage.getItem('flipTutorial') === null && (
+        <FlipTutorial isMobile={props.isMobile} />
+      )}
       {props.fullTeamStats.length ? (
         <>
           <RemoteIcon />

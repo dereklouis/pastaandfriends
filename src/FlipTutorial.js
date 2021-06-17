@@ -3,7 +3,7 @@ import './styles/FlipTutorial.css';
 
 window.scrollTo(0, 0);
 
-const FlipTutorial = () => {
+const FlipTutorial = (props) => {
   const flipContainer = useRef(null);
 
   const handleClick = () => {
@@ -21,7 +21,7 @@ const FlipTutorial = () => {
   return (
     <div
       id="flipTutorialContainer"
-      className="FCAIC fadeIn"
+      className={`FCAIC fadeIn ${props.isMobile ? 'mobile' : 'desktop'}`}
       onClick={handleClick}
       ref={flipContainer}
       onAnimationEnd={handleAnimation}

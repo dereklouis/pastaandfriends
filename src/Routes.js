@@ -13,6 +13,16 @@ import ErrorPage from './ErrorPage';
 
 const season = '20202021';
 
+let isMobile = false;
+
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+) {
+  isMobile = true;
+}
+
 const Routes = () => {
   const [fullTeamStats, setFullTeamStats] = useState([]);
   const [teamStats, setTeamStats] = useState([]);
@@ -87,7 +97,11 @@ const Routes = () => {
           exact
           path="/mancave"
           render={(props) => (
-            <Landing {...props} teamSelection={teamSelection} />
+            <Landing
+              {...props}
+              teamSelection={teamSelection}
+              isMobile={isMobile}
+            />
           )}
         />
         <Route
@@ -97,6 +111,7 @@ const Routes = () => {
               {...props}
               fullTeamStats={fullTeamStats}
               season={season}
+              isMobile={isMobile}
             />
           )}
         />
@@ -108,6 +123,7 @@ const Routes = () => {
               teamStats={teamStats}
               teamSelection={teamSelection}
               season={season}
+              isMobile={isMobile}
             />
           )}
         />
@@ -119,6 +135,7 @@ const Routes = () => {
               teamStats={teamStats}
               teamSelection={teamSelection}
               season={season}
+              isMobile={isMobile}
             />
           )}
         />
@@ -130,10 +147,11 @@ const Routes = () => {
               teamStats={teamStats}
               teamSelection={teamSelection}
               season={season}
+              isMobile={isMobile}
             />
           )}
         />
-        <Route path="/" component={ErrorPage} />
+        <Route path="/" component={ErrorPage} isMobile={isMobile} />
       </Switch>
     </>
   );

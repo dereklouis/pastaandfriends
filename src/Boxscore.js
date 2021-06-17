@@ -62,13 +62,18 @@ const Boxscore = (props) => {
   };
   return (
     <>
-      {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
+      {localStorage.getItem('flipTutorial') === null && (
+        <FlipTutorial isMobile={props.isMobile} />
+      )}
       {!gameData.length ? (
         <Loading />
       ) : (
         <>
           <RemoteIcon />
-          <div id="boxscoreContainer" className="FCAIC">
+          <div
+            id="boxscoreContainer"
+            className={`FCAIC ${props.isMobile ? 'mobile' : 'desktop'}`}
+          >
             {typeof gameData === 'string' ? (
               <div className="NoGameWrapper">
                 <h1 className="NoGame">{gameData}</h1>

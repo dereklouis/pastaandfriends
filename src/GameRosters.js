@@ -94,13 +94,18 @@ const GameRosters = (props) => {
   };
   return (
     <>
-      {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
+      {localStorage.getItem('flipTutorial') === null && (
+        <FlipTutorial isMobile={props.isMobile} />
+      )}
       {!gameData.length ? (
-        <Loading />
+        <Loading isMobile={props.isMobile} />
       ) : (
         <>
           <RemoteIcon />
-          <div id="gameRostersContainer" className="FCAIC">
+          <div
+            id="gameRostersContainer"
+            className={`FCAIC ${props.isMobile ? 'mobile' : 'desktop'}`}
+          >
             {typeof gameData === 'string' ? (
               <div className="NoGameWrapper">
                 <h1 className="NoGame">{gameData}</h1>

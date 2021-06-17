@@ -1,8 +1,11 @@
 import './styles/Loading.css';
 
-const Loading = () => {
+const Loading = (props) => {
   return (
-    <div id="loadingContainer" className="FCAIC">
+    <div
+      id="loadingContainer"
+      className={`FCAIC ${props.isMobile ? 'mobile' : 'desktop'}`}
+    >
       <div id="loadingTitleContainer">
         <h1 id="loadingTitle">Loading</h1>
         <div id="loadingDot"></div>
