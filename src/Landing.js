@@ -142,14 +142,9 @@ const Landing = (props) => {
 
   return (
     <>
-      {localStorage.getItem('remoteTutorial') === null && (
-        <RemoteTutorial isMobile={props.isMobile} />
-      )}
+      {localStorage.getItem('remoteTutorial') === null && <RemoteTutorial />}
       <div id="landingMaster">
-        <div
-          id="landingContainer"
-          className={props.isMobile ? 'mobile' : 'desktop'}
-        >
+        <div id="landingContainer">
           <div id="tvContainer">
             <img id="tv" src="tv.png" alt="tv" />
             <div id="teamTVLogoContainer">

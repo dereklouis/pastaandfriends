@@ -15,16 +15,11 @@ const TeamStats = (props) => {
 
   return (
     <>
-      {localStorage.getItem('flipTutorial') === null && (
-        <FlipTutorial isMobile={props.isMobile} />
-      )}
+      {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
       {props.teamStats.length ? (
         <>
           <RemoteIcon />
-          <div
-            id="teamStatsContainer"
-            className={`FCAIC ${props.isMobile ? 'mobile' : 'desktop'}`}
-          >
+          <div id="teamStatsContainer" className="FCAIC">
             <div
               id="TSBoxWrapper"
               ref={TSMaster}

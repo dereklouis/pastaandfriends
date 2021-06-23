@@ -21,7 +21,7 @@ const FlipTutorial = (props) => {
   return (
     <div
       id="flipTutorialContainer"
-      className={`FCAIC fadeIn ${props.isMobile ? 'mobile' : 'desktop'}`}
+      className="FCAIC fadeIn"
       onClick={handleClick}
       ref={flipContainer}
       onAnimationEnd={handleAnimation}

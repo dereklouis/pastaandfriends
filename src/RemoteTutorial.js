@@ -21,7 +21,7 @@ const RemoteTutorial = (props) => {
   return (
     <div
       id="remoteTutorialContainer"
-      className={`FCAIC fadeIn ${props.isMobile ? 'mobile' : 'desktop'}`}
+      className="FCAIC fadeIn"
       onClick={handleClick}
       ref={remoteContainer}
       onAnimationEnd={handleAnimation}

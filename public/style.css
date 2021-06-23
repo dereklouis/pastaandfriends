@@ -11,14 +11,6 @@ body {
   width: 100%;
 }
 
-.desktop {
-  height: 100vh;
-}
-
-.mobile {
-  height: -webkit-fill-available;
-}
-
 button {
   -webkit-tap-highlight-color: transparent;
 }

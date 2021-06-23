@@ -1,16 +1,16 @@
 /* #FFB81C */
 
+#PSMaster {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
 .playerStatsContainer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 25px 0px 25px 0px;
-}
-
-#PSMaster {
-  max-height: 100vh;
-  overflow-y: auto;
 }
 
 #PSSeason {
