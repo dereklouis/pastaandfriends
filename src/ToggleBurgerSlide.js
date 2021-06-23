@@ -9,13 +9,17 @@ const toggleBurgerSlide = () => {
     stick1.className = 'stick1Open';
     slideMenu.className = 'SMOpen';
     dimmer.className = 'dimmerOn';
-    remoteIcon.className = 'RIRight';
+    if (remoteIcon) {
+      remoteIcon.className = 'RIRight';
+    }
   } else {
     stick0.className = 'stick0Close';
     stick1.className = 'stick1Close';
     slideMenu.className = 'SMClose';
     dimmer.className = 'dimmerFade';
-    remoteIcon.className = 'RILeft';
+    if (remoteIcon) {
+      remoteIcon.className = 'RILeft';
+    }
   }
 };
 

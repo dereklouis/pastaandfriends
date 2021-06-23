@@ -1,5 +1,5 @@
 #teamStatsContainer {
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 100vh;
 }
@@ -11,7 +11,7 @@
   border-radius: 15px;
   position: relative;
   -webkit-tap-highlight-color: transparent;
-  margin: 150px 0px 100px 0px;
+  margin: 180px 0px 100px 0px;
 }
 
 #teamStatsBox,
@@ -520,7 +520,7 @@
     width: 334px;
     height: 283px;
     border-radius: 15px;
-    margin: 125px 0px 100px 0px;
+    margin: 150px 0px 100px 0px;
   }
 
   #teamStatsBox,
