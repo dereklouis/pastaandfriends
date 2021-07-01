@@ -1,6 +1,6 @@
 ## Welcome to Pasta Friends!
 
-![Pasta Friends mobile render](https://dereklouis.github.io/photos/pastafriends/pastafriends0.jpg)
+![Pasta Friends Mobile Render](https://dereklouis.github.io/photos/pastafriends/pastafriends0.jpg)
 
 Inspired by Boston Bruins forwrad David Pastrňák (affectionately known to Bruins fans as "Pasta"), Pasta Friends utilizes the NHL API to deliver player stats, player info, team stats, league standings, live boxscores, scoring play summaries, game day rosters and live "players currently on ice". While the application is Bruins themed and Bruins focused, it allows the user to select any of the 32 NHL teams.
 
