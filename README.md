@@ -24,4 +24,4 @@ You will also see any lint errors in the console.
 
 ## Deployment
 
-Pasta friends is currently deployed on herko: https://pastafriends.herokuapp.com/
+Pasta friends is currently deployed on Herko: https://pastafriends.herokuapp.com/
