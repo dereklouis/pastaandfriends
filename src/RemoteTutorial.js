@@ -29,7 +29,7 @@ const RemoteTutorial = (props) => {
       <h1 id="RTTitle">WELCOME TO PASTA FRIENDS</h1>
       <h2 id="RTInstruction">USE THE REMOTE TO CHANGE TEAMS</h2>
       <video id="RTV" autoPlay muted loop playsInline>
-        <source src="remoteTutorial.mov" type="video/mp4" />
+        <source src="videos/remoteTutorial.mov" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

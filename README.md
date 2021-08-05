@@ -24,4 +24,8 @@ You will also see any lint errors in the console.
 
 ## Deployment
 
-Pasta Friends is currently deployed on Heroku: https://pastafriends.herokuapp.com/
+Pasta Friends is currently deployed on Firebase: https://pastafriends-4322d.web.app/
+
+## PWA
+
+Open Pasta Friends on your mobile browser, then select 'add to homescreen' within your browser options to get PWA support.

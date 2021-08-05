@@ -8,7 +8,7 @@ const Loading = (props) => {
         <div id="loadingDot" />
       </div>
       <div id="loadingLogoWrapper">
-        <img alt="Bruins Logo" id="bruinsLogo" src="bruinsLogo.png" />
+        <img alt="Bruins Logo" id="bruinsLogo" src="images/bruinsLogo.png" />
       </div>
     </div>
   );

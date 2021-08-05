@@ -12,8 +12,8 @@ export const checkSchedule = async (
   SSO
 ) => {
   const data = await axios.get('https://statsapi.web.nhl.com/api/v1/schedule');
-  const gamesArr = data.data.dates[0].games;
-  if (gamesArr.length) {
+  const gamesArr = data.data.dates[0]?.games;
+  if (gamesArr && gamesArr.length) {
     const bruinsGame = gamesArr.filter((game) => {
       if (
         game.teams.away.team.id === teamSelection ||

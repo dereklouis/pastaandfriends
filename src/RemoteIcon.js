@@ -16,7 +16,7 @@ const RemoteIcon = () => {
       className="RILeft"
       onClick={handleToggle}
     >
-      <img src="/remoteIcon.png" alt="Remote Icon" id="remoteIcon" />
+      <img src="/images/remoteIcon.png" alt="Remote Icon" id="remoteIcon" />
     </Link>
   );
 };

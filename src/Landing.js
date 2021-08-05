@@ -146,7 +146,7 @@ const Landing = (props) => {
       <div id="landingMaster">
         <div id="landingContainer">
           <div id="tvContainer">
-            <img id="tv" src="tv.png" alt="tv" />
+            <img id="tv" src="images/tv.png" alt="tv" />
             <div id="teamTVLogoContainer">
               <img
                 alt="Team Logo"
@@ -163,7 +163,7 @@ const Landing = (props) => {
             </div>
             <img
               id="rink"
-              src="rink.jpg"
+              src="images/rink.jpg"
               alt="TD Garden"
               className="opacityShow"
               ref={rink}
@@ -245,9 +245,9 @@ const Landing = (props) => {
               className="arrowButtonOff"
               ref={downButton}
             />
-            <img id="remote" alt="remote" src="remote.png" />
+            <img id="remote" alt="remote" src="images/remote.png" />
           </div>
-          <img alt="Jack" id="jack" src="jackbw.png" />
+          <img alt="Jack" id="jack" src="images/jackbw.png" />
         </div>
       </div>
     </>

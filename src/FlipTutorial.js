@@ -29,7 +29,7 @@ const FlipTutorial = (props) => {
       <h1 id="FTTitle">WELCOME TO PASTA FRIENDS</h1>
       <h2 id="FTInstruction">CLICK OR TAP CONTAINERS TO FLIP THEM!</h2>
       <video id="FTV" autoPlay muted loop playsInline>
-        <source src="containerFlip.mov" type="video/mp4" />
+        <source src="videos/containerFlip.mov" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

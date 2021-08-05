@@ -20,7 +20,7 @@ const SkaterStats = (props) => {
         </div>
         {props.player.captain === true ? (
           <div className="PSCircle FCAIC">
-            <img alt="Captain" className="badge" src="captain.png" />
+            <img alt="Captain" className="badge" src="images/captain.png" />
           </div>
         ) : (
           false
@@ -30,7 +30,7 @@ const SkaterStats = (props) => {
             <img
               alt="Alternate Captain"
               className="badge"
-              src="alternate.png"
+              src="images/alternate.png"
             />
           </div>
         ) : (

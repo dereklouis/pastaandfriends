@@ -76,7 +76,7 @@ function PlayerStats(props) {
               ref={scrollArrowContainer}
             >
               <img
-                src="arrow.png"
+                src="images/arrow.png"
                 alt="Scroll Arrow"
                 id="scrollArrow"
                 className="downPosition"

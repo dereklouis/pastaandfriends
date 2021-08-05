@@ -36,13 +36,13 @@ const NavBar = () => {
       </Link>
       <div id="stickContainer" onClick={toggleBurgerSlide}>
         <img
-          src="stick.png"
+          src="images/stick.png"
           className="stick0Close"
           id="stick0"
           alt="hockey stick"
         />
         <img
-          src="stick.png"
+          src="images/stick.png"
           className="stick1Close"
           id="stick1"
           alt="hockey stick"

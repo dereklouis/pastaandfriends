@@ -70,7 +70,7 @@ const ActivePlayers = (props) => {
                               .toUpperCase()
                               .split(' ')[1]}
                       </p>
-                      <img alt="Net" className="netLogo" src="net.png" />
+                      <img alt="Net" className="netLogo" src="images/net.png" />
                     </div>
                   ))
               )}
@@ -113,7 +113,7 @@ const ActivePlayers = (props) => {
                               .toUpperCase()
                               .split(' ')[1]}
                       </p>
-                      <img alt="Net" className="netLogo" src="net.png" />
+                      <img alt="Net" className="netLogo" src="images/net.png" />
                     </div>
                   ))
               )}
@@ -172,7 +172,7 @@ const ActivePlayers = (props) => {
                           <img
                             alt="Stick"
                             className="skaterOnIceStick"
-                            src="stick.png"
+                            src="images/stick.png"
                           />
                         </div>
                       );
@@ -227,7 +227,7 @@ const ActivePlayers = (props) => {
                           <img
                             alt="Stick"
                             className="skaterOnIceStick"
-                            src="stick.png"
+                            src="images/stick.png"
                           />
                         </div>
                       );
@@ -288,7 +288,7 @@ const ActivePlayers = (props) => {
                           <img
                             alt="Stick"
                             className="skaterOnIceStick"
-                            src="stick.png"
+                            src="images/stick.png"
                           />
                         </div>
                       );
@@ -343,7 +343,7 @@ const ActivePlayers = (props) => {
                           <img
                             alt="Stick"
                             className="skaterOnIceStick"
-                            src="stick.png"
+                            src="images/stick.png"
                           />
                         </div>
                       );

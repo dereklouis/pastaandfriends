@@ -60,6 +60,7 @@ const Boxscore = (props) => {
     }
     autoRefresh();
   };
+
   return (
     <>
       {localStorage.getItem('flipTutorial') === null && <FlipTutorial />}
