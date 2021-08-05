@@ -5,7 +5,7 @@ import Routes from './Routes';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-if (window.location.host === 'pastafriends.herokuapp.com') {
+if (window.location.host === 'pastafriends-4322d.web.app') {
   if (
     window.location.protocol === 'http' ||
     window.location.protocol === 'http:'
